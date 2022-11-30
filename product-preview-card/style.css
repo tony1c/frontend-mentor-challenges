@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  background-color: hsl(30, 38%, 92%);
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cart {
+  width: 60rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.product-img-box {
+  display: block;
+  width: 100%;
+}
+
+.product-description {
+  display: flex;
+  flex-direction: column;
+  /* width: 30rem; */
+  padding: 3.2rem;
+  gap: 2.4rem;
+}
+
+.tag {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: hsl(228, 12%, 48%);
+  text-transform: uppercase;
+  letter-spacing: 0.7rem;
+}
+
+h2,
+.promo-price {
+  font-family: "Fraunces", sans-serif;
+}
+
+h2 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: hsl(212, 21%, 14%);
+  line-height: 0.9;
+}
+
+p {
+  color: hsl(228, 12%, 48%);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+}
+
+.promo-price {
+  color: hsl(158, 36%, 37%);
+  font-size: 3.2rem;
+  margin-right: 1.6rem;
+}
+
+.initial-price {
+  color: hsl(228, 12%, 48%);
+  text-decoration: line-through;
+}
+
+.cart-icon {
+  margin-right: 1.2rem;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  font-family: inherit;
+  border: none;
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(158, 36%, 37%);
+  padding: 1.6rem 3.2rem;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #113719;
+}
+
+@media (max-width: 38em) {
+  html {
+    font-size: 50%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart {
+    max-width: 40rem;
+  }
+
+  .product-img-box {
+    height: 30rem;
+    object-fit: cover;
+  }
+
+  .product-description {
+    font-size: 1.6rem;
+    gap: 1.6rem;
+  }
+}

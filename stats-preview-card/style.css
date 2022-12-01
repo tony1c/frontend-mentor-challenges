@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  background-color: hsl(233, 47%, 7%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.grid-2--cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100rem;
+}
+
+.stats-preview-description {
+  background-color: hsl(244, 38%, 16%);
+  display: flex;
+  flex-direction: column;
+  padding: 6.4rem;
+  gap: 2.4rem;
+  border-radius: 5px;
+}
+
+h2 {
+  font-size: 3rem;
+  color: hsl(0, 0%, 100%);
+}
+
+h2 span {
+  color: hsl(277, 64%, 61%);
+}
+
+p {
+  color: hsla(0, 0%, 100%, 0.75);
+  margin-bottom: 6.4rem;
+  line-height: 1.8;
+}
+
+.stat-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6.4rem;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 2rem;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.stat-headings {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: hsla(0, 0%, 100%, 0.6);
+  text-transform: uppercase;
+}
+
+.tinted-img {
+  background: linear-gradient(hsl(277, 64%, 61%, 0.6), hsl(277, 64%, 61%, 0.6)),
+    url(/images/image-header-desktop.jpg);
+  border-radius: 0 5px 5px 0;
+  background-size: cover;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 66em) {
+  html {
+    font-size: 50%;
+  }
+
+  .grid-2--cols {
+    grid-template-columns: 1fr;
+    width: 30rem;
+  }
+
+  .stats-preview-description {
+    text-align: center;
+    height: 50rem;
+    padding: 3.2rem;
+    border-radius: 0 0 5px 5px;
+    gap: 1.2rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .stat-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  .stats {
+    font-size: 2.4rem;
+  }
+
+  .tinted-img {
+    height: 20rem;
+    grid-row: 1;
+    background-size: cover;
+    border-radius: 5px 5px 0 0;
+  }
+}

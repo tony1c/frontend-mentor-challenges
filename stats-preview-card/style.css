@@ -25,6 +25,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100rem;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .stats-preview-description {
@@ -33,7 +35,7 @@ body {
   flex-direction: column;
   padding: 6.4rem;
   gap: 2.4rem;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
 }
 
 h2 {
@@ -80,8 +82,8 @@ p {
       hsl(277, 64%, 61%, 0.6),
       hsl(277, 64%, 61%, 0.6)
     ),
-    url(/stats-preview-card/images/image-header-desktop.jpg);
-  border-radius: 0 5px 5px 0;
+    url(/images/image-header-desktop.jpg);
+  /*border-radius: 0 5px 5px 0;*/
   background-size: cover;
   background-position: center;
 }
@@ -136,7 +138,6 @@ p {
   .tinted-img {
     height: 20rem;
     grid-row: 1;
-    background-size: cover;
-    border-radius: 5px 5px 0 0;
+    /*border-radius: 5px 5px 0 0;*/
   }
 }

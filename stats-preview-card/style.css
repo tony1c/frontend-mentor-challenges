@@ -24,16 +24,17 @@ body {
 .grid-2--cols {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 100rem;
+  width: 108rem;
+  border-radius: 7px;
+  overflow: hidden;
 }
 
 .stats-preview-description {
   background-color: hsl(244, 38%, 16%);
   display: flex;
   flex-direction: column;
-  padding: 6.4rem;
+  padding: 6.4rem 10rem 6.4rem 6.4rem;
   gap: 2.4rem;
-  border-radius: 5px;
 }
 
 h2 {
@@ -77,11 +78,10 @@ p {
 
 .tinted-img {
   background-image: linear-gradient(
-      hsl(277, 64%, 61%, 0.6),
-      hsl(277, 64%, 61%, 0.6)
+      hsl(277, 64%, 61%, 0.5),
+      hsl(277, 64%, 61%, 0.5)
     ),
-    url(/stats-preview-card/images/image-header-desktop.jpg);
-  border-radius: 0 5px 5px 0;
+    url(images/image-header-desktop.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -106,18 +106,15 @@ p {
 
   .stats-preview-description {
     text-align: center;
-    height: 50rem;
-    padding: 3.2rem;
-    border-radius: 0 0 5px 5px;
+    padding: 3.2rem 2rem;
     gap: 1.2rem;
   }
 
   h2 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
 
   p {
-    font-size: 1.3rem;
     margin-bottom: 1.6rem;
   }
 
@@ -134,9 +131,7 @@ p {
   }
 
   .tinted-img {
-    height: 20rem;
+    height: 27rem;
     grid-row: 1;
-    background-size: cover;
-    border-radius: 5px 5px 0 0;
   }
 }

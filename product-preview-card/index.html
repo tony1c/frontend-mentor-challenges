@@ -46,11 +46,17 @@
       <div class="container">
         <div class="cart">
           <div class="grid">
-            <img
-              class="product-img-box"
-              src="images/image-product-desktop.jpg"
-              alt="Perfume image"
-            />
+            <picture>
+              <source
+                srcset="images/image-product-mobile.jpg"
+                media="(max-width: 600px)"
+              />
+              <img
+                class="product-img-box"
+                src="images/image-product-desktop.jpg"
+                alt="Perfume image"
+              />
+            </picture>
 
             <div class="product-description">
               <span class="tag">Perfume</span>

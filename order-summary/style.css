@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1.6rem;
+  color: hsl(223, 47%, 23%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: hsl(225, 100%, 94%);
+}
+
+.order-summary {
+  background-color: hsl(225, 100%, 98%);
+  width: 45rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.text-description {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 4.8rem;
+}
+
+h2 {
+  font-weight: 900;
+}
+
+.description {
+  color: hsl(224, 23%, 55%);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.plan-flex-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: rgba(224, 232, 255, 0.253);
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+}
+
+.no-icon {
+  display: flex;
+  gap: 9.6rem;
+}
+
+.type-plan {
+  font-weight: 700;
+}
+
+span {
+  display: block;
+  font-weight: 400;
+  color: hsl(224, 23%, 55%);
+}
+
+.btn-change {
+  display: inline-block;
+  border: none;
+  background: none;
+  text-decoration: underline;
+  color: hsl(245, 75%, 52%);
+  cursor: pointer;
+}
+
+.btn-change:hover {
+  text-decoration: none;
+  color: hsl(224, 23%, 55%);
+}
+
+.cta {
+  display: block;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: hsl(245, 75%, 52%);
+  color: #fff;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 9px;
+  font-weight: 700;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s;
+}
+
+.cta:hover {
+  background-color: hsl(224, 23%, 55%);
+}
+
+a {
+  color: hsl(224, 23%, 55%);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+a:hover {
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

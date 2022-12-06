@@ -51,23 +51,6 @@ h2 {
   font-weight: 400;
 }
 
-/* .plan-flex-box {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  background-color: rgba(224, 232, 255, 0.253);
-  padding: 1.6rem 3.2rem;
-  border-radius: 9px;
-  gap: 9.6rem;
-}
-
-.no-change {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.2rem;
-} */
-
 .plan-flex-box {
   display: flex;
   /* justify-content: space-between; */

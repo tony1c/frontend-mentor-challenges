@@ -37,11 +37,11 @@ body {
 .text-description {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 3.6rem;
   padding: 4rem 2.6rem;
 }
 
-h2 {
+h1 {
   font-weight: 900;
 }
 

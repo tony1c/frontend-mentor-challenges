@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <div class="nft-card">
+            <div class="main-image">
+              <img
+                class="image__img"
+                src="/images/image-equilibrium.jpg"
+                alt="Equilibrium image"
+              />
+              <div class="image__overlay">
+                <object
+                  class="icon-view"
+                  alt="View icon"
+                  data="images/icon-view.svg"
+                ></object>
+              </div>
+            </div>
+
+            <a class="title" href="#">Equilibrium #3429</a>
+            <p>Our Equilibrium collection promotes balance and calm.</p>
+            <div class="eth-flexbox">
+              <div class="eth-quantity">
+                <object
+                  class="icon-ethereum"
+                  alt="Eth icon"
+                  data="images/icon-ethereum.svg"
+                ></object>
+                <span>0.041 ETH</span>
+              </div>
+              <div class="time-left">
+                <object
+                  class="icon-clock"
+                  alt="Clock icon"
+                  data="images/icon-clock.svg"
+                ></object
+                ><span>3 days left</span>
+              </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="created-by">
+              <img
+                class="creator-avatar"
+                src="images/image-avatar.png"
+                alt="Creator avatar"
+              />
+              <p>
+                Creation of <a class="creator-name" href="#">Jules Wyvern</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/tony1c">tony1c</a>.
+      </div>
+    </footer>
+  </body>
+</html>

@@ -11,7 +11,9 @@
   --cyan-w-opacity: hsl(178, 100%, 50%, 0.4);
 
   /* General */
-  --border-radius: 13px;
+  --component-width: 35rem;
+  --padding: 2.2rem;
+  --border-radius: 15px;
   --spacing: 2.4rem;
   --shadow: 0 2rem 1.6rem hsl(217, 54%, 11%, 1),
     0 3.6rem 3.2rem hsl(217, 54%, 11%, 0.5);
@@ -32,10 +34,10 @@
   align-items: center;
 }
 .container {
-  width: 35rem;
+  width: var(--component-width);
   background-color: var(--card-bg);
   border-radius: var(--border-radius);
-  padding: 2.2rem;
+  padding: var(--padding);
   box-shadow: var(--shadow);
 }
 .nft-card {
@@ -52,7 +54,7 @@
 .image__img {
   display: block;
   width: 100%;
-  border-radius: 9px;
+  border-radius: calc(var(--border-radius) / 2);
 }
 
 .image__overlay {
@@ -86,6 +88,7 @@
   justify-content: space-between;
 }
 .eth-quantity {
+  font-weight: 600;
   color: var(--cyan);
 }
 .time-left {
@@ -96,11 +99,11 @@
   margin-right: 0.8rem;
 }
 .line {
-  border-bottom: 1px inset var(--soft-blue);
+  border-bottom: 1px solid var(--soft-blue);
   opacity: 0.3;
 }
 .created-by {
-  gap: 1.2rem;
+  gap: calc(var(--spacing) / 2);
   margin-bottom: 1.2rem;
 }
 .creator-avatar {

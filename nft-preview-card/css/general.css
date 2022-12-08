@@ -21,6 +21,7 @@ body {
 p {
   color: var(--soft-blue);
   font-weight: 300;
+  line-height: 1.5;
 }
 
 a:link,

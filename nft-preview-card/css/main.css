@@ -11,7 +11,7 @@
   --cyan-w-opacity: hsl(178, 100%, 50%, 0.4);
 
   /* General */
-  --border-radius: 9px;
+  --border-radius: 13px;
   --spacing: 2.4rem;
   --shadow: 0 2rem 1.6rem hsl(217, 54%, 11%, 1),
     0 3.6rem 3.2rem hsl(217, 54%, 11%, 0.5);
@@ -52,7 +52,8 @@
 .image__img {
   display: block;
   width: 100%;
-  border-radius: var(--border-radius);
+  height: auto;
+  border-radius: 9px;
 }
 
 .image__overlay {

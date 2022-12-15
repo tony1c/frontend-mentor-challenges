@@ -15,7 +15,7 @@
     padding: 6rem;
   }
   .grid {
-    grid-template-columns: 30rem;
+    grid-template-columns: 32%;
     justify-content: center;
   }
 

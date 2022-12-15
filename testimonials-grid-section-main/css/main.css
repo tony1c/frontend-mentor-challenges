@@ -11,8 +11,7 @@
 
   /* General */
   --spacing: 2.6rem;
-  --containers-padding: 3rem 4.1rem;
-  /* --containers-padding: 2.4rem 3.5rem; */
+  --containers-padding: 2.6rem 3.7rem;
   --border-radius: 9px;
   --grid-width: 1140px;
   --shadow: 4px 4px 4px rgba(0, 0, 0, 0.09);
@@ -59,7 +58,7 @@
   justify-content: center;
   padding: var(--containers-padding);
   border-radius: var(--border-radius);
-  gap: 2rem;
+  gap: calc(var(--spacing) - 0.6rem);
 }
 .testimonial-flexbox {
   display: flex;

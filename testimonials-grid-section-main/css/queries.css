@@ -1,0 +1,29 @@
+@media (min-width: 72em) {
+  .grid {
+    grid-template-areas:
+      "first first second fifth"
+      "third fourth fourth fifth";
+  }
+}
+
+@media (max-width: 72em) {
+  html {
+    font-size: 50%;
+  }
+  .wrapper {
+    height: 100%;
+    padding: 6rem;
+  }
+  .grid {
+    grid-template-columns: 30rem;
+    justify-content: center;
+  }
+
+  .el-first {
+    background-position: top right 2rem;
+  }
+
+  .p-title {
+    font-size: 1.7rem;
+  }
+}

@@ -11,7 +11,8 @@
 
   /* General */
   --spacing: 2.6rem;
-  --containers-padding: 2.4rem 3.5rem;
+  --containers-padding: 3rem 4.1rem;
+  /* --containers-padding: 2.4rem 3.5rem; */
   --border-radius: 9px;
   --grid-width: 1140px;
   --shadow: 4px 4px 4px rgba(0, 0, 0, 0.09);
@@ -23,7 +24,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: var(--light-gray);
+  background-color: var(--light-grayish-blue);
 }
 .grid {
   display: grid;
@@ -58,7 +59,7 @@
   justify-content: center;
   padding: var(--containers-padding);
   border-radius: var(--border-radius);
-  gap: 1.6rem;
+  gap: 2rem;
 }
 .testimonial-flexbox {
   display: flex;
@@ -87,7 +88,7 @@
   background-color: var(--moderate-violet);
   background-image: url(../images/bg-pattern-quotation.svg);
   background-repeat: no-repeat;
-  background-position: top right 8rem;
+  background-position: top right 9rem;
 }
 .el-second {
   background-color: var(--grayish-blue);

@@ -59,7 +59,6 @@
   padding: var(--containers-padding);
   border-radius: var(--border-radius);
   gap: 1.6rem;
-  /* gap: calc(var(--spacing) / 2); */
 }
 .testimonial-flexbox {
   display: flex;
@@ -86,7 +85,7 @@
 
 .el-first {
   background-color: var(--moderate-violet);
-  background-image: url(/images/bg-pattern-quotation.svg);
+  background-image: url(../images/bg-pattern-quotation.svg);
   background-repeat: no-repeat;
   background-position: top right 8rem;
 }

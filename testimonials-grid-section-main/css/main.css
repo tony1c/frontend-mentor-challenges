@@ -1,0 +1,114 @@
+:root {
+  /* Primary colors */
+  --moderate-violet: hsl(263, 55%, 52%);
+  --grayish-blue: hsl(217, 19%, 35%);
+  --blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Neutral colors */
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+
+  /* General */
+  --spacing: 2.6rem;
+  --containers-padding: 2.4rem 3.5rem;
+  --border-radius: 9px;
+  --grid-width: 1140px;
+  --shadow: 4px 4px 4px rgba(0, 0, 0, 0.09);
+}
+
+/* CSS */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--light-gray);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing);
+  width: var(--grid-width);
+  grid-template-areas:
+    "first"
+    "second"
+    "third"
+    "fourth"
+    "fifth";
+}
+.el:nth-child(1) {
+  grid-area: first;
+}
+.el:nth-child(2) {
+  grid-area: second;
+}
+.el:nth-child(3) {
+  grid-area: third;
+}
+.el:nth-child(4) {
+  grid-area: fourth;
+}
+.el:nth-child(5) {
+  grid-area: fifth;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--containers-padding);
+  border-radius: var(--border-radius);
+  gap: 1.6rem;
+  /* gap: calc(var(--spacing) / 2); */
+}
+.testimonial-flexbox {
+  display: flex;
+  gap: calc(var(--spacing) / 2);
+}
+.avatar {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 1px solid var(--light-grayish-blue);
+  object-fit: cover;
+  object-position: center;
+}
+.verified-tag {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 50%;
+}
+.p-title {
+  font-size: 2rem;
+}
+
+.el-first {
+  background-color: var(--moderate-violet);
+  background-image: url(/images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 8rem;
+}
+.el-second {
+  background-color: var(--grayish-blue);
+}
+.el-fourth {
+  background-color: var(--blackish-blue);
+}
+.el-first,
+.el-second,
+.el-fourth {
+  color: var(--white);
+}
+
+.el-third,
+.el-fifth {
+  background-color: var(--white);
+  color: var(--grayish-blue);
+  box-shadow: var(--shadow);
+}
+
+.testimonial-text-3-5 {
+  color: var(--grayish-blue);
+}

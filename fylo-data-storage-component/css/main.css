@@ -1,0 +1,80 @@
+:root {
+  /* Primary colors */
+  --gradient: hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+
+  /* Neutral colors */
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+
+  /* General */
+  --spacing: 2rem;
+  --gap: 3rem;
+  --border-radius: 9px;
+  --container-padding: 3.6rem;
+  --icon-padding: 0.8rem 1.2rem;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--very-dark-blue);
+  background-image: url(../images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--gap);
+}
+.fylo-container {
+}
+.fylo-container,
+.storage-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+
+  background-color: var(--dark-blue);
+  padding: var(--container-padding);
+  border-radius: var(--border-radius);
+}
+.fylo-logo {
+  display: block;
+  width: 65%;
+}
+.icons-flexbox {
+  display: flex;
+  gap: calc(var(--gap) / 2);
+}
+.document-icon,
+.folder-icon,
+.upload-icon {
+  display: block;
+  width: 4.5rem;
+  object-fit: contain;
+  /* object-position: center; */
+  padding: var(--icon-padding);
+  background-color: var(--very-dark-blue);
+  border-radius: var(--border-radius);
+}
+.storage-container {
+}
+.storage-used {
+}
+.used-gb {
+}
+.storage-bar {
+}
+.gb-flexbox {
+}
+.min-gb {
+}
+.max-gb {
+}

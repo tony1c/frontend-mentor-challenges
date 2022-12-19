@@ -1,0 +1,31 @@
+@media (max-width: 62em) {
+  .wrapper {
+    background-image: url(../images/bg-mobile.png);
+    background-size: cover;
+    background-position: center;
+  }
+  .container {
+    flex-direction: column;
+    gap: calc(var(--gap) / 2);
+  }
+  .storage-container {
+    width: 35rem;
+    padding-bottom: 5.5rem;
+  }
+  .balloon {
+    top: 13.5rem;
+    right: 9.5rem;
+    padding: 1.6rem 2rem;
+  }
+  .storage-used {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .small-triangle {
+    display: none;
+  }
+  .left-gb,
+  .text-gb {
+    font-size: 3.6rem;
+  }
+}

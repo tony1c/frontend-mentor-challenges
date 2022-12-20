@@ -130,6 +130,7 @@ p {
   }
 
   .tinted-img {
+    background-image: url(images/image-header-mobile.jpg);
     height: 27rem;
     grid-row: 1;
   }

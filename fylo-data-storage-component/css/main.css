@@ -25,21 +25,13 @@
   background-image: url(../images/bg-desktop.png);
   background-repeat: no-repeat;
   background-position: 0 47vh;
+  /* background-position: bottom right; */
   background-size: contain;
 }
 .container {
   display: flex;
   align-items: flex-end;
   gap: var(--gap);
-}
-.fylo-container {
-  width: 35rem;
-  justify-content: center;
-  gap: 3.6rem !important;
-  border-top-right-radius: 10rem !important;
-}
-.storage-container {
-  width: 58rem;
 }
 .fylo-container,
 .storage-container {
@@ -50,6 +42,15 @@
   background-color: var(--dark-blue);
   padding: var(--container-padding);
   border-radius: var(--border-radius);
+}
+.fylo-container {
+  width: 35rem;
+  justify-content: center;
+  gap: 3.6rem !important;
+  border-top-right-radius: 10rem !important;
+}
+.storage-container {
+  width: 58rem;
 }
 .fylo-logo {
   display: block;
@@ -69,7 +70,6 @@
   background-color: var(--very-dark-blue);
   border-radius: var(--border-radius);
 }
-
 .balloon {
   background-color: #fff;
   font-weight: 700;
@@ -101,7 +101,6 @@
   bottom: -2rem;
   right: 0;
 }
-
 .storage-used {
   font-size: 1.5rem;
   font-weight: 400;

@@ -24,10 +24,10 @@ body {
   }
 }
 
-.mod {
-  @apply hover:text-softMagenta duration-300 cursor-pointer sm:text-xl;
+.button {
+  @apply inline-block w-fit bg-white text-violet px-16 py-4 rounded-full shadow-lg hover:bg-softMagenta hover:text-white duration-300 sm:justify-center sm:mx-auto sm:mt-4 sm:px-24 sm:py-3;
 }
 
-.button {
-  @apply inline-block w-fit bg-white text-violet px-20 py-4 rounded-full shadow-lg hover:bg-softMagenta hover:text-white duration-300 sm:justify-center sm:mx-auto sm:mt-4 sm:px-24 sm:py-3;
+.mod {
+  @apply text-xl border border-white w-10 h-10 rounded-full text-center align-middle leading-10 hover:text-softMagenta hover:border-softMagenta duration-300 cursor-pointer sm:text-base sm:w-8 sm:h-8 sm:leading-8;
 }

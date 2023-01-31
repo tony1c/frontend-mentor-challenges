@@ -516,12 +516,6 @@ body {
   width: 8rem;
 }
 
-.min-w-fit {
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-}
-
 .max-w-fit {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
@@ -619,7 +613,7 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.icons {
+.social-icon {
   display: inline-block;
   height: 2rem;
   width: 2rem;
@@ -633,7 +627,7 @@ body {
   transition-duration: 300ms;
 }
 
-.icons:hover {
+.social-icon:hover {
   --tw-border-opacity: 1;
   border-color: hsl(300 69% 71% / var(--tw-border-opacity));
   --tw-text-opacity: 1;
@@ -641,7 +635,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  .icons {
+  .social-icon {
     height: 2.5rem;
     width: 2.5rem;
     line-height: 2.5rem;

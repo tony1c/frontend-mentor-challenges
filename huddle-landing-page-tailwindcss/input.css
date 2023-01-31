@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Poppins", sans-serif;
+    background-image: url(../images/bg-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    @apply font-400 bg-violet text-white;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      background-image: url(../images/bg-desktop.svg);
+      background-size: cover;
+    }
+  }
+}
+
+.btn {
+  @apply inline-block px-20 py-3 bg-white text-violet rounded-full shadow-lg hover:text-white hover:bg-softMagenta duration-300;
+}
+
+.icons {
+  @apply inline-block w-8 h-8 border border-white rounded-full text-center align-middle leading-8 md:w-10 md:h-10 md:leading-10 hover:text-softMagenta hover:border-softMagenta duration-300;
+}

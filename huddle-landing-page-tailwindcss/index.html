@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta
+      charset="UTF-8 md:w-10 md:h-10 md:leading-10 hover:text-softMagenta hover:border-softMagenta duration-300"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,9 +28,9 @@
     </title>
   </head>
 
-  <body>
+  <body class="bg-violet font-400 text-white">
     <!-- Wrapper -->
-    <div class="max-w-fit mx-auto min-h-screen p-8 md:p-0">
+    <div class="mx-auto min-h-screen max-w-fit p-8 md:p-0">
       <!-- Logo -->
       <header class="w-32 py-3 md:w-40 md:py-16">
         <a href="#">
@@ -37,7 +39,7 @@
       </header>
 
       <main>
-        <div class="flex flex-col md:space-x-10 md:flex-row">
+        <div class="flex flex-col md:flex-row md:space-x-10">
           <!-- Main Image -->
           <img
             src="images/illustration-mockups.svg"
@@ -45,39 +47,53 @@
             class="mt-8 md:mt-0"
           />
           <!-- Main text -->
-          <div class="text-center mt-14 space-y-6 md:text-left">
+          <div class="mt-14 space-y-6 text-center md:text-left">
             <!-- Title -->
             <h1
-              class="max-w-md font-600 text-2xl leading-relaxed md:text-4xl md:leading-relaxed"
+              class="max-w-md text-2xl font-600 leading-relaxed md:text-4xl md:leading-relaxed"
             >
               Build The Community Your Fans Will Love
             </h1>
             <!-- Paragraph -->
-            <p class="font-openSans max-w-lg">
+            <p class="max-w-lg font-openSans">
               Huddle re-imagines the way we build communities. You have a voice,
               but so does your audience. Create connections with your users as
               you engage in genuine discussion.
             </p>
             <!-- Button -->
-            <a href="#" class="btn">Register</a>
+            <a
+              href="#"
+              aria-label="Register button"
+              class="inline-block rounded-full bg-white px-20 py-3 text-violet shadow-lg duration-300 hover:bg-softMagenta hover:text-white"
+              >Register</a
+            >
           </div>
         </div>
       </main>
       <!-- Socials footer -->
       <footer>
         <div
-          class="flex flex-row text-lg space-x-4 mt-16 justify-center md:justify-end md:text-xl"
+          class="mt-16 flex flex-row justify-center space-x-4 text-lg md:justify-end md:text-xl"
         >
           <!-- Facebook -->
-          <a href="#" aria-label="Facebook icon" class="social-icon"
+          <a
+            href="#"
+            aria-label="Facebook icon"
+            class="inline-block h-8 w-8 rounded-full border border-white text-center align-middle leading-8 duration-300 hover:border-softMagenta hover:text-softMagenta md:h-10 md:w-10 md:leading-10"
             ><i class="fa-brands fa-facebook-f"></i
           ></a>
           <!-- Twitter -->
-          <a href="#" aria-label="Twitter icon" class="social-icon"
+          <a
+            href="#"
+            aria-label="Twitter icon"
+            class="inline-block h-8 w-8 rounded-full border border-white text-center align-middle leading-8 duration-300 hover:border-softMagenta hover:text-softMagenta md:h-10 md:w-10 md:leading-10"
             ><i class="fa-brands fa-twitter"></i
           ></a>
           <!-- Instagram -->
-          <a href="#" aria-label="Instagram icon" class="social-icon"
+          <a
+            href="#"
+            aria-label="Instagram icon"
+            class="inline-block h-8 w-8 rounded-full border border-white text-center align-middle leading-8 duration-300 hover:border-softMagenta hover:text-softMagenta md:h-10 md:w-10 md:leading-10"
             ><i class="fa-brands fa-instagram"></i
           ></a>
         </div>

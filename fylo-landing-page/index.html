@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/a38e63988f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Frontend Mentor | Fylo landing page with two column layout</title>
+  </head>
+  <body class="text-veryDarkBlue">
+    <!-- Header -->
+    <header class="container mx-auto mb-32 flex flex-row justify-between p-8">
+      <!-- Logo -->
+      <a href="#">
+        <img src="images/logo.svg" alt="Main logo" class="w-28 md:w-max"
+      /></a>
+      <!-- Nav -->
+      <nav class="space-x-4 self-center text-desaturatedBlue">
+        <a href="#" class="">Features</a>
+        <a href="#" class="">Team</a>
+        <a href="#" class="">Sign In</a>
+      </nav>
+    </header>
+
+    <!-- Page Main Content -->
+    <main>
+      <!-- Section 1 -->
+      <section
+        id="hero"
+        class="container mx-auto mb-16 p-8 md:flex md:flex-row-reverse"
+      >
+        <!-- Image -->
+        <img
+          src="images/illustration-1.svg"
+          alt="Illustration 1"
+          class="mb-16 md:max-w-xl"
+        />
+        <!-- Section text -->
+        <div
+          class="mx-auto max-w-xs space-y-6 text-center md:mt-20 md:ml-0 md:max-w-lg md:text-left"
+        >
+          <!-- Title -->
+          <h1
+            class="font-sans text-2xl font-700 leading-relaxed tracking-wide md:text-3xl md:leading-normal"
+          >
+            All your files in one secure location, accessible anywhere.
+          </h1>
+          <!-- Paragraph -->
+          <p>
+            Fylo stores your most important files in one secure location. Access
+            them wherever you need, share and collaborate with friends, family,
+            and co-workers.
+          </p>
+          <!-- Input form -->
+          <form class="flex flex-col gap-3 font-sans md:flex-row">
+            <!-- Email -->
+            <div>
+              <input
+                class="peer w-full rounded-sm border border-veryDarkBlue py-2 pl-2 text-sm shadow-sm md:border-red-800 md:pr-28"
+                id="email"
+                type="email"
+                placeholder="Enter your email..."
+                name="email"
+                required
+              />
+              <p
+                class="invisible mt-1 hidden text-xs text-red-800 peer-invalid:visible md:block"
+              >
+                Please check your email
+              </p>
+            </div>
+            <!-- Button -->
+            <button
+              class="inline-block h-fit rounded-sm bg-brightBlue py-2 font-700 text-white shadow-md duration-300 hover:opacity-70 md:px-14"
+            >
+              Get Started
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section
+        class="bg-mobile bg-cover bg-top md:bg-desktop"
+        id="accessibility"
+      >
+        <div
+          class="container mx-auto p-8 py-32 pb-12 md:flex md:flex-row-reverse"
+        >
+          <!-- Image -->
+          <img
+            src="images/illustration-2.svg"
+            alt="Illustration 2"
+            class="mb-16 md:max-w-lg"
+          />
+          <!-- Section text -->
+          <div class="space-y-8 leading-relaxed md:mr-auto">
+            <!-- Title -->
+            <h2 class="text-center font-sans font-700 md:text-left md:text-4xl">
+              Stay productive, wherever you are
+            </h2>
+            <!-- Paragraphs text -->
+            <div class="space-y-8 md:max-w-lg">
+              <!-- Paragraph 1 -->
+              <p>
+                Never let location be an issue when accessing your files. Fylo
+                has you covered for all of your file storage needs.
+              </p>
+              <!-- Paragraph 2 -->
+              <p>
+                Securely share files and folders with friends, family and
+                colleagues for live collaboration. No email attachments
+                required!
+              </p>
+            </div>
+            <!-- Anchor el -->
+            <div class="pb-1.5 text-center md:text-left">
+              <a
+                href="#"
+                class="text-moderateCyan underline underline-offset-8 hover:opacity-60"
+                >See how Fylo works
+                <!-- Small Arrow -->
+                <img
+                  src="images/icon-arrow.svg"
+                  alt="Small green arrow"
+                  class="inline-block"
+              /></a>
+            </div>
+            <!-- Testimonial -->
+            <div
+              class="relative mx-auto max-w-xs rounded-md bg-white pl-6 pt-12 pb-6 pr-3 shadow-md md:m-0"
+            >
+              <!-- Quotes image -->
+              <img
+                src="images/icon-quotes.svg"
+                alt="Testimonial quotes"
+                class="absolute left-6 top-6"
+              />
+              <!-- Testimonial Comment -->
+              <div class="space-y-6 text-sm">
+                <!-- Testimonial paragraph -->
+                <p class="leading-relaxed">
+                  Fylo has improved our team productivity by an order of
+                  magnitude. Since making the switch our team has become a
+                  well-oiled collaboration machine.
+                </p>
+                <!-- Avatar & Name -->
+                <div class="flex flex-row space-x-3">
+                  <!-- Avatar Image -->
+                  <img
+                    src="images/avatar-testimonial.jpg"
+                    alt="Kyle Burton"
+                    class="h-9 w-9 rounded-full"
+                  />
+                  <!-- Name & Status -->
+                  <div>
+                    <!-- Testimonial name -->
+                    <span class="block font-sans font-700">Kayle Burton</span>
+                    <!-- Status -->
+                    <span class="text-sm">Founder &amp; CEO, Huddle</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="cta" class="bg-desaturatedBlue">
+        <!-- Section Wrapper -->
+        <div
+          class="container mx-auto space-y-8 p-8 py-16 md:flex md:flex-row md:justify-between"
+        >
+          <!-- Section text -->
+          <div class="space-y-6 text-center text-white md:text-left">
+            <!-- Title -->
+            <h2 class="font-sans text-xl font-700">Get early access today</h2>
+            <!-- Paragraph 3 -->
+            <p class="mx-auto max-w-xs md:max-w-md">
+              It only takes a minute to sign up and our free starter tier is
+              extremely generous. If you have any questions, our support team
+              would be happy to help you.
+            </p>
+          </div>
+          <!-- Input form -->
+          <form class="flex flex-col gap-3 font-sans">
+            <!-- Email -->
+
+            <div class="mx-auto">
+              <input
+                class="peer inline-block w-64 rounded-sm border-red-800 py-3 px-3 text-xs shadow-md outline-none md:w-96 md:border"
+                id="email"
+                type="email"
+                placeholder="email@example.com"
+                name="email"
+                required
+              />
+              <p
+                class="invisible mt-1 hidden text-xs text-white peer-invalid:visible md:block"
+              >
+                Please check your email
+              </p>
+            </div>
+            <!-- Button -->
+            <button
+              class="mx-auto inline-block w-64 rounded-sm bg-brightBlue py-3 text-xs font-700 tracking-wide text-white shadow-md hover:mix-blend-screen md:ml-0 md:w-max md:px-8"
+            >
+              Get Started For Free
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-veryDarkBlue text-white">
+      <!-- Footer wrapper -->
+      <div class="container mx-auto space-y-10 p-8 py-16">
+        <!-- Logo -->
+        <img
+          src="images/logo-white.svg"
+          alt="Footer logo"
+          class="w-28 md:w-max"
+        />
+        <!-- Footer elements -->
+        <div
+          class="flex flex-col gap-14 md:flex md:flex-row md:justify-between"
+        >
+          <!-- Contacts -->
+          <div class="space-y-4">
+            <!-- Phone section -->
+            <div class="flex flex-row gap-4">
+              <!-- Phone icon -->
+              <img
+                src="images/icon-phone.svg"
+                alt="Phone icon"
+                class="object-contain"
+              />
+              <!-- Phone number -->
+              <span>Phone: +1-543-123-4567</span>
+            </div>
+            <!-- Mail section -->
+            <div class="flex flex-row gap-4">
+              <!-- Mail icon -->
+              <img
+                src="images/icon-email.svg"
+                alt="Mail icon"
+                class="object-contain"
+              />
+              <!-- Mail -->
+              <span>example@fylo.com</span>
+            </div>
+          </div>
+          <!-- Footer col 1 -->
+          <ul class="space-y-4">
+            <li>
+              <a href="#" class="duration-300 hover:text-brightBlue"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="duration-300 hover:text-brightBlue">Jobs</a>
+            </li>
+            <li>
+              <a href="#" class="duration-300 hover:text-brightBlue">Press</a>
+            </li>
+            <li>
+              <a href="#" class="duration-300 hover:text-brightBlue">Blog</a>
+            </li>
+          </ul>
+          <!-- Footer col 2 -->
+          <ul class="space-y-4">
+            <li>
+              <a href="#" class="duration-300 hover:text-brightBlue"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="duration-300 hover:text-brightBlue">Terms</a>
+            </li>
+            <li>
+              <a href="#" class="duration-300 hover:text-brightBlue">Privacy</a>
+            </li>
+          </ul>
+          <!-- Socials -->
+          <div class="flex justify-center gap-2">
+            <!-- Facebook -->
+            <a
+              href="#"
+              class="inline-block h-8 w-8 rounded-full border border-white text-center align-middle leading-8 duration-300 hover:border-brightBlue hover:text-brightBlue md:h-10 md:w-10 md:leading-10"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <!-- Twitter -->
+            <a
+              href="#"
+              class="inline-block h-8 w-8 rounded-full border border-white text-center align-middle leading-8 duration-300 hover:border-brightBlue hover:text-brightBlue md:h-10 md:w-10 md:leading-10"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <!-- Instagram -->
+            <a
+              href="#"
+              class="inline-block h-8 w-8 rounded-full border border-white text-center align-middle leading-8 duration-300 hover:border-brightBlue hover:text-brightBlue md:h-10 md:w-10 md:leading-10"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

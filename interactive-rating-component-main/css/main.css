@@ -1,0 +1,144 @@
+:root {
+  /* Primary color */
+  --orange: hsl(25, 97%, 53%);
+
+  /* Neutral colors */
+  --white: hsl(0, 0%, 100%);
+  --lightGrey: hsl(217, 12%, 63%);
+  --mediumGrey: hsl(216, 12%, 54%);
+  --darkBlue: hsl(213, 19%, 18%);
+  --veryDarkBlue: hsl(216, 12%, 8%);
+
+  --darkBlueOpac: hsl(213, 19%, 18%, 0.7);
+}
+
+.wrapper {
+  max-width: 1440px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.component {
+  background-color: var(--darkBlueOpac);
+  border-radius: 3rem;
+  padding: 3.4rem;
+}
+
+.component-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.after-sub-content {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.after-sub-content div img {
+  margin-bottom: 1.2rem;
+}
+
+.after-sub-content div p {
+  display: inline-block;
+  color: var(--orange);
+  background-color: var(--darkBlueOpac);
+  padding: 10px 16px;
+  border-radius: 22px;
+  line-height: 1;
+  height: 3.2rem;
+  margin-bottom: 2rem;
+}
+
+.after-sub-content h2 {
+  color: var(--white);
+}
+
+.after-sub-content p {
+  text-align: center;
+  max-width: 34rem;
+}
+
+.star-el {
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  background: var(--darkBlue);
+  border-radius: 50%;
+  text-align: center;
+}
+
+.star-el > img {
+  vertical-align: middle;
+}
+
+.ratings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.radio-inputs > input {
+  appearance: none;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--darkBlue);
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--lightGrey);
+  }
+
+  &:hover + label span {
+    color: var(--white);
+  }
+
+  &:checked {
+    background-color: var(--orange);
+  }
+
+  &:checked + label span {
+    color: var(--white);
+  }
+}
+
+.radio-inputs > label {
+  color: var(--mediumGrey);
+  position: relative;
+}
+
+.radio-inputs > label > span {
+  position: absolute;
+  cursor: pointer;
+  right: 20.5px;
+  bottom: 20px;
+}
+
+.radio-inputs > label > .first {
+  padding-right: 2px;
+}
+
+.submit-btn > button {
+  display: inline-block;
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 50px;
+  padding: 1.6rem 0;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  &:hover {
+    background-color: var(--white);
+    color: var(--orange);
+  }
+}

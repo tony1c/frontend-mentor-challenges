@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+
+    <!-- JS -->
+    <script src="js/script.js" defer></script>
+
+    <title>Frontend Mentor | Interactive rating component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- Wrapper -->
+      <div class="wrapper">
+        <div class="component">
+          <!-- Rating state start -->
+          <div class="component-content">
+            <div class="star-el">
+              <img src="images/icon-star.svg" alt="Star icon" />
+            </div>
+
+            <!-- Text -->
+            <div class="text-el">
+              <!-- Component title -->
+              <h1>How did we do?</h1>
+
+              <!-- Component paragraph -->
+              <p>
+                Please let us know how we did with your support request. All
+                feedback is appreciated to help us improve our offering!
+              </p>
+            </div>
+            <!-- Ratings -->
+            <form class="ratings-form">
+              <div class="ratings">
+                <div class="radio-inputs">
+                  <input
+                    type="radio"
+                    id="radio_1"
+                    name="radio-group"
+                    value="1"
+                  />
+                  <label for="radio_1"><span class="first">1</span></label>
+                </div>
+                <div class="radio-inputs">
+                  <input
+                    type="radio"
+                    id="radio_2"
+                    name="radio-group"
+                    value="2"
+                  />
+                  <label for="radio_2"><span>2</span></label>
+                </div>
+                <div class="radio-inputs">
+                  <input
+                    type="radio"
+                    name="radio-group"
+                    id="radio_3"
+                    value="3"
+                  />
+                  <label for="radio_3"><span>3</span></label>
+                </div>
+                <div class="radio-inputs">
+                  <input
+                    type="radio"
+                    name="radio-group"
+                    id="radio_4"
+                    value="4"
+                  />
+                  <label for="radio_4"><span>4</span></label>
+                </div>
+                <div class="radio-inputs">
+                  <input
+                    type="radio"
+                    name="radio-group"
+                    id="radio_5"
+                    value="5"
+                  />
+                  <label for="radio_5"><span>5</span></label>
+                </div>
+              </div>
+
+              <!-- Submit btn -->
+              <div class="submit-btn">
+                <button id="submit-button" type="button">Submit</button>
+              </div>
+            </form>
+          </div>
+          <!-- Rating state end -->
+          <!-- Thank you state start -->
+          <div class="after-sub-content">
+            <!-- Container img -->
+            <div>
+              <img src="images/illustration-thank-you.svg" alt="Thank you!" />
+            </div>
+            <!-- Add rating here -->
+            <div>
+              <p id="selected">You selected 4 out of 5</p>
+            </div>
+            <!-- Container title -->
+            <h2>Thank you!</h2>
+            <!-- Container paragraph -->
+            <p>
+              We appreciate you taking the time to give a rating. If you ever
+              need more support, don’t hesitate to get in touch!
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Thank you state end -->
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/tony1c">tony1c</a>.
+      </div>
+    </footer>
+  </body>
+</html>

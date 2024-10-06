@@ -4,8 +4,6 @@
     tabindex="0"
     (keydown)="handleKeydown($event, accordion.id)"
     (click)="toggleAccordion(accordion.id)"
-    [ariaExpanded]="(expandedIdx$ | async) === accordion.id"
-    id="accordion-{{ accordion.id }}"
     class="flex justify-between hover:text-purple cursor-pointer items-center"
   >
     <h2 class="font-600 max-w-[212px] md:max-w-full">

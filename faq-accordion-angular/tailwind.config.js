@@ -5,6 +5,7 @@ module.exports = {
     colors: {
       white: "hsl(0, 0%, 100%)",
       "light-pink": "#f9f0ff",
+      purple: "#8B39B9",
       "grayish-purple": "hsl(292, 16%, 49%)",
       "dark-purple": "hsl(292, 42%, 14%)",
     },

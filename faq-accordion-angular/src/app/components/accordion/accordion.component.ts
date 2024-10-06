@@ -18,4 +18,11 @@ export class AccordionComponent {
   toggleAccordion(id: number) {
     this.#accordionService.toggleAccordion(id);
   }
+
+  handleKeydown(event: KeyboardEvent, accordionId: number) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.toggleAccordion(accordionId);
+    }
+  }
 }

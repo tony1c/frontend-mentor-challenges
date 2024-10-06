@@ -30,8 +30,7 @@ export class AccordionService {
     },
     {
       id: 3,
-      question:
-        "How can I get help if I'm stuck on a Frontend Mentor challenge?",
+      question: "How can I get help if I'm stuck on a challenge?",
       response:
         "The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members.",
     },

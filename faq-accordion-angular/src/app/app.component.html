@@ -1,0 +1,42 @@
+<div class="bg-light-pink h-full">
+  <div
+    class="bg-[url('/background-pattern-mobile.svg')] bg-cover bg-bottom bg-no-repeat h-[30%]"
+  >
+    <!-- wrapper -->
+    <div
+      class="container leading-5 text-balance mx-auto flex items-center h-screen justify-center"
+    >
+      <!-- accordion component -->
+      <div
+        class="w-[327px] h-[526px] bg-white rounded-lg p-6 flex flex-col gap-[29px]"
+      >
+        <div class="flex items-center gap-5">
+          <img class="size-[22px]" src="./icon-star.svg" alt="Star icon" />
+          <h1 class="text-3xl font-700">FAQs</h1>
+        </div>
+        <!-- first question -->
+        <app-accordion
+          question="What is Frontend Mentor, and how will it help me?"
+          response="Frontend Mentor offers realistic coding challenges to help developers
+      improve their frontend coding skills with projects in HTML, CSS, and
+      JavaScript. It's suitable for all levels and ideal for portfolio building."
+        />
+
+        <!-- second question -->
+        <app-accordion
+          question="Is Frontend Mentor free?"
+          response="Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels."
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="text-grayish-purple">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      >Frontend Mentor</a
+    >. Coded by
+    <a href="https://www.frontendmentor.io/profile/tony1c">tony1c</a>.
+  </div>
+</footer>

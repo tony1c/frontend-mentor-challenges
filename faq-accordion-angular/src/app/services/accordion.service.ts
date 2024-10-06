@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AccordionModel } from '../models/accordion.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AccordionService {
+  private expandedIdxSubject = new BehaviorSubject<number | null>(null);
+  expandedIdx$ = this.expandedIdxSubject.asObservable();
+
   accordions: AccordionModel[] = [
     {
       id: 0,
@@ -35,5 +39,10 @@ export class AccordionService {
 
   getAccordions() {
     return this.accordions;
+  }
+
+  public toggleAccordion(id: number): void {
+    const currentIdx = this.expandedIdxSubject.getValue();
+    this.expandedIdxSubject.next(currentIdx === id ? null : id);
   }
 }

@@ -1,22 +1,29 @@
 <div class="flex flex-col gap-[27px]">
+  @for (accordion of accordions; track accordion.id) {
   <div class="flex justify-between items-center">
     <h2 class="font-600 max-w-[212px]">
-      {{ question }}
+      {{ accordion.question }}
     </h2>
     <button
-      (click)="toggleIsOpen()"
+      (click)="toggleAccordion(accordion.id)"
       class="inline-flex rounded-full pointer-events-none size-10 items-center justify-center"
       type="button"
     >
       <img
+        [src]="
+          accordion.id === expandedIdx ? '/icon-minus.svg' : '/icon-plus.svg'
+        "
         class="cursor-pointer pointer-events-auto"
-        [src]="accordionService.isOpen ? './icon-minus.svg' : './icon-plus.svg'"
         alt="Plus icon"
       />
     </button>
   </div>
-  @if (this.accordionService.isOpen) {
-  <p class="text-pretty text-sm text-grayish-purple">{{ response }}</p>
-  }
+
+  @if (accordion.id === expandedIdx) {
+  <p class="text-pretty text-sm text-grayish-purple">
+    {{ accordion.response }}
+  </p>
+  } @if (accordion.id <= 2) {
   <div class="border-b-2 border-b-light-pink w-full"></div>
+  } }
 </div>

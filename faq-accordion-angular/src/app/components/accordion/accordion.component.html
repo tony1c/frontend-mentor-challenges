@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-[27px]">
   @for (accordion of accordions; track accordion.id) {
   <div class="flex justify-between items-center">
-    <h2 class="font-600 max-w-[212px]">
+    <h2 class="font-600 max-w-[212px] md:max-w-full">
       {{ accordion.question }}
     </h2>
     <button
@@ -22,7 +22,7 @@
   </div>
 
   @if ((expandedIdx$ | async) === accordion.id) {
-  <p class="text-pretty text-sm text-grayish-purple">
+  <p class="text-pretty text-sm md:tracking-wide text-grayish-purple">
     {{ accordion.response }}
   </p>
   } @if (accordion.id <= 2) {

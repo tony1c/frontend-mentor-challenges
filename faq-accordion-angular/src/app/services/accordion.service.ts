@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class AccordionService {
-  private expandedIdxSubject = new BehaviorSubject<number | null>(null);
+  private expandedIdxSubject = new BehaviorSubject<number | null>(0);
   expandedIdx$ = this.expandedIdxSubject.asObservable();
 
   accordions: AccordionModel[] = [

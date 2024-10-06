@@ -4,13 +4,15 @@
     tabindex="0"
     (keydown)="handleKeydown($event, accordion.id)"
     (click)="toggleAccordion(accordion.id)"
+    [ariaExpanded]="(expandedIdx$ | async) === accordion.id"
+    id="accordion-{{ accordion.id }}"
     class="flex justify-between hover:text-purple cursor-pointer items-center"
   >
     <h2 class="font-600 max-w-[212px] md:max-w-full">
       {{ accordion.question }}
     </h2>
     <button
-      class="inline-flex rounded-full pointer-events-none size-10 items-center justify-center"
+      class="inline-flex rounded-full size-10 items-center justify-center"
       type="button"
     >
       <img
@@ -19,7 +21,6 @@
             ? '/icon-minus.svg'
             : '/icon-plus.svg'
         "
-        class="cursor-pointer pointer-events-auto"
         alt="Plus icon"
       />
     </button>

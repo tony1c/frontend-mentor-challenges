@@ -11,7 +11,9 @@
     >
       <img
         [src]="
-          accordion.id === expandedIdx ? '/icon-minus.svg' : '/icon-plus.svg'
+          (expandedIdx$ | async) === accordion.id
+            ? '/icon-minus.svg'
+            : '/icon-plus.svg'
         "
         class="cursor-pointer pointer-events-auto"
         alt="Plus icon"
@@ -19,7 +21,7 @@
     </button>
   </div>
 
-  @if (accordion.id === expandedIdx) {
+  @if ((expandedIdx$ | async) === accordion.id) {
   <p class="text-pretty text-sm text-grayish-purple">
     {{ accordion.response }}
   </p>

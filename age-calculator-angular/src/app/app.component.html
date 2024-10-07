@@ -1,0 +1,26 @@
+<main class="container mx-auto">
+  <!-- wrapper -->
+  <div class="flex h-screen items-center justify-center">
+    <!-- app container -->
+    <div
+      class="h-[487px] w-[344px] space-y-[52px] rounded-3xl rounded-br-[95px] bg-white px-[26px] py-[52px] shadow-sm"
+    >
+      <!-- age form -->
+      <div class="h-[91px] w-full bg-light-red">
+        <app-age-form />
+      </div>
+      <!-- line w/ button -->
+      <div class="relative h-[2px] w-full bg-light-grey">
+        <button
+          (click)="log()"
+          class="absolute left-1/2 top-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 transform items-center justify-center rounded-full bg-purple"
+        >
+          <img class="size-7" src="icon-arrow.svg" alt="Arrow icon" />
+        </button>
+      </div>
+
+      <!-- display -->
+      <app-age-display />
+    </div>
+  </div>
+</main>

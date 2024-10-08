@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AgeDisplayComponent } from './age-display.component';
+import { AgeCalculatorComponent } from './age-calculator.component';
 
-describe('AgeDisplayComponent', () => {
-  let component: AgeDisplayComponent;
-  let fixture: ComponentFixture<AgeDisplayComponent>;
+describe('AgeCalculatorComponent', () => {
+  let component: AgeCalculatorComponent;
+  let fixture: ComponentFixture<AgeCalculatorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AgeDisplayComponent]
+      imports: [AgeCalculatorComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AgeDisplayComponent);
+    fixture = TestBed.createComponent(AgeCalculatorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

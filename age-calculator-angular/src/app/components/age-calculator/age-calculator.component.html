@@ -1,21 +1,71 @@
 <!-- app container -->
 <div
-  class="h-[487px] w-[344px] space-y-[52px] rounded-3xl rounded-br-[95px] bg-white px-[26px] py-[52px] shadow-sm"
+  class="h-[487px] w-[344px] space-y-[68px] rounded-3xl rounded-br-[95px] bg-white px-[26px] py-[52px] shadow-sm"
 >
   <!-- age form -->
-  <div class="h-[91px] w-full bg-light-red"></div>
-  <!-- line w/ button -->
-  <div class="relative h-[2px] w-full bg-light-grey">
-    <button
-      (click)="log()"
-      class="absolute left-1/2 top-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 transform items-center justify-center rounded-full bg-purple transition-colors duration-300 hover:bg-off-black"
-    >
-      <img class="size-7" src="icon-arrow.svg" alt="Arrow icon" />
-    </button>
-  </div>
+  <form
+    (ngSubmit)="submitForm()"
+    [formGroup]="dateOfBirth"
+    class="space-y-[64px]"
+  >
+    <div class="flex justify-between">
+      <!-- input day -->
+      <fieldset class="flex flex-col">
+        <label
+          for="day"
+          class="text-sm font-700 uppercase tracking-widest text-smokey-grey"
+          >Day</label
+        >
+        <input
+          id="day"
+          type="text"
+          formControlName="dayValue"
+          class="h-[52px] w-[90px] rounded-md border border-light-grey px-4 text-xl font-800"
+        />
+      </fieldset>
+      <!-- input month -->
+      <fieldset class="flex flex-col">
+        <label
+          for="month"
+          class="text-sm font-700 uppercase tracking-widest text-smokey-grey"
+          >Month</label
+        >
+        <input
+          id="month"
+          type="text"
+          formControlName="monthValue"
+          class="h-[52px] w-[90px] rounded-md border border-light-grey px-4 text-xl font-800"
+        />
+      </fieldset>
+      <!-- input year -->
+      <fieldset class="flex flex-col">
+        <label
+          for="year"
+          class="text-sm font-700 uppercase tracking-widest text-smokey-grey"
+          >Year</label
+        >
+        <input
+          id="year"
+          type="text"
+          formControlName="yearValue"
+          class="h-[52px] w-[90px] rounded-md border border-light-grey px-4 text-xl font-800"
+        />
+      </fieldset>
+    </div>
+
+    <!-- line w/ button -->
+    <div class="relative h-[2px] w-full bg-light-grey">
+      <button
+        (click)="log()"
+        class="absolute left-1/2 top-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 transform items-center justify-center rounded-full bg-purple transition-colors duration-300 hover:bg-off-black md:-right-8 md:left-auto"
+      >
+        <img class="size-7" src="icon-arrow.svg" alt="Arrow icon" />
+      </button>
+    </div>
+  </form>
 
   <!-- display -->
-  <div class="mt-14 flex flex-col gap-1 text-6xl font-700 italic">
+  <div class="flex flex-col gap-1 text-6xl font-700 italic">
     <div class="space-x-2">
       <span class="text-purple">38</span>
       <span>years</span>

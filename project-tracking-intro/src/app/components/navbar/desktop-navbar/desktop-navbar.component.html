@@ -1,0 +1,17 @@
+<div
+  class="container mx-auto hidden h-44 items-center justify-between px-20 font-barlow-condensed text-base md:flex"
+>
+  <app-logo />
+  <div class="flex items-center gap-8">
+    <ul class="flex gap-8 uppercase text-very-dark-blue">
+      @for (link of links; track $index) {
+        <li class="cursor-pointer underline-offset-2 hover:underline">
+          <a href="/">{{ link }}</a>
+        </li>
+      }
+    </ul>
+    <!-- divider -->
+    <div class="size-[6px] rounded-full bg-grayish-blue"></div>
+    <app-login-btn />
+  </div>
+</div>

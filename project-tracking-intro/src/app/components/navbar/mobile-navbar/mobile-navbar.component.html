@@ -18,11 +18,12 @@
 
     @if (isOpen) {
       <div
-        class="absolute left-1/2 top-0 h-[230px] w-[310px] -translate-x-1/2 translate-y-1/2 transform rounded-[4px] bg-white shadow-2xl"
+        @openClose
+        class="absolute left-1/2 h-[230px] w-[310px] -translate-x-1/2 translate-y-1/2 transform rounded-[4px] bg-white shadow-2xl"
       >
         <ul class="flex h-full flex-col justify-between px-5 py-5">
           @for (link of links; track $index) {
-            <li class="uppercase last:pt-10">
+            <li class="menu-item uppercase last:pt-10">
               <a href="/">{{ link }}</a>
             </li>
           }

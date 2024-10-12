@@ -1,14 +1,17 @@
-<main class="mt-16 grid grid-cols-1 place-items-center gap-12 md:grid-cols-2">
+<main
+  class="mt-16 grid grid-cols-1 place-items-center gap-12 md:grid-cols-2 md:place-items-end md:gap-0"
+>
+  <!-- [630px_1fr] -->
   <!-- img -->
   <div class="overflow-hidden md:order-2">
     <img
-      class="translate-x-14 transform object-contain"
+      class="translate-x-14 transform object-contain object-left md:h-[500px] md:w-[1000px] md:translate-x-2 md:object-cover"
       src="images/illustration-devices.svg"
       alt="Illustration devices image"
     />
   </div>
   <!-- content -->
-  <div class="space-y-6 p-8 md:order-1">
+  <div class="space-y-6 p-8 md:order-1 md:space-y-10">
     <h2 class="space-x-4 font-barlow-condensed text-base uppercase">
       <span
         class="rounded-full bg-very-dark-blue px-3 py-1 tracking-wide text-white"
@@ -19,21 +22,22 @@
       >
     </h2>
     <h1
-      class="max-w-[421px] font-barlow text-4xl font-700 uppercase text-very-dark-blue"
+      class="max-w-[421px] font-barlow text-4xl font-700 uppercase text-very-dark-blue md:max-w-2xl md:text-6xl"
     >
       Powerful insights into your team
     </h1>
-    <p class="max-w-[19rem] tracking-wide text-dark-grayish-blue">
+    <p class="max-w-[19rem] tracking-wide text-dark-grayish-blue md:text-lg">
       Project planning and time tracking for agile teams
     </p>
-    <div class="flex gap-6">
+    <!-- cta -->
+    <div class="flex gap-6 md:pt-8">
       <button
         class="rounded-md bg-red px-6 py-3 font-barlow-condensed text-sm font-700 uppercase tracking-widest text-white hover:opacity-80"
       >
         Schedule a demo
       </button>
       <button
-        class="font-barlow-condensed text-sm uppercase tracking-[0.3em] text-grayish-blue"
+        class="font-barlow-condensed text-sm uppercase tracking-widest text-grayish-blue md:tracking-[0.3em]"
       >
         To see a preview
       </button>

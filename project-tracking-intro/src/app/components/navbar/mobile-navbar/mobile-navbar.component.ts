@@ -7,7 +7,6 @@ import { LoginBtnComponent } from '../login-btn/login-btn.component';
   standalone: true,
   imports: [LogoComponent, LoginBtnComponent],
   templateUrl: './mobile-navbar.component.html',
-  styleUrl: './mobile-navbar.component.css',
 })
 export class MobileNavbarComponent {
   @Input({ required: true }) links!: string[];

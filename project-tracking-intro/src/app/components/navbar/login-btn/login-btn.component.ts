@@ -5,8 +5,5 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './login-btn.component.html',
-  styleUrl: './login-btn.component.css'
 })
-export class LoginBtnComponent {
-
-}
+export class LoginBtnComponent {}

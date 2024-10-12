@@ -7,7 +7,6 @@ import { DesktopNavbarComponent } from './desktop-navbar/desktop-navbar.componen
   standalone: true,
   imports: [MobileNavbarComponent, DesktopNavbarComponent],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
   links: string[] = ['Product', 'Features', 'Pricing'];

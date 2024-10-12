@@ -18,8 +18,8 @@
         >
         <input
           id="day"
-          type="text"
-          formControlName="dayValue"
+          type="number"
+          formControlName="day"
           class="h-[52px] w-[90px] rounded-md border border-light-grey px-4 text-xl font-800"
         />
       </fieldset>
@@ -32,8 +32,8 @@
         >
         <input
           id="month"
-          type="text"
-          formControlName="monthValue"
+          type="number"
+          formControlName="month"
           class="h-[52px] w-[90px] rounded-md border border-light-grey px-4 text-xl font-800"
         />
       </fieldset>
@@ -41,13 +41,13 @@
       <fieldset class="flex flex-col">
         <label
           for="year"
-          class="text-sm font-700 uppercase tracking-widest text-smokey-grey"
+          class="appearance-none text-sm font-700 uppercase tracking-widest text-smokey-grey"
           >Year</label
         >
         <input
           id="year"
-          type="text"
-          formControlName="yearValue"
+          type="number"
+          formControlName="year"
           class="h-[52px] w-[90px] rounded-md border border-light-grey px-4 text-xl font-800"
         />
       </fieldset>
@@ -65,17 +65,19 @@
   </form>
 
   <!-- display -->
-  <div class="flex flex-col gap-1 text-6xl font-700 italic">
+  <div class="flex flex-col gap-1 text-[3.4rem] font-700 italic leading-tight">
     <div class="space-x-2">
-      <span class="text-purple">38</span>
+      <span class="text-purple">{{
+        submittedValues.year ? submittedValues.year : "--"
+      }}</span>
       <span>years</span>
     </div>
     <div class="space-x-2">
-      <span class="text-purple">3</span>
+      <span class="text-purple">{{ submittedValues.month }}</span>
       <span>months</span>
     </div>
     <div class="space-x-2">
-      <span class="text-purple">26</span>
+      <span class="text-purple">{{ submittedValues.day }}</span>
       <span>days</span>
     </div>
   </div>

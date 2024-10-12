@@ -1,0 +1,18 @@
+<button (click)="toggle()" class="flex size-6 flex-col gap-[4px]">
+  <span
+    [ngClass]="{
+      'translate-y-[6px] rotate-45': isOpen,
+    }"
+    class="inline-block h-[2px] w-full rounded-full bg-very-dark-blue transition-transform duration-300"
+  ></span>
+  <span
+    [ngClass]="{ 'opacity-0': isOpen }"
+    class="inline-block h-[2px] w-full rounded-full bg-very-dark-blue"
+  ></span>
+  <span
+    [ngClass]="{
+      '-translate-y-[6px] -rotate-45': isOpen,
+    }"
+    class="inline-block h-[2px] w-full rounded-full bg-very-dark-blue transition-transform duration-300"
+  ></span>
+</button>

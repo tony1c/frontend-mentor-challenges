@@ -1,39 +1,25 @@
 <nav class="flex h-20 items-center justify-between px-8 md:hidden">
   <app-logo />
   <!-- hamburger btn -->
-  <button (click)="toggle()">
-    @if (!isOpen) {
-      <img
-        class="size-6 object-contain"
-        src="images/icon-hamburger.svg"
-        alt="Hamburger menu icon"
-      />
-    } @else {
-      <img
-        class="size-6 object-contain"
-        src="images/icon-close.svg"
-        alt="Hamburger menu icon"
-      />
-    }
+  <app-hamburger-menu (menuToggled)="toggle()" [isOpen]="isOpen" />
 
-    @if (isOpen) {
-      <div
-        @openClose
-        class="absolute left-1/2 h-[230px] w-[310px] -translate-x-1/2 translate-y-1/2 transform rounded-[4px] bg-white shadow-2xl"
-      >
-        <ul class="flex h-full flex-col justify-between px-5 py-5">
-          @for (link of links; track $index) {
-            <li class="menu-item uppercase last:pt-10">
-              <a href="/">{{ link }}</a>
-            </li>
-          }
-          <!-- divider -->
-          <div class="border-b border-light-grayish-blue"></div>
-          <li>
-            <app-login-btn />
+  @if (isOpen) {
+    <div
+      @openClose
+      class="absolute left-1/2 h-[230px] w-[310px] -translate-x-1/2 translate-y-1/2 transform rounded-[4px] bg-white shadow-2xl"
+    >
+      <ul class="flex h-full flex-col justify-between px-5 py-5">
+        @for (link of links; track $index) {
+          <li class="menu-item uppercase last:pt-10">
+            <a href="/">{{ link }}</a>
           </li>
-        </ul>
-      </div>
-    }
-  </button>
+        }
+        <!-- divider -->
+        <div class="border-b border-light-grayish-blue"></div>
+        <li>
+          <app-login-btn />
+        </li>
+      </ul>
+    </div>
+  }
 </nav>

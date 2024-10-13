@@ -25,32 +25,21 @@
           formControlName="day"
           placeholder="DD"
           [ngClass]="{
-            'border-light-red': submitted && !isValidDate(),
+            'border-light-red outline-light-red': submitted && !isValidDate(),
           }"
-          class="h-[52px] w-[88px] rounded-md border border-light-grey px-3 text-xl font-800 md:h-[64px] md:w-[144px]"
+          class="h-[52px] w-[88px] cursor-pointer rounded-md border border-light-grey px-3 text-xl font-800 caret-purple outline-purple md:h-[64px] md:w-[144px]"
         />
-        @if (submitted && dateOfBirth.controls.day.hasError("required")) {
-          <small class="max-w-[88px] italic text-light-red md:max-w-full"
-            >This field is required</small
-          >
-        } @else if (
-          submitted &&
-          (dateOfBirth.controls.day.hasError("min") ||
-            dateOfBirth.controls.day.hasError("max"))
-        ) {
-          <small class="max-w-[88px] italic text-light-red md:max-w-full"
-            >Must be a valid day</small
-          >
-        } @else if (submitted && !isValidDate()) {
-          <small class="max-w-[88px] italic text-light-red md:max-w-full"
-            >Must be a valid date</small
-          >
-        }
+        <small class="max-w-[88px] italic text-light-red md:max-w-full">{{
+          getErrorMessageForDay()
+        }}</small>
       </fieldset>
       <!-- input month -->
       <fieldset class="flex flex-col gap-1 md:gap-2">
         <label
           for="month"
+          [ngClass]="{
+            'text-light-red': submitted && !isValidDate(),
+          }"
           class="text-sm font-700 uppercase tracking-widest text-smokey-grey"
           >Month</label
         >
@@ -59,13 +48,22 @@
           type="number"
           formControlName="month"
           placeholder="MM"
-          class="h-[52px] w-[88px] rounded-md border border-light-grey px-3 text-xl font-800 md:h-[64px] md:w-[144px]"
+          [ngClass]="{
+            'border-light-red outline-light-red': submitted && !isValidDate(),
+          }"
+          class="h-[52px] w-[88px] cursor-pointer rounded-md border border-light-grey px-3 text-xl font-800 caret-purple outline-purple md:h-[64px] md:w-[144px]"
         />
+        <small class="max-w-[88px] italic text-light-red md:max-w-full">{{
+          getErrorMessageForMonth()
+        }}</small>
       </fieldset>
       <!-- input year -->
       <fieldset class="flex flex-col gap-1 md:gap-2">
         <label
           for="year"
+          [ngClass]="{
+            'text-light-red outline-light-red': submitted && !isValidDate(),
+          }"
           class="appearance-none text-sm font-700 uppercase tracking-widest text-smokey-grey"
           >Year</label
         >
@@ -74,8 +72,14 @@
           type="number"
           formControlName="year"
           placeholder="YYYY"
-          class="h-[52px] w-[88px] rounded-md border border-light-grey px-3 text-xl font-800 md:h-[64px] md:w-[144px]"
+          [ngClass]="{
+            'border-light-red outline-light-red': submitted && !isValidDate(),
+          }"
+          class="h-[52px] w-[88px] cursor-pointer rounded-md border border-light-grey px-3 text-xl font-800 caret-purple outline-purple md:h-[64px] md:w-[144px]"
         />
+        <small class="max-w-[88px] italic text-light-red md:max-w-full">{{
+          getErrorMessageForYear()
+        }}</small>
       </fieldset>
     </div>
     <!-- line w/ button -->

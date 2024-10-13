@@ -12,7 +12,9 @@
       <!-- input day -->
       <fieldset class="relative flex flex-col gap-1 md:gap-2">
         <label
-          [ngClass]="submitted ? 'text-light-red' : 'text-smokey-grey'"
+          [ngClass]="
+            submitted && !isValidDate() ? 'text-light-red' : 'text-smokey-grey'
+          "
           for="day"
           class="text-sm font-700 uppercase tracking-widest"
           >Day</label

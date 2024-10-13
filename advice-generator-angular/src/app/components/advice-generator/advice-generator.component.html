@@ -1,6 +1,6 @@
 <!-- app container -->
 <div
-  class="relative mt-[120px] h-[315px] w-[343px] rounded-xl bg-c-dark-grayish-blue py-[41px] md:mt-[222px] md:h-[334px] md:w-[538px] md:py-[50px]"
+  class="relative z-10 mt-[120px] h-[315px] w-[343px] rounded-xl bg-c-dark-grayish-blue py-[41px] md:mt-[222px] md:h-[334px] md:w-[538px] md:py-[50px]"
 >
   <!-- app content -->
   <div class="flex flex-col items-center gap-[24px] md:gap-[28px]">
@@ -29,9 +29,15 @@
   </div>
 
   <!-- generate random advice btn -->
-  <button
-    class="absolute bottom-0 left-1/2 flex size-[64px] -translate-x-1/2 translate-y-1/2 transform items-center justify-center rounded-full bg-c-neon-green"
-  >
-    <img class="" src="images/icon-dice.svg" alt="Dice icon" />
-  </button>
+  <div class="group">
+    <button
+      class="absolute bottom-0 left-1/2 flex size-[64px] -translate-x-1/2 translate-y-1/2 transform items-center justify-center rounded-full bg-c-neon-green"
+    >
+      <img src="images/icon-dice.svg" alt="Dice icon" />
+    </button>
+    <!-- radial effect on hover -->
+    <div
+      class="absolute bottom-0 left-1/2 -z-10 flex size-[64px] -translate-x-1/2 translate-y-1/2 transform items-center justify-center rounded-full bg-c-neon-green opacity-50 transition-all duration-300 group-hover:blur-lg"
+    ></div>
+  </div>
 </div>

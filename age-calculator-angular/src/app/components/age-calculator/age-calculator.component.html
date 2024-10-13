@@ -3,7 +3,11 @@
   class="h-[487px] w-[345px] space-y-[68px] rounded-3xl rounded-br-[95px] bg-white px-[23px] py-[44px] shadow-sm md:h-[590px] md:w-[756px] md:space-y-[43px] md:rounded-br-[176px] md:py-[52px]"
 >
   <!-- age form -->
-  <form (ngSubmit)="calcAge()" [formGroup]="dateOfBirth" class="space-y-[42px]">
+  <form
+    (ngSubmit)="onSubmit()"
+    [formGroup]="dateOfBirth"
+    class="space-y-[42px]"
+  >
     <div class="flex justify-between md:gap-6 md:pl-[24px] md:pr-[189px]">
       <!-- input day -->
       <fieldset class="flex flex-col gap-1 md:gap-2">
@@ -65,15 +69,15 @@
     class="flex flex-col gap-1 text-[3.5rem] font-700 italic leading-none md:gap-2 md:pl-[24px] md:text-8xl md:tracking-tight"
   >
     <div class="space-x-2">
-      <span class="text-purple">{{ years }}</span>
+      <span class="text-purple">{{ age.years ?? "--" }}</span>
       <span>years</span>
     </div>
     <div class="space-x-2">
-      <span class="text-purple">{{ months }}</span>
+      <span class="text-purple">{{ age.months ?? "--" }}</span>
       <span>months</span>
     </div>
     <div class="space-x-2">
-      <span class="text-purple">{{ days }}</span>
+      <span class="text-purple">{{ age.days ?? "--" }}</span>
       <span>days</span>
     </div>
   </div>

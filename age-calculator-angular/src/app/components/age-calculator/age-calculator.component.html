@@ -1,16 +1,12 @@
 <!-- app container -->
 <div
-  class="h-[487px] w-[344px] space-y-[68px] rounded-3xl rounded-br-[95px] bg-white px-[26px] py-[52px] shadow-sm"
+  class="h-[487px] w-[345px] space-y-[68px] rounded-3xl rounded-br-[95px] bg-white px-[26px] py-[44px] shadow-sm md:h-[590px] md:w-[756px] md:space-y-[43px] md:rounded-br-[176px] md:py-[52px]"
 >
   <!-- age form -->
-  <form
-    (ngSubmit)="submitForm()"
-    [formGroup]="dateOfBirth"
-    class="space-y-[64px]"
-  >
-    <div class="flex justify-between">
+  <form (ngSubmit)="calcAge()" [formGroup]="dateOfBirth" class="space-y-[42px]">
+    <div class="flex justify-between md:gap-6 md:pl-[24px] md:pr-[189px]">
       <!-- input day -->
-      <fieldset class="flex flex-col">
+      <fieldset class="flex flex-col gap-1 md:gap-2">
         <label
           for="day"
           class="text-sm font-700 uppercase tracking-widest text-smokey-grey"
@@ -20,11 +16,11 @@
           id="day"
           type="number"
           formControlName="day"
-          class="h-[52px] w-[90px] rounded-md border border-light-grey px-4 text-xl font-800"
+          class="h-[52px] w-[88px] rounded-md border border-light-grey px-4 text-xl font-800 md:h-[64px] md:w-[144px]"
         />
       </fieldset>
       <!-- input month -->
-      <fieldset class="flex flex-col">
+      <fieldset class="flex flex-col gap-1 md:gap-2">
         <label
           for="month"
           class="text-sm font-700 uppercase tracking-widest text-smokey-grey"
@@ -34,11 +30,11 @@
           id="month"
           type="number"
           formControlName="month"
-          class="h-[52px] w-[90px] rounded-md border border-light-grey px-4 text-xl font-800"
+          class="h-[52px] w-[88px] rounded-md border border-light-grey px-4 text-xl font-800 md:h-[64px] md:w-[144px]"
         />
       </fieldset>
       <!-- input year -->
-      <fieldset class="flex flex-col">
+      <fieldset class="flex flex-col gap-1 md:gap-2">
         <label
           for="year"
           class="appearance-none text-sm font-700 uppercase tracking-widest text-smokey-grey"
@@ -48,36 +44,37 @@
           id="year"
           type="number"
           formControlName="year"
-          class="h-[52px] w-[90px] rounded-md border border-light-grey px-4 text-xl font-800"
+          class="h-[52px] w-[88px] rounded-md border border-light-grey px-4 text-xl font-800 md:h-[64px] md:w-[144px]"
         />
       </fieldset>
     </div>
-
-    <!-- line w/ button -->
-    <div class="relative h-[2px] w-full bg-light-grey">
-      <button
-        (click)="log()"
-        class="absolute left-1/2 top-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 transform items-center justify-center rounded-full bg-purple transition-colors duration-300 hover:bg-off-black md:-right-8 md:left-auto"
-      >
-        <img class="size-7" src="icon-arrow.svg" alt="Arrow icon" />
-      </button>
-    </div>
   </form>
+  <!-- line w/ button -->
+  <div class="relative h-[2px] w-full bg-light-grey md:mx-auto md:w-[656px]">
+    <button
+      class="absolute left-1/2 top-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 transform items-center justify-center rounded-full bg-purple transition-colors duration-300 hover:bg-off-black md:-right-[44px] md:left-auto md:size-[86px]"
+    >
+      <img class="size-7" src="icon-arrow.svg" alt="Arrow icon" />
+    </button>
+  </div>
 
   <!-- display -->
-  <div class="flex flex-col gap-1 text-[3.4rem] font-700 italic leading-tight">
+  <div
+    class="flex flex-col gap-1 text-[3.5rem] font-700 italic leading-none md:gap-2 md:pl-[24px] md:text-8xl md:tracking-tight"
+  >
     <div class="space-x-2">
-      <span class="text-purple">{{
-        submittedValues.year ? submittedValues.year : "--"
-      }}</span>
+      <!-- <span class="text-purple">{{ years }}</span> -->
+      <span class="text-purple">38</span>
       <span>years</span>
     </div>
     <div class="space-x-2">
-      <span class="text-purple">{{ submittedValues.month }}</span>
+      <!-- <span class="text-purple">{{ months }}</span> -->
+      <span class="text-purple">3</span>
       <span>months</span>
     </div>
     <div class="space-x-2">
-      <span class="text-purple">{{ submittedValues.day }}</span>
+      <!-- <span class="text-purple">{{ days }}</span> -->
+      <span class="text-purple">26</span>
       <span>days</span>
     </div>
   </div>

@@ -17,14 +17,14 @@ import { Slip } from '../../models/slip.model';
   ],
   templateUrl: './advice-generator.component.html',
 })
-export class AdviceGeneratorComponent implements OnInit {
+export class AdviceGeneratorComponent {
   #generateAdvice: GenerateAdviceService = inject(GenerateAdviceService);
   slip: Slip = {
     id: 117,
     advice: `It is easy to sit up and take notice, what's difficult is getting up and taking action.`,
   };
 
-  ngOnInit(): void {
+  public generateAdvice(): void {
     this.#generateAdvice.fetchAdvice().subscribe((res) => {
       this.slip = res.slip;
     });

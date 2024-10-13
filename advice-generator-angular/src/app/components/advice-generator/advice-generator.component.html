@@ -3,5 +3,5 @@
   <!-- app content -->
   <app-content [slip]="slip" />
   <!-- generate random advice btn -->
-  <app-button-generate />
+  <app-button-generate (onGenerateAdvice)="generateAdvice()" />
 </app-container>

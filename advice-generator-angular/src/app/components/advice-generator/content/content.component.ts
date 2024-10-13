@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PatternComponent } from '../pattern/pattern.component';
+import { Slip } from '../../../models/slip.model';
 
 @Component({
   selector: 'app-content',
@@ -8,4 +9,6 @@ import { PatternComponent } from '../pattern/pattern.component';
   templateUrl: './content.component.html',
   styles: ``,
 })
-export class ContentComponent {}
+export class ContentComponent {
+  @Input({ required: true }) slip!: Slip;
+}

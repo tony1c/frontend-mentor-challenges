@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { PatternComponent } from '../pattern/pattern.component';
 import { Slip } from '../../../models/slip.model';
+import { PatternComponent } from '../pattern/pattern.component';
 
 @Component({
   selector: 'app-content',

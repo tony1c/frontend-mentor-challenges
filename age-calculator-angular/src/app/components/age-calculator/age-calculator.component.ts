@@ -1,13 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { AgeCalculatorService } from '../../services/age-calculator.service';
 import { Age } from '../../models/age.model';
 
 @Component({
   selector: 'app-age-calculator',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, NgClass],
   templateUrl: './age-calculator.component.html',
 })
 export class AgeCalculatorComponent implements OnInit {

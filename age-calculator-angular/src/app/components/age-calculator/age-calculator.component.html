@@ -12,11 +12,9 @@
       <!-- input day -->
       <fieldset class="relative flex flex-col gap-1 md:gap-2">
         <label
-          [ngClass]="{
-            'text-light-red': submitted && !isValidDate(),
-          }"
+          [ngClass]="submitted ? 'text-light-red' : 'text-smokey-grey'"
           for="day"
-          class="text-sm font-700 uppercase tracking-widest text-smokey-grey"
+          class="text-sm font-700 uppercase tracking-widest"
           >Day</label
         >
         <input
@@ -37,10 +35,10 @@
       <fieldset class="flex flex-col gap-1 md:gap-2">
         <label
           for="month"
-          [ngClass]="{
-            'text-light-red': submitted && !isValidDate(),
-          }"
-          class="text-sm font-700 uppercase tracking-widest text-smokey-grey"
+          [ngClass]="
+            submitted && !isValidDate() ? 'text-light-red' : 'text-smokey-grey'
+          "
+          class="text-sm font-700 uppercase tracking-widest"
           >Month</label
         >
         <input
@@ -61,10 +59,10 @@
       <fieldset class="flex flex-col gap-1 md:gap-2">
         <label
           for="year"
-          [ngClass]="{
-            'text-light-red outline-light-red': submitted && !isValidDate(),
-          }"
-          class="appearance-none text-sm font-700 uppercase tracking-widest text-smokey-grey"
+          [ngClass]="
+            submitted && !isValidDate() ? 'text-light-red' : 'text-smokey-grey'
+          "
+          class="appearance-none text-sm font-700 uppercase tracking-widest"
           >Year</label
         >
         <input

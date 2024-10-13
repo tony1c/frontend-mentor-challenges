@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Age } from '../models/age.model';
+import { AbstractControl } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -10,35 +11,25 @@ export class AgeCalculatorService {
     month: string | null,
     year: string | null,
   ): boolean {
-    const dateInput = `${year}/${month}/${day}`; // YYYY-MM-DD format
+    const dateInput = `${year}/${month}/${day}`;
 
     const dateObj = new Date(dateInput);
     const currentDate = new Date();
 
-    if (dateObj > currentDate) {
-      console.log('Not valid');
-      return false;
-    }
-
-    if (isNaN(dateObj.getTime())) {
-      // Invalid date
-      console.log('Not a valid date');
-      return false;
-    }
-
-    // Extracting the correct day, month, and year from the date object
     const extractedDay = dateObj.getDate();
-    const extractedMonth = dateObj.getMonth() + 1; // Months are 0-indexed
+    const extractedMonth = dateObj.getMonth() + 1;
     const extractedYear = dateObj.getFullYear();
 
     const resultDate = `${extractedYear}/${extractedMonth}/${extractedDay}`;
 
-    if (resultDate !== dateInput) {
-      console.log(`${resultDate} !== ${dateInput} is also not valid.`);
+    if (
+      dateObj > currentDate ||
+      isNaN(dateObj.getTime()) ||
+      resultDate !== dateInput
+    ) {
       return false;
     }
 
-    console.log('valid');
     return true;
   }
 
@@ -62,5 +53,50 @@ export class AgeCalculatorService {
     }
 
     return { years, months, days };
+  }
+
+  public getErrorMessageForDay(
+    dayControl: AbstractControl,
+    isValidDate: () => boolean,
+    submitted: boolean,
+  ): string | null {
+    if (submitted) {
+      if (dayControl.hasError('required')) {
+        return 'This field is required';
+      } else if (dayControl.hasError('min') || dayControl.hasError('max')) {
+        return 'Must be a valid day';
+      } else if (!isValidDate()) {
+        return 'Must be a valid date';
+      }
+    }
+    return null;
+  }
+
+  public getErrorMessageForMonth(
+    monthControl: AbstractControl,
+    submitted: boolean,
+  ): string | null {
+    if (submitted) {
+      if (monthControl.hasError('required')) {
+        return 'This field is required';
+      } else if (monthControl.hasError('min') || monthControl.hasError('max')) {
+        return 'Must be a valid month';
+      }
+    }
+    return null;
+  }
+
+  public getErrorMessageForYear(
+    yearControl: AbstractControl,
+    submitted: boolean,
+  ): string | null {
+    if (submitted) {
+      if (yearControl.hasError('required')) {
+        return 'This field is required';
+      } else if (yearControl.hasError('max')) {
+        return 'Must be in the past';
+      }
+    }
+    return null;
   }
 }

@@ -37,6 +37,28 @@ export class AgeCalculatorComponent implements OnInit {
     });
   }
 
+  getErrorMessageForDay(): string | null {
+    return this.#ageCalculatorService.getErrorMessageForDay(
+      this.dateOfBirth.controls.day,
+      this.isValidDate.bind(this),
+      this.submitted,
+    );
+  }
+
+  getErrorMessageForMonth(): string | null {
+    return this.#ageCalculatorService.getErrorMessageForMonth(
+      this.dateOfBirth.controls.month,
+      this.submitted,
+    );
+  }
+
+  getErrorMessageForYear(): string | null {
+    return this.#ageCalculatorService.getErrorMessageForYear(
+      this.dateOfBirth.controls.year,
+      this.submitted,
+    );
+  }
+
   public isValidDate(): boolean {
     const { day, month, year } = this.dateOfBirth.getRawValue();
     return this.#ageCalculatorService.isValidDate(day, month, year);

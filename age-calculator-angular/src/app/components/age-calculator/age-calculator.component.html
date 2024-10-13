@@ -10,8 +10,11 @@
   >
     <div class="flex justify-between md:gap-6 md:pl-[24px] md:pr-[189px]">
       <!-- input day -->
-      <fieldset class="flex flex-col gap-1 md:gap-2">
+      <fieldset class="relative flex flex-col gap-1 md:gap-2">
         <label
+          [ngClass]="{
+            'text-light-red': submitted && !isValidDate(),
+          }"
           for="day"
           class="text-sm font-700 uppercase tracking-widest text-smokey-grey"
           >Day</label
@@ -20,8 +23,29 @@
           id="day"
           type="number"
           formControlName="day"
-          class="h-[52px] w-[88px] rounded-md border border-light-grey px-4 text-xl font-800 md:h-[64px] md:w-[144px]"
+          placeholder="DD"
+          [ngClass]="{
+            'border-light-red': submitted && !isValidDate(),
+          }"
+          class="h-[52px] w-[88px] rounded-md border border-light-grey px-3 text-xl font-800 md:h-[64px] md:w-[144px]"
         />
+        @if (submitted && dateOfBirth.controls.day.hasError("required")) {
+          <small class="max-w-[88px] italic text-light-red md:max-w-full"
+            >This field is required</small
+          >
+        } @else if (
+          submitted &&
+          (dateOfBirth.controls.day.hasError("min") ||
+            dateOfBirth.controls.day.hasError("max"))
+        ) {
+          <small class="max-w-[88px] italic text-light-red md:max-w-full"
+            >Must be a valid day</small
+          >
+        } @else if (submitted && !isValidDate()) {
+          <small class="max-w-[88px] italic text-light-red md:max-w-full"
+            >Must be a valid date</small
+          >
+        }
       </fieldset>
       <!-- input month -->
       <fieldset class="flex flex-col gap-1 md:gap-2">
@@ -34,7 +58,8 @@
           id="month"
           type="number"
           formControlName="month"
-          class="h-[52px] w-[88px] rounded-md border border-light-grey px-4 text-xl font-800 md:h-[64px] md:w-[144px]"
+          placeholder="MM"
+          class="h-[52px] w-[88px] rounded-md border border-light-grey px-3 text-xl font-800 md:h-[64px] md:w-[144px]"
         />
       </fieldset>
       <!-- input year -->
@@ -48,7 +73,8 @@
           id="year"
           type="number"
           formControlName="year"
-          class="h-[52px] w-[88px] rounded-md border border-light-grey px-4 text-xl font-800 md:h-[64px] md:w-[144px]"
+          placeholder="YYYY"
+          class="h-[52px] w-[88px] rounded-md border border-light-grey px-3 text-xl font-800 md:h-[64px] md:w-[144px]"
         />
       </fieldset>
     </div>

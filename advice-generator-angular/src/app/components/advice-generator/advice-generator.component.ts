@@ -26,7 +26,7 @@ export class AdviceGeneratorComponent {
   #generateAdvice: GenerateAdviceService = inject(GenerateAdviceService);
   slip: Slip = initialAdvice;
 
-  public generateAdvice(): void {
+  generateAdvice(): void {
     this.#generateAdvice.fetchAdvice().subscribe((advice) => {
       this.slip = advice;
     });

@@ -6,6 +6,11 @@ import { ContentComponent } from './content/content.component';
 import { GenerateAdviceService } from '../../services/generate-advice.service';
 import { Slip } from '../../models/slip.model';
 
+const initialAdvice: Slip = {
+  id: 117,
+  advice: `It is easy to sit up and take notice, what's difficult is getting up and taking action.`,
+};
+
 @Component({
   selector: 'app-advice-generator',
   standalone: true,
@@ -19,14 +24,11 @@ import { Slip } from '../../models/slip.model';
 })
 export class AdviceGeneratorComponent {
   #generateAdvice: GenerateAdviceService = inject(GenerateAdviceService);
-  slip: Slip = {
-    id: 117,
-    advice: `It is easy to sit up and take notice, what's difficult is getting up and taking action.`,
-  };
+  slip: Slip = initialAdvice;
 
   public generateAdvice(): void {
-    this.#generateAdvice.fetchAdvice().subscribe((res) => {
-      this.slip = res.slip;
+    this.#generateAdvice.fetchAdvice().subscribe((advice) => {
+      this.slip = advice;
     });
   }
 }

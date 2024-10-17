@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [],
+  imports: [AddToCartComponent],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.css'
+  styles: ``,
 })
-export class ProductComponent {
-
-}
+export class ProductComponent {}

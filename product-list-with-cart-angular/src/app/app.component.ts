@@ -3,11 +3,12 @@ import { Product } from './models/product.model';
 import { ProductComponent } from './components/product/product.component';
 import productsData from '../../public/assets/data.json';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ProductComponent, ProductListComponent],
+  imports: [ProductComponent, ProductListComponent, CartComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

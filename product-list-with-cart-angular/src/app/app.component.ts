@@ -1,7 +1,7 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from './models/product.model';
-import { ProductsService } from './services/products.service';
 import { ProductComponent } from './components/product/product.component';
+import productsData from '../../public/assets/data.json';
 
 @Component({
   selector: 'app-root',
@@ -12,13 +12,9 @@ import { ProductComponent } from './components/product/product.component';
 })
 export class AppComponent implements OnInit {
   title = 'product-list-with-cart-angular';
-  productsService = inject(ProductsService);
-  products: Product[] = [];
+  products: Product[] = productsData;
 
   ngOnInit(): void {
-    this.productsService.getProducts().subscribe((product: Product[]) => {
-      this.products = product;
-      console.log(this.products);
-    });
+    console.log(this.products);
   }
 }

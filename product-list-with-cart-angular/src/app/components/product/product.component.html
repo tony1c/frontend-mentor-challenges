@@ -1,24 +1,22 @@
 <div class="space-y-[36px]">
-  <div class="relative w-[328px]">
+  <div class="relative max-w-[328px]">
     <img
       [src]="product.image.mobile"
-      class="size-full object-cover rounded-lg"
+      class="rounded-lg object-cover"
       [alt]="product.name"
     />
     <div
-      class="absolute -bottom-[0px] left-1/2 transform -translate-x-1/2 translate-y-1/2"
+      class="absolute -bottom-[0px] left-1/2 -translate-x-1/2 translate-y-1/2 transform"
     >
       <app-add-to-cart />
     </div>
   </div>
   <!-- description -->
   <div>
-    <small class="tracking-[0.043em] text-sm text-c-rose-500">{{
+    <small class="text-sm tracking-[0.043em] text-c-rose-500">{{
       product.category
     }}</small>
     <h3 class="font-600 text-c-rose-900">{{ product.name }}</h3>
     <span class="font-600 text-c-red">{{ product.price | currency }}</span>
   </div>
 </div>
-
-<!-- src="/assets/images/image-waffle-mobile.jpg" -->

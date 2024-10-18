@@ -1,7 +1,7 @@
-<ul>
-  @for(product of products; track $index) {
-  <li>
-    <app-product [product]="product" />
-  </li>
+<ul class="space-y-[23px]">
+  @for (product of products; track $index) {
+    <li>
+      <app-product [product]="product" />
+    </li>
   }
 </ul>

@@ -7,4 +7,16 @@
   Panna Cotta 6.50 Add to Cart Your Cart () Your added items
   will appear here -->
 <!-- </p> -->
-<app-product />
+<main class="font-red-hat-text bg-c-rose-50 w-full tracking-[0.006em]">
+  <!-- grid layout -->
+  <div
+    class="grid-cols-1 px-[22px] py-[28px] gap-[35px] bg-slate-100 grid max-w-[376px]"
+  >
+    <!-- card -->
+    <h1 class="text-c-rose-900 font-700 text-4xl tracking-[0.075em]">
+      Desserts
+    </h1>
+    <!-- <app-product /> -->
+    <app-product-list [products]="products" />
+  </div>
+</main>

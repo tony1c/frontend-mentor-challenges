@@ -2,6 +2,7 @@
   <div class="relative max-w-[328px]">
     <img
       [src]="product.image.mobile"
+      [ngClass]="{ 'border-2 border-c-red': isProductInCart() }"
       class="rounded-lg object-cover"
       [alt]="product.name"
     />

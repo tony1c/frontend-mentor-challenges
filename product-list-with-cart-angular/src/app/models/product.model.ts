@@ -11,3 +11,9 @@ export interface Image {
   tablet: string;
   desktop: string;
 }
+
+export interface CartProduct {
+  id: string;
+  quantity: number;
+  product: Product;
+}

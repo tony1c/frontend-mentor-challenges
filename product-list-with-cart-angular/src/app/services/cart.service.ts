@@ -1,22 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { CartProduct, Product } from '../models/product.model';
-
-interface CartState {
-  products: CartProduct[];
-  totalPrice: number;
-  totalQuantity: number;
-}
+import { CartProduct, CartState, Product } from '../models/product.model';
+import { initialCartState } from './initial-cart-state-data';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  cartState$ = new BehaviorSubject<CartState>({
-    products: [],
-    totalPrice: 0,
-    totalQuantity: 0,
-  });
+  cartState$ = new BehaviorSubject<CartState>(initialCartState);
 
   addProduct(product: Product) {
     const currentState = this.cartState$.getValue();

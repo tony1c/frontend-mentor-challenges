@@ -12,8 +12,8 @@ export interface Image {
   desktop: string;
 }
 
-export interface CartProduct {
+export interface CartProduct extends Product {
   id: string;
   quantity: number;
-  product: Product;
+  productsPrice: number;
 }

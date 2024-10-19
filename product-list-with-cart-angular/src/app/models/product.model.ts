@@ -17,3 +17,9 @@ export interface CartProduct extends Product {
   quantity: number;
   productsPrice: number;
 }
+
+export interface CartState {
+  products: CartProduct[];
+  totalPrice: number;
+  totalQuantity: number;
+}

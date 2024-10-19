@@ -42,6 +42,13 @@ export class CartService {
     }
   }
 
+  isProductInCart(product: Product): boolean {
+    const currentState = this.cartState$.getValue();
+    return currentState.products.some(
+      (cartProd) => cartProd.name === product.name,
+    );
+  }
+
   private updateCartState(state: CartState): void {
     state.totalPrice = state.products.reduce(
       (acc, prod) => acc + prod.productsPrice,

@@ -1,0 +1,25 @@
+@if (!isProductInCart()) {
+  <button
+    (click)="addToCart()"
+    class="flex h-[42px] w-[160px] items-center justify-center gap-2 rounded-full border border-c-rose-400 bg-white"
+  >
+    <img src="/assets/images/icon-add-to-cart.svg" alt="Add to cart icon" />
+    <span class="text-sm font-600">Add to Cart</span>
+  </button>
+} @else {
+  <button
+    class="flex h-[42px] w-[160px] items-center justify-between rounded-full border border-c-rose-400 bg-c-red px-[10px] text-white"
+  >
+    <img
+      class="size-5 rounded-full border border-white p-1"
+      src="/assets/images/icon-decrement-quantity.svg"
+      alt="Decrement quantity icon"
+    />
+    <span class="text-sm font-600">{{ cartProduct?.quantity }}</span>
+    <img
+      class="size-5 rounded-full border border-white p-1"
+      src="/assets/images/icon-increment-quantity.svg"
+      alt="Increment quantity icon"
+    />
+  </button>
+}

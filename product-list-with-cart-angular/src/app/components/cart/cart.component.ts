@@ -42,7 +42,6 @@ export class CartComponent implements OnInit {
   }
 
   onOrderConfirmed(): void {
-    console.log('Order confirmed!');
     this.orderConfirmed.emit();
   }
 }

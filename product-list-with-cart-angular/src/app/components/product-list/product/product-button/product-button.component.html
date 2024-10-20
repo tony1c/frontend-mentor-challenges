@@ -1,7 +1,7 @@
 @if (!isProductInCart()) {
   <button
     (click)="addToCart()"
-    class="flex h-[42px] w-[160px] items-center justify-center gap-2 rounded-full border border-c-rose-400 bg-white"
+    class="flex h-[42px] w-[160px] items-center justify-center gap-2 rounded-full border border-c-rose-400 bg-white transition-colors duration-300 hover:border-c-red hover:text-c-red"
   >
     <img src="/assets/images/icon-add-to-cart.svg" alt="Add to cart icon" />
     <span class="text-sm font-600">Add to Cart</span>

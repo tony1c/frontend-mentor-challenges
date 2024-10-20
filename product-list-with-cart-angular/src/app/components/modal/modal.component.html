@@ -1,9 +1,9 @@
 <div [ngClass]="isModalVisible ? 'block' : 'hidden'" class="text-c-rose-900">
   <!-- bg -->
   <div
-    (keydown)="closeModal()"
+    (keydown)="resetCart()"
     tabindex="0"
-    (click)="closeModal()"
+    (click)="resetCart()"
     class="absolute top-0 h-full w-full bg-black/50"
   ></div>
   <!-- modal -->

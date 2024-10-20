@@ -1,15 +1,15 @@
 import { Component, DestroyRef, inject, Input, OnInit } from '@angular/core';
-import { CartService } from '../../services/cart.service';
-import { CartProduct, Product } from '../../models/product.model';
+import { CartService } from '../../../services/cart.service';
+import { CartProduct, Product } from '../../../models/product.model';
 
 @Component({
-  selector: 'app-button',
+  selector: 'app-product-button',
   standalone: true,
   imports: [],
-  templateUrl: './button.component.html',
+  templateUrl: './product-button.component.html',
   styles: ``,
 })
-export class ButtonComponent implements OnInit {
+export class ProductButtonComponent implements OnInit {
   #cartService = inject(CartService);
   destroyRef = inject(DestroyRef);
 

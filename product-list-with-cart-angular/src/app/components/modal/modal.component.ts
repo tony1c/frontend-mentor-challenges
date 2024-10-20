@@ -40,9 +40,4 @@ export class ModalComponent implements OnInit {
     this.isModalVisible = false;
     this.closedModal.emit();
   }
-
-  closeModal(): void {
-    this.isModalVisible = false;
-    this.closedModal.emit();
-  }
 }

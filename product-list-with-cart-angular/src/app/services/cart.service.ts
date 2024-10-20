@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { CartProduct, CartState, Product } from '../models/product.model';
-import { initialCartState } from './initial-cart-state-data';
+import { initialCartState } from './cart-state';
 
 @Injectable({
   providedIn: 'root',
@@ -40,6 +40,17 @@ export class CartService {
       currentState.products = updatedProducts;
       this.updateCartState(currentState);
     }
+  }
+
+  resetCartState(): void {
+    // this.cartState$.next({ ...emptyCartState });
+    const emptyState: CartState = {
+      products: [],
+      totalPrice: 0,
+      totalQuantity: 0,
+    };
+
+    this.cartState$.next(emptyState);
   }
 
   isProductInCart(product: Product): boolean {

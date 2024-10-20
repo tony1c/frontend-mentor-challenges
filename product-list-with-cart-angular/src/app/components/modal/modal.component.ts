@@ -23,7 +23,7 @@ export class ModalComponent implements OnInit {
   destroyRef = inject(DestroyRef);
   cartProducts: CartProduct[] = [];
   totalPrice = 0;
-  @Input({ required: true }) openModal = false;
+  @Input({ required: true }) isModalVisible = false;
   @Output() closedModal = new EventEmitter();
 
   ngOnInit(): void {
@@ -35,8 +35,14 @@ export class ModalComponent implements OnInit {
     this.destroyRef.onDestroy(() => subscription.unsubscribe());
   }
 
+  resetCart(): void {
+    this.#cartService.resetCartState();
+    this.isModalVisible = false;
+    this.closedModal.emit();
+  }
+
   closeModal(): void {
-    this.openModal = false;
+    this.isModalVisible = false;
     this.closedModal.emit();
   }
 }

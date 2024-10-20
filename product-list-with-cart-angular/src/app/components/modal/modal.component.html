@@ -1,0 +1,68 @@
+<div [ngClass]="openModal ? 'block' : 'hidden'" class="text-c-rose-900">
+  <!-- bg -->
+  <div
+    (keydown)="closeModal()"
+    tabindex="0"
+    (click)="closeModal()"
+    class="absolute top-0 h-full w-full bg-black/50"
+  ></div>
+  <!-- modal -->
+  <div
+    class="absolute bottom-0 z-10 max-h-full w-full space-y-[28px] rounded-lg bg-white px-[28px] py-[36px]"
+  >
+    <div>
+      <img
+        src="assets/images/icon-order-confirmed.svg"
+        alt="Order confirmed icon"
+      />
+    </div>
+    <h2 class="max-w-[48px] text-4xl font-700 leading-tight text-c-rose-900">
+      Order Confirmed
+    </h2>
+    <p class="!mt-[11px]">We hope you enjoy your food!</p>
+    <!-- order info -->
+    <ul class="space-y-[22px] rounded-lg bg-c-rose-50 p-[26px]">
+      @for (product of cartProducts; track product.name) {
+        <li
+          class="flex items-center justify-between gap-[16px] border-b border-c-rose-300 pb-[12px]"
+        >
+          <div class="flex gap-[10px]">
+            <img
+              class="aspect-square size-[48px] rounded-md"
+              [src]="product.image.mobile"
+              alt="Product image"
+            />
+            <div class="flex flex-col gap-[8px]">
+              <h4 class="max-w-[157px] truncate text-sm font-600 tracking-wide">
+                {{ product.name }}
+              </h4>
+              <div class="flex space-x-[17px] text-sm">
+                <span class="font-600 text-c-red">{{ product.quantity }}x</span>
+                <span class="text-c-rose-400"
+                  >&#64; ${{ product.price | number: "1.2" }}</span
+                >
+              </div>
+            </div>
+          </div>
+          <span class="font-600"
+            >${{ product.productsPrice | number: "1.2" }}</span
+          >
+        </li>
+      }
+      <!-- total -->
+      <div class="!mt-[40px] flex justify-between">
+        <span class="text-sm">Order Total</span>
+        <span class="text-2xl font-700 text-c-rose-900"
+          >${{ totalPrice | number: "1.2" }}</span
+        >
+      </div>
+    </ul>
+
+    <!-- start new order btn -->
+    <button
+      class="mt-[18px] h-[52px] w-full rounded-full bg-c-red font-600 text-white"
+    >
+      Start New Order
+    </button>
+  </div>
+</div>

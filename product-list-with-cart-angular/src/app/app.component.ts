@@ -4,19 +4,34 @@ import { ProductComponent } from './components/product/product.component';
 import productsData from '../../public/assets/data.json';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ProductComponent, ProductListComponent, CartComponent],
+  imports: [
+    ProductComponent,
+    ProductListComponent,
+    CartComponent,
+    ModalComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
   title = 'product-list-with-cart-angular';
   products: Product[] = productsData;
+  isModalVisible = false;
 
   ngOnInit(): void {
     console.log(this.products);
+  }
+
+  openModal(): void {
+    this.isModalVisible = true;
+  }
+
+  onClosedModal(): void {
+    this.isModalVisible = false;
   }
 }

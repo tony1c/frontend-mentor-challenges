@@ -1,4 +1,4 @@
-<ul class="space-y-[23px]">
+<ul class="grid grid-cols-1 gap-[23px] md:grid-cols-3 md:gap-[8px]">
   @for (product of products; track $index) {
     <li>
       <app-product [product]="product" />

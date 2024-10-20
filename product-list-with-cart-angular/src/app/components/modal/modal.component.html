@@ -4,66 +4,73 @@
     (keydown)="resetCart()"
     tabindex="0"
     (click)="resetCart()"
-    class="absolute top-0 h-full w-full bg-black/50"
-  ></div>
-  <!-- modal -->
-  <div
-    class="absolute bottom-0 z-10 max-h-full w-full space-y-[28px] rounded-lg bg-white px-[28px] py-[36px]"
+    class="absolute inset-0 h-full w-full bg-black/50"
   >
-    <div>
-      <img
-        src="assets/images/icon-order-confirmed.svg"
-        alt="Order confirmed icon"
-      />
-    </div>
-    <h2 class="max-w-[48px] text-4xl font-700 leading-tight text-c-rose-900">
-      Order Confirmed
-    </h2>
-    <p class="!mt-[11px]">We hope you enjoy your food!</p>
-    <!-- order info -->
-    <ul class="space-y-[22px] rounded-lg bg-c-rose-50 p-[26px]">
-      @for (product of cartProducts; track product.name) {
-        <li
-          class="flex items-center justify-between gap-[16px] border-b border-c-rose-300 pb-[12px]"
-        >
-          <div class="flex gap-[10px]">
-            <img
-              class="size-[48px] rounded-md object-cover"
-              [src]="product.image.mobile"
-              alt="Product image"
-            />
-            <div class="flex flex-col gap-[8px]">
-              <h4 class="max-w-[157px] truncate text-sm font-600 tracking-wide">
-                {{ product.name }}
-              </h4>
-              <div class="flex space-x-[17px] text-sm">
-                <span class="font-600 text-c-red">{{ product.quantity }}x</span>
-                <span class="text-c-rose-400"
-                  >&#64; ${{ product.price | number: "1.2" }}</span
+    <!-- modal -->
+    <div
+      class="absolute bottom-0 z-10 w-full space-y-[28px] rounded-lg bg-white px-[28px] py-[36px] md:-top-4 md:bottom-auto md:left-1/2 md:w-[574px] md:-translate-x-1/2 md:translate-y-1/2 md:transform"
+    >
+      <div>
+        <img
+          src="assets/images/icon-order-confirmed.svg"
+          alt="Order confirmed icon"
+        />
+      </div>
+      <h2
+        class="max-w-[48px] text-4xl font-700 leading-tight text-c-rose-900 md:max-w-full md:text-5xl"
+      >
+        Order Confirmed
+      </h2>
+      <p class="!mt-[11px]">We hope you enjoy your food!</p>
+      <!-- order info -->
+      <ul class="space-y-[22px] rounded-lg bg-c-rose-50 p-[26px]">
+        @for (product of cartProducts; track product.name) {
+          <li
+            class="flex items-center justify-between gap-[16px] border-b border-c-rose-300 pb-[12px]"
+          >
+            <div class="flex gap-[10px]">
+              <img
+                class="size-[48px] rounded-md object-cover"
+                [src]="product.image.mobile"
+                alt="Product image"
+              />
+              <div class="flex flex-col gap-[8px]">
+                <h4
+                  class="max-w-[157px] truncate text-sm font-600 tracking-wide"
                 >
+                  {{ product.name }}
+                </h4>
+                <div class="flex space-x-[17px] text-sm">
+                  <span class="font-600 text-c-red"
+                    >{{ product.quantity }}x</span
+                  >
+                  <span class="text-c-rose-400"
+                    >&#64; ${{ product.price | number: "1.2" }}</span
+                  >
+                </div>
               </div>
             </div>
-          </div>
-          <span class="font-600"
-            >${{ product.productsPrice | number: "1.2" }}</span
+            <span class="font-600"
+              >${{ product.productsPrice | number: "1.2" }}</span
+            >
+          </li>
+        }
+        <!-- total -->
+        <div class="!mt-[40px] flex justify-between">
+          <span class="text-sm">Order Total</span>
+          <span class="text-2xl font-700 text-c-rose-900"
+            >${{ totalPrice | number: "1.2" }}</span
           >
-        </li>
-      }
-      <!-- total -->
-      <div class="!mt-[40px] flex justify-between">
-        <span class="text-sm">Order Total</span>
-        <span class="text-2xl font-700 text-c-rose-900"
-          >${{ totalPrice | number: "1.2" }}</span
-        >
-      </div>
-    </ul>
+        </div>
+      </ul>
 
-    <!-- start new order btn -->
-    <button
-      (click)="resetCart()"
-      class="mt-[18px] h-[52px] w-full rounded-full bg-c-red font-600 text-white"
-    >
-      Start New Order
-    </button>
+      <!-- start new order btn -->
+      <button
+        (click)="resetCart()"
+        class="mt-[18px] h-[52px] w-full rounded-full bg-c-red font-600 text-white"
+      >
+        Start New Order
+      </button>
+    </div>
   </div>
 </div>

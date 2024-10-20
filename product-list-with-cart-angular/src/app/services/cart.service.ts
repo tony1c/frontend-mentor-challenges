@@ -43,7 +43,6 @@ export class CartService {
   }
 
   resetCartState(): void {
-    // this.cartState$.next({ ...emptyCartState });
     const emptyState: CartState = {
       products: [],
       totalPrice: 0,

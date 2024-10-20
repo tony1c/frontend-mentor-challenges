@@ -6,9 +6,11 @@
     <div class="flex gap-[15px] text-sm">
       <span class="font-600 text-c-red">{{ product.quantity }}x</span>
       <div class="space-x-[9px]">
-        <span class="text-c-rose-400">&#64; ${{ product.price }}</span>
+        <span class="text-c-rose-400"
+          >&#64; ${{ product.price | number: "1.2" }}</span
+        >
         <span class="font-600 text-c-rose-500"
-          >${{ product.productsPrice }}</span
+          >${{ product.productsPrice | number: "1.2" }}</span
         >
       </div>
     </div>

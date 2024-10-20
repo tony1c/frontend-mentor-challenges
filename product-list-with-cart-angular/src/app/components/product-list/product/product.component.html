@@ -1,15 +1,21 @@
 <div class="space-y-[36px]">
-  <div class="relative max-w-[328px]">
+  <div class="relative max-w-[328px] md:max-w-[244px]">
     <img
       [src]="product.image.mobile"
       [ngClass]="{ 'border-2 border-c-red': isProductInCart() }"
-      class="rounded-lg object-cover"
+      class="rounded-lg object-cover md:hidden"
+      [alt]="product.name"
+    />
+
+    <img
+      [src]="product.image.desktop"
+      [ngClass]="{ 'border-2 border-c-red': isProductInCart() }"
+      class="hidden rounded-lg object-cover md:block"
       [alt]="product.name"
     />
     <div
       class="absolute -bottom-[0px] left-1/2 -translate-x-1/2 translate-y-1/2 transform"
     >
-      <!-- <app-add-to-cart (productAdded)="addProduct(product)" /> -->
       <app-product-button [product]="product" />
     </div>
   </div>

@@ -1,15 +1,18 @@
 <main class="container mx-auto w-full tracking-[0.006em]">
   <!-- grid layout -->
   <div
-    class="mx-auto grid max-w-[370px] grid-cols-1 gap-[37px] px-[22px] py-[28px]"
+    class="mx-auto grid max-w-[370px] grid-cols-1 gap-[37px] px-[22px] py-[28px] md:max-w-full md:grid-cols-[856px_1fr] md:gap-0 md:px-[161px] md:py-[92px]"
   >
-    <h1
-      class="place-self-start text-4xl font-700 tracking-[0.075em] text-c-rose-900"
-    >
-      Desserts
-    </h1>
-    <app-product-list [products]="products" />
+    <div>
+      <h1
+        class="mb-[34px] text-4xl font-700 tracking-[0.075em] text-c-rose-900"
+      >
+        Desserts
+      </h1>
+      <app-product-list [products]="products" />
+    </div>
     <app-cart (orderConfirmed)="openModal()" />
   </div>
 </main>
+<app-footer />
 <app-modal [isModalVisible]="isModalVisible" (closedModal)="onClosedModal()" />

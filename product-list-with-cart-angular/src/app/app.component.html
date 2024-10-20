@@ -18,6 +18,7 @@
       Desserts
     </h1>
     <app-product-list [products]="products" />
-    <app-cart />
+    <app-cart (orderConfirmed)="openModal()" />
   </div>
 </main>
+<app-modal [openModal]="isModalVisible" (closedModal)="onClosedModal()" />

@@ -49,6 +49,34 @@ export class CartService {
     );
   }
 
+  incrementQuantity(product: Product): void {
+    const currentState = this.cartState$.getValue();
+    const prod = currentState.products.find(
+      (prod) => prod.name === product.name,
+    );
+
+    if (prod) {
+      prod.quantity++;
+      prod.productsPrice = prod.quantity * prod.price;
+      this.updateCartState(currentState);
+    }
+  }
+
+  decrementQuantity(product: Product): void {
+    const currentState = this.cartState$.getValue();
+    const prod = currentState.products.find(
+      (prod) => prod.name === product.name,
+    );
+
+    if (prod && prod.quantity > 1) {
+      prod.quantity--;
+      prod.productsPrice = prod.quantity * prod.price;
+      this.updateCartState(currentState);
+    } else {
+      this.removeProduct(product);
+    }
+  }
+
   private updateCartState(state: CartState): void {
     state.totalPrice = state.products.reduce(
       (acc, prod) => acc + prod.productsPrice,
@@ -67,58 +95,3 @@ export class CartService {
     product.productsPrice = product.quantity * product.price;
   }
 }
-
-// private cartProducts: CartProduct[] = [];
-// private totalPrice = 0;
-// private totalQuantity = 0;
-
-// get cart(): CartProduct[] {
-//   return this.cartProducts;
-// }
-
-// addProduct(product: Product) {
-//   const existingProduct = this.cartProducts.find(
-//     (prod) => prod.name === product.name,
-//   );
-//   if (existingProduct) {
-//     this.updateProduct(existingProduct);
-//   } else {
-//     const newProduct: CartProduct = {
-//       ...product,
-//       id: crypto.randomUUID(),
-//       quantity: 1,
-//       productsPrice: product.price,
-//     };
-//     this.cartProducts.push(newProduct);
-//     console.log(this.cartProducts);
-//   }
-//   this.updateTotalPrice();
-//   this.updateTotalQuantity();
-//   console.log(this.totalPrice);
-//   console.log(this.totalQuantity);
-// }
-
-// getTotalPrice(): number {
-//   return this.totalPrice;
-// }
-
-// getTotalQuantity(): number {
-//   return this.totalQuantity;
-// }
-
-// private updateTotalPrice(): void {
-//   this.totalPrice = this.cartProducts.reduce((acc, currProd) => {
-//     return acc + currProd.productsPrice;
-//   }, 0);
-// }
-
-// private updateTotalQuantity(): void {
-//   this.totalQuantity = this.cartProducts.reduce((acc, currProd) => {
-//     return acc + currProd.quantity;
-//   }, 0);
-// }
-
-// private updateProduct(product: CartProduct): void {
-//   product.quantity++;
-//   product.productsPrice = product.quantity * product.price;
-// }

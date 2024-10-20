@@ -39,4 +39,12 @@ export class ButtonComponent implements OnInit {
       this.#cartService.addProduct(this.product);
     }
   }
+
+  incrementQuantity(product: Product): void {
+    this.#cartService.incrementQuantity(product);
+  }
+
+  decrementQuantity(product: Product): void {
+    this.#cartService.decrementQuantity(product);
+  }
 }

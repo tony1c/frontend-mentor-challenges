@@ -2,12 +2,17 @@ import { Component, inject, Input } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { CurrencyPipe, NgClass } from '@angular/common';
 import { CartService } from '../../services/cart.service';
-import { ButtonComponent } from '../button/button.component';
+import { ProductButtonComponent } from './product-button/product-button.component';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [ButtonComponent, CurrencyPipe, NgClass],
+  imports: [
+    CurrencyPipe,
+    NgClass,
+    ProductButtonComponent,
+    ProductButtonComponent,
+  ],
   templateUrl: './product.component.html',
   styles: ``,
 })

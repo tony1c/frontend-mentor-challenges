@@ -1,4 +1,4 @@
-<div [ngClass]="openModal ? 'block' : 'hidden'" class="text-c-rose-900">
+<div [ngClass]="isModalVisible ? 'block' : 'hidden'" class="text-c-rose-900">
   <!-- bg -->
   <div
     (keydown)="closeModal()"
@@ -28,7 +28,7 @@
         >
           <div class="flex gap-[10px]">
             <img
-              class="aspect-square size-[48px] rounded-md"
+              class="size-[48px] rounded-md object-cover"
               [src]="product.image.mobile"
               alt="Product image"
             />
@@ -60,6 +60,7 @@
 
     <!-- start new order btn -->
     <button
+      (click)="resetCart()"
       class="mt-[18px] h-[52px] w-full rounded-full bg-c-red font-600 text-white"
     >
       Start New Order

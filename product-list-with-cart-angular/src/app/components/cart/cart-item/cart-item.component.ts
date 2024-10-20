@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartProduct, Product } from '../../../models/product.model';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-cart-item',
   standalone: true,
-  imports: [],
+  imports: [DecimalPipe],
   templateUrl: './cart-item.component.html',
   styles: ``,
 })

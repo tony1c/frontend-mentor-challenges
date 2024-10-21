@@ -1,11 +1,12 @@
 import { Component, DestroyRef, inject, Input, OnInit } from '@angular/core';
 import { CartService } from '../../../../services/ cart/cart.service';
 import { CartProduct, Product } from '../../../../models/product.model';
+import { IconButtonComponent } from './icon-button/icon-button.component';
 
 @Component({
   selector: 'app-product-button',
   standalone: true,
-  imports: [],
+  imports: [IconButtonComponent],
   templateUrl: './product-button.component.html',
   styles: ``,
 })

@@ -10,20 +10,14 @@
   <div
     class="flex h-[42px] w-[160px] items-center justify-between rounded-full border border-c-red bg-c-red px-[10px] text-white"
   >
-    <button (click)="decrementQuantity(product)">
-      <img
-        class="size-5 rounded-full border border-white p-1"
-        src="/assets/images/icon-decrement-quantity.svg"
-        alt="Decrement quantity icon"
-      />
-    </button>
+    <app-icon-button
+      operationType="decrease"
+      (buttonClicked)="decrementQuantity(product)"
+    />
     <span class="text-sm font-600">{{ cartProduct?.quantity }}</span>
-    <button (click)="incrementQuantity(product)">
-      <img
-        class="size-5 rounded-full border border-white p-1"
-        src="/assets/images/icon-increment-quantity.svg"
-        alt="Increment quantity icon"
-      />
-    </button>
+    <app-icon-button
+      operationType="increase"
+      (buttonClicked)="incrementQuantity(product)"
+    />
   </div>
 }

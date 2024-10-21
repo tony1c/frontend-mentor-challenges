@@ -7,7 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { CartProduct, Product } from '../../models/product.model';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/ cart/cart.service';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { DecimalPipe } from '@angular/common';
 import { ModalComponent } from '../modal/modal.component';

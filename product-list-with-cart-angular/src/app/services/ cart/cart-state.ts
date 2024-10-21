@@ -1,4 +1,4 @@
-import { CartState } from '../models/product.model';
+import { CartState } from '../../models/product.model';
 
 export const initialCartState: CartState = {
   products: [

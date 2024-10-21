@@ -23,3 +23,5 @@ export interface CartState {
   totalPrice: number;
   totalQuantity: number;
 }
+
+export type ImageType = 'mobile' | 'tablet' | 'desktop';

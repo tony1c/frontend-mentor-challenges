@@ -1,4 +1,4 @@
-<div class="flex justify-between border-b border-c-rose-100">
+<div class="flex items-center justify-between border-b border-c-rose-100">
   <div class="flex flex-col gap-[6px] py-[15px]">
     <h3 class="text-sm font-600 tracking-[0.004em] text-c-rose-900">
       {{ product.name }}
@@ -15,11 +15,21 @@
       </div>
     </div>
   </div>
-  <button (click)="removeProduct(product)">
-    <img
-      class="rounded-full border-2 border-c-rose-100 p-[2px] transition-colors duration-300 hover:border-c-rose-900"
-      src="/assets/images/icon-remove-item.svg"
-      alt="Remove items btn"
-    />
+  <button
+    class="group flex size-5 items-center rounded-full border-2 border-[#CAAFA7] p-1 transition-colors duration-300 hover:border-c-rose-900"
+    (click)="removeProduct(product)"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="10"
+      height="10"
+      viewBox="0 0 10 10"
+    >
+      <path
+        fill="#CAAFA7"
+        class="transition-colors duration-300 group-hover:fill-c-rose-900"
+        d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
+      />
+    </svg>
   </button>
 </div>

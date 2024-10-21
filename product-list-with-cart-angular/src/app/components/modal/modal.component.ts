@@ -7,7 +7,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/ cart/cart.service';
 import { CartProduct } from '../../models/product.model';
 import { DecimalPipe, NgClass } from '@angular/common';
 

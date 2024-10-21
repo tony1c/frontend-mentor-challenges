@@ -1,6 +1,6 @@
 import { Component, DestroyRef, inject, Input, OnInit } from '@angular/core';
 import { CurrencyPipe, NgClass } from '@angular/common';
-import { CartService } from '../../../services/cart.service';
+import { CartService } from '../../../services/ cart/cart.service';
 import { ProductButtonComponent } from './product-button/product-button.component';
 import { ImageType, Product } from '../../../models/product.model';
 // import { ProductService } from '../../../services/product/product.service';

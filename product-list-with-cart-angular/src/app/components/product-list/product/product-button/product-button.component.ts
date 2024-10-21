@@ -1,5 +1,5 @@
 import { Component, DestroyRef, inject, Input, OnInit } from '@angular/core';
-import { CartService } from '../../../../services/cart.service';
+import { CartService } from '../../../../services/ cart/cart.service';
 import { CartProduct, Product } from '../../../../models/product.model';
 
 @Component({

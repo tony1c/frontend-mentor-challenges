@@ -23,7 +23,6 @@ export class CartService {
     } else {
       const newProduct: CartProduct = {
         ...product,
-        id: crypto.randomUUID(),
         quantity: 1,
         productsPrice: product.price,
       };

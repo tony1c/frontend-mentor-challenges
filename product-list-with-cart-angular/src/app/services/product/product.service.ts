@@ -8,6 +8,7 @@ import { ImageType } from '../../models/product.model';
 })
 export class ProductService {
   #breakpointObserver = inject(BreakpointObserver);
+
   getCurrentBreakpoint(): Observable<ImageType> {
     return this.#breakpointObserver
       .observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])

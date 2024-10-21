@@ -24,7 +24,7 @@
     <h2 class="text-2xl font-700 tracking-[0.0025em] text-c-red">
       Your Cart ({{ totalQuantity }})
     </h2>
-    @for (product of cartProducts; track product.id) {
+    @for (product of cartProducts; track product.name) {
       <app-cart-item
         [product]="product"
         (productRemoved)="onRemoveProduct($event)"

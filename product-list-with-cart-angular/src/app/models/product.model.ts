@@ -13,7 +13,6 @@ export interface Image {
 }
 
 export interface CartProduct extends Product {
-  id: string;
   quantity: number;
   productsPrice: number;
 }

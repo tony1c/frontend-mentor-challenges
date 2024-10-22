@@ -3,9 +3,7 @@ import { CurrencyPipe, NgClass } from '@angular/common';
 import { CartService } from '../../../services/ cart/cart.service';
 import { ProductButtonComponent } from './product-button/product-button.component';
 import { ImageType, Product } from '../../../models/product.model';
-// import { ProductService } from '../../../services/product/product.service';
 import { ProductService } from '../../../services/product/product.service';
-// import productData from '../../../../../public/assets/data.json';
 
 @Component({
   selector: 'app-product',
@@ -17,11 +15,11 @@ import { ProductService } from '../../../services/product/product.service';
 export class ProductComponent implements OnInit {
   #cartService = inject(CartService);
   #productService = inject(ProductService);
+  destroyRef = inject(DestroyRef);
 
   @Input({ required: true }) product!: Product;
 
   currentImageType: ImageType = 'mobile';
-  destroyRef = inject(DestroyRef);
 
   ngOnInit(): void {
     const subscription = this.#productService
@@ -30,7 +28,9 @@ export class ProductComponent implements OnInit {
         this.currentImageType = breakpoint;
       });
 
-    this.destroyRef.onDestroy(() => subscription.unsubscribe());
+    this.destroyRef.onDestroy(() => {
+      subscription.unsubscribe();
+    });
   }
 
   addProduct(product: Product): void {
@@ -42,6 +42,6 @@ export class ProductComponent implements OnInit {
   }
 
   getProductImage(product: Product): string {
-    return product.image[this.currentImageType];
+    return this.#productService.getProductImage(product, this.currentImageType);
   }
 }

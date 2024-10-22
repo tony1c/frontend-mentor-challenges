@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, Observable } from 'rxjs';
-import { ImageType } from '../../models/product.model';
+import { ImageType, Product } from '../../models/product.model';
 
 @Injectable({
   providedIn: 'root',
@@ -25,5 +25,9 @@ export class ProductService {
           return 'desktop';
         }),
       );
+  }
+
+  getProductImage(product: Product, currentImageType: ImageType): string {
+    return product.image[currentImageType];
   }
 }

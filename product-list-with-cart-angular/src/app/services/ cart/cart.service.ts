@@ -38,10 +38,8 @@ export class CartService {
       (cartProd) => cartProd.name !== product.name,
     );
 
-    if (updatedProducts.length !== currentState.products.length) {
-      currentState.products = updatedProducts;
-      this.updateCartState(currentState);
-    }
+    currentState.products = updatedProducts;
+    this.updateCartState(currentState);
   }
 
   resetCartState(): void {

@@ -1,5 +1,5 @@
 import { ContentLayout } from "./components/layouts/content-layout";
-import { Advice } from "./components/ui/Advice";
+import { Advice } from "./components/ui/advice";
 import { AppContainer } from "./components/ui/app-container";
 
 export default function App() {

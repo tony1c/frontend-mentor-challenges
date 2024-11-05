@@ -1,12 +1,12 @@
 import { useMediaQuery } from "react-responsive";
 import { useFetchAdvice } from "../../hooks/useFetchAdvice";
 import { FetchButton } from "./fetch-button";
+import mobilePattern from "../../assets/pattern-divider-mobile.svg";
+import desktopPattern from "../../assets/pattern-divider-desktop.svg";
 
 export const Advice = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
-  const dividerSrc = isMobile
-    ? "./src/assets/pattern-divider-mobile.svg"
-    : "./src/assets/pattern-divider-desktop.svg";
+  const dividerSrc = isMobile ? mobilePattern : desktopPattern;
   const { slip, fetchAdvice } = useFetchAdvice();
 
   return (

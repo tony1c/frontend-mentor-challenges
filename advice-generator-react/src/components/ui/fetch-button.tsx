@@ -1,3 +1,5 @@
+import diceIcon from "../../assets/icon-dice.svg";
+
 type FetchButtonProps = {
   fetchAdvice: () => Promise<void>;
 };
@@ -10,7 +12,7 @@ export const FetchButton = ({ fetchAdvice }: FetchButtonProps) => {
         type="button"
         className="absolute bottom-0 left-1/2 flex size-[64px] -translate-x-1/2 translate-y-1/2 transform items-center justify-center rounded-full bg-c-neon-green"
       >
-        <img src="./src/assets/icon-dice.svg" alt="Dice icon" />
+        <img src={diceIcon} alt="Dice icon" />
       </button>
 
       {/* radial effect on hover */}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Slip } from "../types/slip.interface";
+import { Slip } from "../types/slip.type";
 
 const initialAdvice: Slip = {
   id: 117,

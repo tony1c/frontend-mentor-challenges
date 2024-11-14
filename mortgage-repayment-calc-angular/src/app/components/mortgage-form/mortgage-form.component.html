@@ -1,0 +1,69 @@
+<form class="space-y-[26px] py-4 pt-2 md:p-0 md:pt-[42px]" action="">
+  <fieldset class="flex flex-col gap-2.5">
+    <label class="font-500 text-c-slate-700" for="">Mortgage Amount</label>
+    <div class="relative">
+      <input
+        type="text"
+        class="relative z-10 h-[48px] w-full rounded-md border border-c-slate-700 bg-transparent"
+      />
+      <div
+        class="absolute left-0 top-0 flex size-[47px] items-center justify-center bg-c-slate-100 text-lg text-c-slate-700"
+      >
+        &#163;
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="justify-between space-y-[26px] md:flex md:space-y-0">
+    <fieldset class="flex flex-col gap-2.5 md:w-[200px]">
+      <label class="font-500 text-c-slate-700" for="">Mortgage Term</label>
+      <div class="relative">
+        <input
+          type="text"
+          class="relative z-10 h-[48px] w-full rounded-md border border-c-slate-700 bg-transparent"
+        />
+        <div
+          class="absolute right-0 top-0 flex h-[48px] w-[81px] items-center justify-center bg-c-slate-100 text-lg text-c-slate-700"
+        >
+          years
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="flex flex-col gap-2.5 md:w-[200px]">
+      <label class="font-500 text-c-slate-700" for="">Interest Rate</label>
+      <div class="relative">
+        <input
+          type="text"
+          class="relative z-10 h-[48px] w-full rounded-md border border-c-slate-700 bg-transparent"
+        />
+        <div
+          class="absolute right-0 top-0 flex size-[47px] items-center justify-center bg-c-slate-100 text-lg text-c-slate-700"
+        >
+          &#37;
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="space-y-3">
+    <fieldset class="flex flex-col gap-2.5">
+      <label class="font-500 text-c-slate-700" for="type">Mortgage Type</label>
+      <div
+        class="flex h-[48px] w-full items-center gap-[18px] rounded-md border border-c-slate-700 px-[17px]"
+      >
+        <input id="type" class="size-[19px]" type="radio" name="type" />
+        <span class="text-lg font-700 text-c-slate-900">Repayment</span>
+      </div>
+    </fieldset>
+    <fieldset class="flex flex-col gap-2.5">
+      <div
+        class="flex h-[48px] w-full items-center gap-[18px] rounded-md border border-c-slate-700 px-[17px]"
+      >
+        <input id="type" class="size-[19px]" type="radio" name="type" />
+        <span class="text-lg font-700 text-c-slate-900">Interest Only</span>
+      </div>
+    </fieldset>
+  </div>
+
+  <app-btn-calc></app-btn-calc>
+</form>

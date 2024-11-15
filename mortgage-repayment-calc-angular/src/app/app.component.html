@@ -1,18 +1,23 @@
 <main class="flex items-center justify-center md:h-screen md:bg-c-slate-300">
   <div
-    class="mx-auto grid w-[376px] grid-cols-1 gap-[17px] bg-c-white tracking-wide md:mt-[66px] md:w-[1005px] md:grid-cols-2 md:gap-0 md:overflow-hidden md:rounded-3xl"
+    class="grid max-w-[376px] grid-cols-1 bg-c-white tracking-wide md:mt-[50px] md:max-w-[1005px] md:grid-cols-2 md:overflow-hidden md:rounded-3xl"
   >
-    <div class="space-y-[8px] md:space-y-0 md:px-[40px] md:py-[40px]">
+    <div class="px-[24px] py-[31px] md:px-[38px] md:py-[40px]">
       <!-- px-[25px] py-[32px] md:space-y-0 md:px-[40px] -->
-      <div class="justify-between space-y-[8px] md:flex">
+      <div
+        class="flex flex-col gap-[8px] md:flex-row md:items-center md:justify-between"
+      >
         <h1 class="text-2xl font-700 text-c-slate-900">Mortgage Calculator</h1>
-        <button class="font-500 text-c-slate-700 underline">Clear All</button>
+        <button class="inline-flex font-500 text-c-slate-700 underline">
+          Clear All
+        </button>
       </div>
       <app-mortgage-form />
     </div>
 
+    <!-- gap-[17px] -->
     <div
-      class="flex h-[390px] flex-col items-center gap-[17px] bg-c-slate-900 p-8 py-[32px] md:h-full md:justify-center md:rounded-es-[77px]"
+      class="flex h-[390px] flex-col items-center gap-[17px] bg-c-slate-900 p-[32px] md:h-full md:justify-center md:rounded-es-[77px]"
     >
       <img class="size-[192px]" src="../assets/illustration-empty.svg" alt="" />
       <div class="space-y-[13px] text-center text-c-white">

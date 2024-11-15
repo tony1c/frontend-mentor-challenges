@@ -4,9 +4,13 @@
   class="mt-[25px] space-y-[26px] md:mt-[40px]"
 >
   <fieldset class="flex flex-col gap-2.5">
-    <label class="font-500 text-c-slate-700" for="">Mortgage Amount</label>
+    <label class="font-500 text-c-slate-700" for="amount"
+      >Mortgage Amount</label
+    >
     <div class="relative">
       <input
+        mask="separator"
+        thousandSeparator=","
         formControlName="amount"
         type="text"
         class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[60px] text-lg font-700 caret-c-slate-900 focus:outline-c-lime"

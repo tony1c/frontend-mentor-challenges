@@ -1,8 +1,13 @@
-<form class="mt-[25px] space-y-[26px] md:mt-[40px]" action="">
+<form
+  [formGroup]="mortgageForm"
+  (ngSubmit)="onSubmit()"
+  class="mt-[25px] space-y-[26px] md:mt-[40px]"
+>
   <fieldset class="flex flex-col gap-2.5">
     <label class="font-500 text-c-slate-700" for="">Mortgage Amount</label>
     <div class="relative">
       <input
+        formControlName="amount"
         type="text"
         value="300"
         class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[60px] text-lg font-700 caret-c-slate-900 focus:outline-c-lime"
@@ -20,6 +25,7 @@
       <label class="font-500 text-c-slate-700" for="">Mortgage Term</label>
       <div class="relative">
         <input
+          formControlName="term"
           type="text"
           class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[18px] text-lg font-700 focus:outline-c-lime"
         />
@@ -34,6 +40,7 @@
       <label class="font-500 text-c-slate-700" for="">Interest Rate</label>
       <div class="relative">
         <input
+          formControlName="interestRate"
           type="text"
           class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[18px] text-lg font-700 focus:outline-c-lime"
         />

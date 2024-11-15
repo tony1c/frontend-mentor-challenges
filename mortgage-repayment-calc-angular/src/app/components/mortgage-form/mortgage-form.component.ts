@@ -41,4 +41,8 @@ export class MortgageFormComponent {
 
     console.log(this.repayment);
   }
+
+  onClearAll(): void {
+    this.mortgageForm.reset();
+  }
 }

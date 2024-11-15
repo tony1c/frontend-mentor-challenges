@@ -1,13 +1,13 @@
 <form class="mt-[25px] space-y-[26px] md:mt-[40px]" action="">
   <fieldset class="flex flex-col gap-2.5">
     <label class="font-500 text-c-slate-700" for="">Mortgage Amount</label>
-    <div class="relative">
+    <div class="group relative">
       <input
         type="text"
-        class="relative z-10 h-[48px] w-full rounded-md border border-c-slate-700 bg-transparent"
+        class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[64px] font-500 caret-c-slate-900 focus:outline-c-lime"
       />
       <div
-        class="absolute left-0 top-0 flex size-[47px] items-center justify-center bg-c-slate-100 text-lg font-500 text-c-slate-700"
+        class="absolute left-0 top-0 flex size-[47px] items-center justify-center rounded-s-md bg-c-slate-100 text-lg font-500 text-c-slate-700 peer-focus:bg-c-lime"
       >
         &#163;
       </div>
@@ -46,35 +46,60 @@
   </div>
 
   <div class="space-y-3">
-    <fieldset class="flex flex-col gap-2.5">
-      <label class="font-500 text-c-slate-700" for="type">Mortgage Type</label>
-      <div
-        class="flex h-[48px] w-full items-center gap-[18px] rounded-md border border-c-slate-700 px-[17px]"
-      >
-        <input
-          id="type"
-          class="size-[19px] appearance-none rounded-full border-2 border-c-slate-500"
-          type="radio"
-          name="type"
-        />
-        <span class="mt-1 text-lg font-700 text-c-slate-900"> Repayment </span>
-      </div>
-    </fieldset>
-    <fieldset class="flex flex-col gap-2.5">
-      <div
-        class="flex h-[48px] w-full items-center gap-[18px] rounded-md border border-c-slate-700 px-[17px]"
-      >
-        <input
-          id="type"
-          class="size-[19px] appearance-none rounded-full border-2 border-c-slate-500"
-          type="radio"
-          name="type"
-        />
-        <span class="mt-1 text-lg font-700 text-c-slate-900"
-          >Interest Only</span
+    <h3 class="font-500 text-c-slate-700">Mortgage Type</h3>
+    <fieldset>
+      <label for="type">
+        <div
+          class="flex h-[48px] w-full cursor-pointer items-center gap-[18px] rounded-md border border-c-slate-700 px-[17px] hover:border-c-lime has-[input:checked]:border-c-lime has-[input:checked]:bg-c-lime/25"
         >
-      </div>
+          <input
+            id="type"
+            name="type"
+            type="radio"
+            class="size-[16px]"
+            checked
+          />
+
+          <span class="mt-1 text-lg font-700 text-c-slate-900">
+            Repayment
+          </span>
+        </div>
+      </label>
     </fieldset>
+
+    <fieldset>
+      <label for="type-2">
+        <div
+          class="flex h-[48px] w-full cursor-pointer items-center gap-[18px] rounded-md border border-c-slate-700 px-[17px] hover:border-c-lime has-[input:checked]:border-c-lime has-[input:checked]:bg-c-lime/20"
+        >
+          <input id="type-2" name="type" type="radio" class="size-[16px]" />
+
+          <span class="mt-1 text-lg font-700 text-c-slate-900"
+            >Interest Only</span
+          >
+        </div>
+      </label>
+    </fieldset>
+    <!-- <fieldset class="flex flex-col gap-2.5">
+      <h3 class="font-500 text-c-slate-700">Mortgage Type</h3>
+      <label for="type">
+        <div
+          class="flex h-[48px] w-full cursor-pointer items-center gap-[18px] rounded-md border border-c-slate-700 px-[17px] hover:border-c-lime has-[input:checked]:border-c-lime"
+        >
+          <input
+            id="type"
+            class="size-[19px]"
+            type="radio"
+            name="type"
+            checked
+          />
+
+          <span class="mt-1 text-lg font-700 text-c-slate-900">
+            Repayment
+          </span>
+        </div>
+      </label>
+    </fieldset> -->
   </div>
 
   <app-btn-calc></app-btn-calc>

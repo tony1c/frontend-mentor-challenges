@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NgxMaskDirective } from 'ngx-mask';
 import { MortgageService } from '../../services/mortgage.service';
 import { BtnCalcComponent } from '../btn-calc/btn-calc.component';
 
 @Component({
   selector: 'app-mortgage-form',
   standalone: true,
-  imports: [BtnCalcComponent, ReactiveFormsModule],
+  imports: [ReactiveFormsModule, BtnCalcComponent, NgxMaskDirective],
   templateUrl: './mortgage-form.component.html',
   styles: ``,
 })

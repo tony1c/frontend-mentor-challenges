@@ -14,14 +14,18 @@ export class MortgageFormComponent {
   #mortgageService = inject(MortgageService);
   #fb = inject(FormBuilder);
   mortgageForm = this.#fb.group({
-    amount: [0, Validators.required],
-    term: [0, Validators.required],
-    rate: [0, Validators.required],
+    amount: ['', Validators.required],
+    term: ['', Validators.required],
+    rate: ['', Validators.required],
     type: ['', Validators.required],
   });
   repayment = 0;
 
   onSubmit(): void {
+    if (this.mortgageForm.invalid) {
+      return;
+    }
+
     const { amount, term, rate, type } = this.mortgageForm.value;
     this.repayment = this.#mortgageService.calcMortgage(
       amount!,

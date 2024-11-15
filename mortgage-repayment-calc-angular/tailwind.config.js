@@ -6,6 +6,9 @@ module.exports = {
       500: 500,
       700: 700,
     },
+    fontFamily: {
+      "plus-jakarta": "'Plus Jakarta Sans', sans-serif",
+    },
     extend: {
       colors: {
         // primary

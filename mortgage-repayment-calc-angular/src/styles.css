@@ -6,21 +6,23 @@
 @tailwind components;
 @tailwind utilities;
 
-input[type="radio"] {
-  cursor: pointer;
-}
+@layer components {
+  input[type="radio"] {
+    cursor: pointer;
+  }
 
-input[type="radio"]:checked {
-  appearance: none;
-  -webkit-appearance: none;
-  border-radius: 50%;
-  background: theme("colors.c-lime");
-  border: 3px solid theme("colors.c-lime" / 20%);
+  input[type="radio"]:checked {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    background: theme("colors.c-lime");
+    border: 3px solid theme("colors.c-lime" / 20%);
 
-  /* to style the "bg" border color, must come after its property */
-  -webkit-background-clip: padding-box; /* for Safari */
-  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    /* to style the "bg" border color, must come after its property */
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 
-  /* The outline will be the outer circle */
-  outline: 1px solid theme("colors.c-lime");
+    /* The outline will be the outer circle */
+    outline: 1px solid theme("colors.c-lime");
+  }
 }

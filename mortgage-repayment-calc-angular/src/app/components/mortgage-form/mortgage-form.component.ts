@@ -3,11 +3,12 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgxMaskDirective } from 'ngx-mask';
 import { MortgageService } from '../../services/mortgage.service';
 import { BtnCalcComponent } from '../btn-calc/btn-calc.component';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-mortgage-form',
   standalone: true,
-  imports: [ReactiveFormsModule, BtnCalcComponent, NgxMaskDirective],
+  imports: [ReactiveFormsModule, BtnCalcComponent, NgxMaskDirective, NgClass],
   templateUrl: './mortgage-form.component.html',
   styles: ``,
 })
@@ -21,6 +22,14 @@ export class MortgageFormComponent {
     type: ['', Validators.required],
   });
   repayment = 0;
+  isSubmitted = true;
+
+  isFieldValid(fieldName: string): boolean {
+    const control = this.mortgageForm.get(fieldName);
+
+    console.log(control);
+    return control!.valid && this.isSubmitted;
+  }
 
   onSubmit(): void {
     if (this.mortgageForm.invalid) {

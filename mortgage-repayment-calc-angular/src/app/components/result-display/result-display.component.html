@@ -1,0 +1,43 @@
+@if (repaymentAmount !== 0) {
+  <div
+    class="flex h-[390px] flex-col gap-[12px] bg-c-slate-900/95 px-[24px] py-[32px] md:h-full md:rounded-es-[77px] md:p-[42px]"
+  >
+    <h2 class="text-2xl font-500 text-c-white">Your results</h2>
+    <p class="tracking-normal text-c-slate-300">
+      Your results are shown below based on the information you provided. To
+      adjust the results, edit the form and click “calculate repayments” again.
+    </p>
+
+    <div
+      class="mt-[10px] flex w-full flex-col gap-[11px] rounded-md border-t-4 border-t-c-lime bg-c-slate-900 px-[16px] py-[23px] md:mt-[30px] md:p-[32px]"
+    >
+      <h3 class="font-500 text-c-slate-300">Your monthly repayments</h3>
+      <span
+        class="text-4xl font-700 tracking-wide text-c-lime md:text-6xl md:tracking-tight"
+        >&#163;1,797.74</span
+      >
+      <div
+        class="borded-b mt-2 h-2 w-full border-b-[1px] border-c-slate-700 md:mt-[18px]"
+      ></div>
+      <h3 class="font-500 text-c-slate-300 md:mt-[20px]">
+        Total you'll repay over the term
+      </h3>
+      <span class="text-2xl font-500 tracking-wide text-c-white"
+        >&#163; 539,322.94</span
+      >
+    </div>
+  </div>
+} @else {
+  <div
+    class="flex h-[390px] flex-col items-center gap-[17px] bg-c-slate-900/95 p-[32px] md:h-full md:justify-center md:rounded-es-[77px]"
+  >
+    <img class="size-[192px]" src="../assets/illustration-empty.svg" alt="" />
+    <div class="space-y-[13px] text-center text-c-white">
+      <h2 class="text-2xl tracking-wider">Results shown here</h2>
+      <p class="text-c-slate-300">
+        Complete the form and click “calculate repayments” to see what your
+        monthly repayments would be. {{ repaymentAmount }}
+      </p>
+    </div>
+  </div>
+}

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgxMaskDirective } from 'ngx-mask';
 import { MortgageService } from '../../services/mortgage.service';
@@ -12,7 +12,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './mortgage-form.component.html',
   styles: ``,
 })
-export class MortgageFormComponent {
+export class MortgageFormComponent implements OnInit {
   #mortgageService = inject(MortgageService);
   #fb = inject(FormBuilder);
   mortgageForm = this.#fb.group({
@@ -22,17 +22,26 @@ export class MortgageFormComponent {
     type: ['', Validators.required],
   });
   repayment = 0;
-  isSubmitted = true;
+  isSubmitted = false;
+
+  ngOnInit() {
+    this.mortgageForm.valueChanges.subscribe(() => {
+      if (this.isSubmitted) {
+        this.isSubmitted = false;
+      }
+    });
+  }
 
   isFieldValid(fieldName: string): boolean {
     const control = this.mortgageForm.get(fieldName);
 
-    console.log(control);
-    return control!.valid && this.isSubmitted;
+    return control!.invalid && this.isSubmitted;
   }
 
   onSubmit(): void {
+    this.isSubmitted = true;
     if (this.mortgageForm.invalid) {
+      console.log('invalid');
       return;
     }
 

@@ -21,7 +21,6 @@ export class MortgageFormComponent implements OnInit {
     rate: ['', Validators.required],
     type: ['', Validators.required],
   });
-  repayment = 0;
   isSubmitted = false;
 
   ngOnInit() {
@@ -48,18 +47,11 @@ export class MortgageFormComponent implements OnInit {
     }
 
     const { amount, term, rate, type } = this.mortgageForm.value;
-    this.repayment = this.#mortgageService.calcMortgage(
-      amount!,
-      term!,
-      rate!,
-      type!,
-    );
+    this.#mortgageService.calcMortgage(amount!, term!, rate!, type!);
 
     console.log(
       `Submitted with those values: ${amount}, ${term}, ${rate}, ${type}`,
     );
-
-    console.log(this.repayment);
   }
 
   onClearAll(): void {

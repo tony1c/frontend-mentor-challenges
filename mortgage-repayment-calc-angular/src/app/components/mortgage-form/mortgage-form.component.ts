@@ -33,9 +33,11 @@ export class MortgageFormComponent implements OnInit {
   }
 
   isFieldValid(fieldName: string): boolean {
-    const control = this.mortgageForm.get(fieldName);
-
-    return control!.invalid && this.isSubmitted;
+    return this.#mortgageService.isFieldValid(
+      this.mortgageForm,
+      fieldName,
+      this.isSubmitted,
+    );
   }
 
   onSubmit(): void {
@@ -61,6 +63,7 @@ export class MortgageFormComponent implements OnInit {
   }
 
   onClearAll(): void {
+    console.log(this.isSubmitted);
     this.mortgageForm.reset();
   }
 }

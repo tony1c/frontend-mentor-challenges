@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -21,5 +22,11 @@ export class MortgageService {
       return repayment;
     }
     return 0;
+  }
+
+  isFieldValid(form: FormGroup, fieldName: string, isSubmitted: boolean) {
+    const control = form.get(fieldName);
+
+    return control!.invalid && isSubmitted;
   }
 }

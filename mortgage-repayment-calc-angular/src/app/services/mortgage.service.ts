@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class MortgageService {
   private repaymentAmountSubject = new BehaviorSubject<number | null>(null);
   repaymentAmount$ = this.repaymentAmountSubject.asObservable();
+  totalRepayment$ = this.repaymentAmount$.pipe(map((cost) => cost! * 300));
 
   calcMortgage(amount: string, term: string, rate: string, type: string): void {
     if (type === 'repayment') {

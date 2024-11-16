@@ -26,12 +26,17 @@
         formControlName="amount"
         type="text"
         class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[60px] text-lg font-700 caret-c-slate-900 focus:outline-c-lime"
+        [ngClass]="{ '!border-c-red': !isFieldValid('amount') }"
       />
       <div
         class="absolute left-0 top-0 flex size-[47px] items-center justify-center rounded-s-md bg-c-slate-100 text-lg font-500 text-c-slate-700 peer-focus:bg-c-lime"
+        [ngClass]="{ '!bg-c-red !text-c-white': !isFieldValid('amount') }"
       >
         &#163;
       </div>
+      @if (!isFieldValid("amount")) {
+        <small class="text-c-red">This field is required</small>
+      }
     </div>
   </fieldset>
 
@@ -43,12 +48,18 @@
           formControlName="term"
           type="number"
           class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[18px] text-lg font-700 focus:outline-c-lime"
+          [ngClass]="{ '!border-c-red': !isFieldValid('term') }"
         />
         <div
           class="absolute right-0 top-0 flex h-[48px] items-center justify-center rounded-e-md bg-c-slate-100 px-[15px] text-lg font-500 text-c-slate-700 peer-focus:bg-c-lime"
+          [ngClass]="{ '!bg-c-red !text-c-white': !isFieldValid('term') }"
         >
           years
         </div>
+
+        @if (!isFieldValid("term")) {
+          <small class="text-c-red">This field is required</small>
+        }
       </div>
     </fieldset>
     <fieldset class="flex flex-col gap-2.5 md:w-[200px]">
@@ -58,12 +69,18 @@
           formControlName="rate"
           type="number"
           class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[18px] text-lg font-700 focus:outline-c-lime"
+          [ngClass]="{ '!border-c-red': !isFieldValid('rate') }"
         />
         <div
           class="absolute right-0 top-0 flex h-[48px] items-center justify-center rounded-e-md bg-c-slate-100 px-[15px] text-lg font-500 text-c-slate-700 peer-focus:bg-c-lime"
+          [ngClass]="{ '!bg-c-red !text-c-white': !isFieldValid('rate') }"
         >
           &#37;
         </div>
+
+        @if (!isFieldValid("rate")) {
+          <small class="text-c-red">This field is required</small>
+        }
       </div>
     </fieldset>
   </div>
@@ -106,6 +123,10 @@
           <span class="text-lg font-700 text-c-slate-900">Interest Only</span>
         </div>
       </label>
+
+      @if (!isFieldValid("type")) {
+        <small class="text-c-red">This field is required</small>
+      }
     </fieldset>
   </div>
 

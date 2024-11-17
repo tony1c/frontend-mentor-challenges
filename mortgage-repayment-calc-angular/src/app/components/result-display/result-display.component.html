@@ -1,4 +1,4 @@
-@if (repaymentAmount !== null) {
+@if ((repaymentAmount$ | async) !== null) {
   <div
     class="flex flex-col gap-[12px] bg-c-slate-900/95 px-[24px] py-[32px] md:h-full md:rounded-es-[77px] md:p-[42px]"
   >
@@ -14,7 +14,7 @@
       <h3 class="font-500 text-c-slate-300">Your monthly repayments</h3>
       <span
         class="text-4xl font-700 tracking-wide text-c-lime md:text-6xl md:tracking-tight"
-        >&#163; {{ repaymentAmount | number: "1.2-2" }}</span
+        >&#163; {{ repaymentAmount$ | async | number: "1.2-2" }}</span
       >
       <div
         class="borded-b mt-2 h-2 w-full border-b-[1px] border-c-slate-700 md:mt-[18px]"
@@ -36,7 +36,7 @@
       <h2 class="text-2xl tracking-wider">Results shown here</h2>
       <p class="text-c-slate-300">
         Complete the form and click “calculate repayments” to see what your
-        monthly repayments would be. {{ repaymentAmount }}
+        monthly repayments would be.
       </p>
     </div>
   </div>

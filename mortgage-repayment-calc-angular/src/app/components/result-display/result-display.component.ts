@@ -1,5 +1,5 @@
 import { AsyncPipe, DecimalPipe } from '@angular/common';
-import { Component, DestroyRef, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject } from '@angular/core';
 import { MortgageService } from '../../services/mortgage.service';
 
 @Component({
@@ -9,19 +9,9 @@ import { MortgageService } from '../../services/mortgage.service';
   templateUrl: './result-display.component.html',
   styles: ``,
 })
-export class ResultDisplayComponent implements OnInit {
+export class ResultDisplayComponent {
   #mortgageService = inject(MortgageService);
   destroyRef = inject(DestroyRef);
-  repaymentAmount: number | null = null;
+  repaymentAmount$ = this.#mortgageService.repaymentAmount$;
   totalRepayment$ = this.#mortgageService.totalRepayment$;
-
-  ngOnInit() {
-    const subscription = this.#mortgageService.repaymentAmount$.subscribe(
-      (val) => {
-        this.repaymentAmount = val;
-      },
-    );
-
-    this.destroyRef.onDestroy(() => subscription.unsubscribe());
-  }
 }

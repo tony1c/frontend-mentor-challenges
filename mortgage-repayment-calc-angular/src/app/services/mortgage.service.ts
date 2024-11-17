@@ -1,33 +1,37 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { BehaviorSubject, combineLatest, map } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MortgageService {
   private repaymentAmountSubject = new BehaviorSubject<number | null>(null);
-  private totMonthsSubject = new BehaviorSubject<number | null>(null);
-  private totMonths$ = this.totMonthsSubject.asObservable();
+  private totalRepaymentSubject = new BehaviorSubject<number | null>(null);
   repaymentAmount$ = this.repaymentAmountSubject.asObservable();
-  totalRepayment$ = combineLatest([
-    this.repaymentAmount$,
-    this.totMonths$,
-  ]).pipe(map(([repayment, totMonths]) => (repayment || 0) * totMonths!));
+  totalRepayment$ = this.totalRepaymentSubject.asObservable();
 
   calcMortgage(amount: string, term: string, rate: string, type: string): void {
+    const monthsInYear = 12;
+    const monthlyInterest = Number(rate) / 100 / monthsInYear;
+    const totMonths = Number(term) * monthsInYear;
+    const repayment =
+      Number(amount) *
+      ((monthlyInterest * Math.pow(1 + monthlyInterest, totMonths)) /
+        (Math.pow(1 + monthlyInterest, totMonths) - 1));
+    const totalRepayment = repayment * totMonths;
+
     if (type === 'repayment') {
-      const monthsInYear = 12;
-      const monthlyInterest = Number(rate) / 100 / monthsInYear;
-      const totMonths = Number(term) * monthsInYear;
-      const repayment =
-        Number(amount) *
-        ((monthlyInterest * Math.pow(1 + monthlyInterest, totMonths)) /
-          (Math.pow(1 + monthlyInterest, totMonths) - 1));
       this.repaymentAmountSubject.next(repayment);
-      this.totMonthsSubject.next(totMonths);
-    } else {
-      this.repaymentAmountSubject.next(0);
+      this.totalRepaymentSubject.next(totalRepayment);
+    }
+
+    if (type === 'interest-only') {
+      const diff = totalRepayment - Number(amount);
+      const monthlyInterestOnly = repayment * (Number(rate) / 100);
+      console.log(diff);
+      this.repaymentAmountSubject.next(monthlyInterestOnly);
+      this.totalRepaymentSubject.next(diff);
     }
   }
 
@@ -39,6 +43,6 @@ export class MortgageService {
 
   resetValues(): void {
     this.repaymentAmountSubject.next(null);
-    this.totMonthsSubject.next(0);
+    this.totalRepaymentSubject.next(null);
   }
 }

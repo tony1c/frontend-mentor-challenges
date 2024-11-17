@@ -42,7 +42,6 @@ export class MortgageFormComponent implements OnInit {
   onSubmit(): void {
     this.isSubmitted = true;
     if (this.mortgageForm.invalid) {
-      console.log('invalid');
       return;
     }
 

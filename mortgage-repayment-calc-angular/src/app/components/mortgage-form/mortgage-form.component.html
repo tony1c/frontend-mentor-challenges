@@ -1,134 +1,136 @@
-<div
-  class="flex flex-col gap-[8px] md:flex-row md:items-center md:justify-between"
->
-  <h1 class="text-2xl font-700 text-c-slate-900">Mortgage Calculator</h1>
-  <button
-    (click)="onClearAll()"
-    type="button"
-    class="inline-flex font-500 text-c-slate-700 underline"
+<div class="px-[24px] py-[31px] md:px-[38px] md:py-[40px]">
+  <div
+    class="flex flex-col gap-[8px] md:flex-row md:items-center md:justify-between"
   >
-    Clear All
-  </button>
-</div>
-<form
-  [formGroup]="mortgageForm"
-  (ngSubmit)="onSubmit()"
-  class="mt-[25px] space-y-[26px] md:mt-[40px]"
->
-  <fieldset class="flex flex-col gap-2.5">
-    <label class="font-500 text-c-slate-700" for="amount"
-      >Mortgage Amount</label
+    <h1 class="text-2xl font-700 text-c-slate-900">Mortgage Calculator</h1>
+    <button
+      (click)="onClearAll()"
+      type="button"
+      class="inline-flex font-500 text-c-slate-700 underline"
     >
-    <div class="relative">
-      <input
-        mask="separator"
-        thousandSeparator=","
-        formControlName="amount"
-        type="text"
-        class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[60px] text-lg font-700 caret-c-slate-900 focus:outline-c-lime"
-        [ngClass]="{ '!border-c-red': isFieldValid('amount') }"
-      />
-      <div
-        class="absolute left-0 top-0 flex size-[47px] items-center justify-center rounded-s-md bg-c-slate-100 text-lg font-500 text-c-slate-700 peer-focus:bg-c-lime"
-        [ngClass]="{ '!bg-c-red !text-c-white': isFieldValid('amount') }"
+      Clear All
+    </button>
+  </div>
+  <form
+    [formGroup]="mortgageForm"
+    (ngSubmit)="onSubmit()"
+    class="mt-[25px] space-y-[26px] md:mt-[40px]"
+  >
+    <fieldset class="flex flex-col gap-2.5">
+      <label class="font-500 text-c-slate-700" for="amount"
+        >Mortgage Amount</label
       >
-        &#163;
+      <div class="relative">
+        <input
+          mask="separator"
+          thousandSeparator=","
+          formControlName="amount"
+          type="text"
+          class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[60px] text-lg font-700 caret-c-slate-900 focus:outline-c-lime"
+          [ngClass]="{ '!border-c-red': isFieldValid('amount') }"
+        />
+        <div
+          class="absolute left-0 top-0 flex size-[47px] items-center justify-center rounded-s-md bg-c-slate-100 text-lg font-500 text-c-slate-700 peer-focus:bg-c-lime"
+          [ngClass]="{ '!bg-c-red !text-c-white': isFieldValid('amount') }"
+        >
+          &#163;
+        </div>
+        @if (isFieldValid("amount")) {
+          <small class="text-c-red">This field is required</small>
+        }
       </div>
-      @if (isFieldValid("amount")) {
-        <small class="text-c-red">This field is required</small>
-      }
+    </fieldset>
+
+    <div class="flex flex-col justify-between gap-[26px] md:flex-row">
+      <fieldset class="flex flex-col gap-2.5 md:w-[200px]">
+        <label class="font-500 text-c-slate-700" for="">Mortgage Term</label>
+        <div class="relative">
+          <input
+            formControlName="term"
+            type="number"
+            class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[18px] text-lg font-700 focus:outline-c-lime"
+            [ngClass]="{ '!border-c-red': isFieldValid('term') }"
+          />
+          <div
+            class="absolute right-0 top-0 flex h-[48px] items-center justify-center rounded-e-md bg-c-slate-100 px-[15px] text-lg font-500 text-c-slate-700 peer-focus:bg-c-lime"
+            [ngClass]="{ '!bg-c-red !text-c-white': isFieldValid('term') }"
+          >
+            years
+          </div>
+
+          @if (isFieldValid("term")) {
+            <small class="text-c-red">This field is required</small>
+          }
+        </div>
+      </fieldset>
+      <fieldset class="flex flex-col gap-2.5 md:w-[200px]">
+        <label class="font-500 text-c-slate-700" for="">Interest Rate</label>
+        <div class="relative">
+          <input
+            formControlName="rate"
+            type="number"
+            class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[18px] text-lg font-700 focus:outline-c-lime"
+            [ngClass]="{ '!border-c-red': isFieldValid('rate') }"
+          />
+          <div
+            class="absolute right-0 top-0 flex h-[48px] items-center justify-center rounded-e-md bg-c-slate-100 px-[15px] text-lg font-500 text-c-slate-700 peer-focus:bg-c-lime"
+            [ngClass]="{ '!bg-c-red !text-c-white': isFieldValid('rate') }"
+          >
+            &#37;
+          </div>
+
+          @if (isFieldValid("rate")) {
+            <small class="text-c-red">This field is required</small>
+          }
+        </div>
+      </fieldset>
     </div>
-  </fieldset>
 
-  <div class="flex flex-col justify-between gap-[26px] md:flex-row">
-    <fieldset class="flex flex-col gap-2.5 md:w-[200px]">
-      <label class="font-500 text-c-slate-700" for="">Mortgage Term</label>
-      <div class="relative">
-        <input
-          formControlName="term"
-          type="number"
-          class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[18px] text-lg font-700 focus:outline-c-lime"
-          [ngClass]="{ '!border-c-red': isFieldValid('term') }"
-        />
-        <div
-          class="absolute right-0 top-0 flex h-[48px] items-center justify-center rounded-e-md bg-c-slate-100 px-[15px] text-lg font-500 text-c-slate-700 peer-focus:bg-c-lime"
-          [ngClass]="{ '!bg-c-red !text-c-white': isFieldValid('term') }"
-        >
-          years
-        </div>
+    <div class="space-y-3">
+      <h3 class="font-500 text-c-slate-700">Mortgage Type</h3>
+      <fieldset>
+        <label for="type">
+          <div
+            class="flex h-[48px] w-full cursor-pointer items-center gap-[18px] rounded-md border border-c-slate-700 px-[17px] hover:border-c-lime has-[input:checked]:border-c-lime has-[input:checked]:bg-c-lime/25"
+          >
+            <input
+              formControlName="type"
+              id="type"
+              value="repayment"
+              name="type"
+              type="radio"
+              class="size-[16px]"
+            />
 
-        @if (isFieldValid("term")) {
+            <span class="text-lg font-700 text-c-slate-900"> Repayment </span>
+          </div>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <label for="type-2">
+          <div
+            class="flex h-[48px] w-full cursor-pointer items-center gap-[18px] rounded-md border border-c-slate-700 px-[17px] hover:border-c-lime has-[input:checked]:border-c-lime has-[input:checked]:bg-c-lime/20"
+          >
+            <input
+              formControlName="type"
+              id="type-2"
+              value="interest-only"
+              name="type"
+              type="radio"
+              class="size-[16px]"
+            />
+
+            <span class="text-lg font-700 text-c-slate-900">Interest Only</span>
+          </div>
+        </label>
+
+        @if (isFieldValid("type")) {
           <small class="text-c-red">This field is required</small>
         }
-      </div>
-    </fieldset>
-    <fieldset class="flex flex-col gap-2.5 md:w-[200px]">
-      <label class="font-500 text-c-slate-700" for="">Interest Rate</label>
-      <div class="relative">
-        <input
-          formControlName="rate"
-          type="number"
-          class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[18px] text-lg font-700 focus:outline-c-lime"
-          [ngClass]="{ '!border-c-red': isFieldValid('rate') }"
-        />
-        <div
-          class="absolute right-0 top-0 flex h-[48px] items-center justify-center rounded-e-md bg-c-slate-100 px-[15px] text-lg font-500 text-c-slate-700 peer-focus:bg-c-lime"
-          [ngClass]="{ '!bg-c-red !text-c-white': isFieldValid('rate') }"
-        >
-          &#37;
-        </div>
+      </fieldset>
+    </div>
 
-        @if (isFieldValid("rate")) {
-          <small class="text-c-red">This field is required</small>
-        }
-      </div>
-    </fieldset>
-  </div>
-
-  <div class="space-y-3">
-    <h3 class="font-500 text-c-slate-700">Mortgage Type</h3>
-    <fieldset>
-      <label for="type">
-        <div
-          class="flex h-[48px] w-full cursor-pointer items-center gap-[18px] rounded-md border border-c-slate-700 px-[17px] hover:border-c-lime has-[input:checked]:border-c-lime has-[input:checked]:bg-c-lime/25"
-        >
-          <input
-            formControlName="type"
-            id="type"
-            value="repayment"
-            name="type"
-            type="radio"
-            class="size-[16px]"
-          />
-
-          <span class="text-lg font-700 text-c-slate-900"> Repayment </span>
-        </div>
-      </label>
-    </fieldset>
-
-    <fieldset>
-      <label for="type-2">
-        <div
-          class="flex h-[48px] w-full cursor-pointer items-center gap-[18px] rounded-md border border-c-slate-700 px-[17px] hover:border-c-lime has-[input:checked]:border-c-lime has-[input:checked]:bg-c-lime/20"
-        >
-          <input
-            formControlName="type"
-            id="type-2"
-            value="interest-only"
-            name="type"
-            type="radio"
-            class="size-[16px]"
-          />
-
-          <span class="text-lg font-700 text-c-slate-900">Interest Only</span>
-        </div>
-      </label>
-
-      @if (isFieldValid("type")) {
-        <small class="text-c-red">This field is required</small>
-      }
-    </fieldset>
-  </div>
-
-  <app-btn-calc></app-btn-calc>
-</form>
+    <app-btn-calc></app-btn-calc>
+  </form>
+</div>

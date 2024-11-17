@@ -29,7 +29,6 @@ export class MortgageService {
     if (type === 'interest-only') {
       const diff = totalRepayment - Number(amount);
       const monthlyInterestOnly = repayment * (Number(rate) / 100);
-      console.log(diff);
       this.repaymentAmountSubject.next(monthlyInterestOnly);
       this.totalRepaymentSubject.next(diff);
     }

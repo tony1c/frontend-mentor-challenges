@@ -48,14 +48,10 @@ export class MortgageFormComponent implements OnInit {
 
     const { amount, term, rate, type } = this.mortgageForm.value;
     this.#mortgageService.calcMortgage(amount!, term!, rate!, type!);
-
-    console.log(
-      `Submitted with those values: ${amount}, ${term}, ${rate}, ${type}`,
-    );
   }
 
   onClearAll(): void {
-    console.log(this.isSubmitted);
     this.mortgageForm.reset();
+    this.#mortgageService.resetValues();
   }
 }

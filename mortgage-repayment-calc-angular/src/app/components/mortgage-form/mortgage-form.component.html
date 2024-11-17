@@ -22,6 +22,7 @@
       >
       <div class="relative">
         <input
+          id="amount"
           mask="separator"
           thousandSeparator=","
           formControlName="amount"
@@ -43,9 +44,12 @@
 
     <div class="flex flex-col justify-between gap-[26px] md:flex-row">
       <fieldset class="flex flex-col gap-2.5 md:w-[200px]">
-        <label class="font-500 text-c-slate-700" for="">Mortgage Term</label>
+        <label class="font-500 text-c-slate-700" for="term"
+          >Mortgage Term</label
+        >
         <div class="relative">
           <input
+            id="term"
             formControlName="term"
             type="number"
             class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[18px] text-lg font-700 focus:outline-c-lime"
@@ -64,9 +68,12 @@
         </div>
       </fieldset>
       <fieldset class="flex flex-col gap-2.5 md:w-[200px]">
-        <label class="font-500 text-c-slate-700" for="">Interest Rate</label>
+        <label class="font-500 text-c-slate-700" for="rate"
+          >Interest Rate</label
+        >
         <div class="relative">
           <input
+            id="rate"
             formControlName="rate"
             type="number"
             class="peer relative z-10 h-[48px] w-full cursor-pointer rounded-md border border-c-slate-700 bg-transparent pl-[18px] text-lg font-700 focus:outline-c-lime"

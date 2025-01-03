@@ -150,6 +150,9 @@ export default {
       ],
     },
     extend: {
+      boxShadow: {
+        'custom-dropshadow': '0 4px 0 #F57463',
+      },
       colors: {
         'c-neutral': {
           900: '#0D082D',
@@ -168,6 +171,7 @@ export default {
       },
       fontFamily: {
         inconsolata: ['Inconsolata', 'sans-serif'],
+        'fira-code': ['Fira Code', 'sans-serif'],
         sans: [
           'Inter',
           'ui-sans-serif',

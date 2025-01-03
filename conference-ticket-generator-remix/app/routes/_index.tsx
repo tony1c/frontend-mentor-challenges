@@ -9,8 +9,9 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className='w-full bg-c-gradient-01 text-c-orange-500'>
+    <div className='w-full bg-c-gradient-01 font-inconsolata text-preset-1'>
       Hello from app
+      <div className='size-300 rounded-full bg-c-neutral-500'></div>
     </div>
   );
 }

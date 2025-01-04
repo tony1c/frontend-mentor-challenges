@@ -22,35 +22,26 @@ export default function Index() {
           }
         ></div>
         {/* top line */}
-        <div className="absolute translate-x-[263px] translate-y-[24px] md:translate-x-[536px] md:translate-y-[88px] lg:translate-x-[994px] lg:translate-y-[76px]">
+        <div className="absolute h-[53px] w-[112px] translate-x-[263px] translate-y-[24px] md:h-[108px] md:w-[232px] md:translate-x-[536px] md:translate-y-[88px] lg:h-[208px] lg:w-[446px] lg:translate-x-[994px] lg:translate-y-[76px]">
           <img
             src="/images/pattern-squiggly-line-top.svg"
             alt="Top line decoration"
-            className="h-[53px] w-[112px] md:h-[108px] md:w-[232px] lg:h-[208px] lg:w-[446px]"
           />
         </div>
         {/* circle */}
-        <div className="absolute translate-x-[313px] translate-y-[548px] md:translate-x-[669px] md:translate-y-[552px] lg:translate-x-[938px] lg:translate-y-[534px]">
-          <img
-            src="/images/pattern-circle.svg"
-            alt="Top line decoration"
-            className="size-[107px] md:size-[217px]"
-          />
+        <div className="absolute size-[107px] translate-x-[313px] translate-y-[548px] md:size-[217px] md:translate-x-[669px] md:translate-y-[552px] lg:translate-x-[938px] lg:translate-y-[534px]">
+          <img src="/images/pattern-circle.svg" alt="Top line decoration" />
         </div>
         {/* circle desktop only */}
-        <div className="absolute hidden -translate-y-[85px] translate-x-[44px] lg:block">
-          <img
-            src="/images/pattern-circle.svg"
-            alt="Top line decoration"
-            className="size-[217px]"
-          />
+        <div className="absolute hidden size-[217px] -translate-y-[85px] translate-x-[44px] lg:block">
+          <img src="/images/pattern-circle.svg" alt="Top line decoration" />
         </div>
         {/* bottom line */}
-        <div className="absolute bottom-0">
+        <div className="absolute bottom-0 h-[210px] w-[301px] md:h-[276px] md:w-[396px] lg:h-[476px] lg:w-[825px]">
           <img
             src="/images/pattern-squiggly-line-bottom.svg"
             alt="Bottom line decoration"
-            className="h-[210px] w-[301px] overflow-visible object-left md:h-[276px] md:w-[396px] lg:h-[476px] lg:w-[825px] lg:object-none"
+            className="overflow-visible object-left lg:object-none"
           />
         </div>
         {/* content */}

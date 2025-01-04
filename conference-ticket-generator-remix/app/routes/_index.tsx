@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Form } from "@remix-run/react";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import { Logo } from "~/components/Logo";
 
 export const meta: MetaFunction = () => {
@@ -12,17 +12,18 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   const [avatar, setAvatar] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  function handleFileUpload(e: ChangeEvent<HTMLInputElement>) {
+  const handleFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const newAvatar = URL.createObjectURL(file);
       setAvatar(newAvatar);
       console.log("Avatar selected!");
     }
-  }
+  };
 
-  function handleDrop(e: React.DragEvent<HTMLInputElement>) {
+  const handleDrop = (e: React.DragEvent<HTMLInputElement>) => {
     e.preventDefault();
 
     const file = e.dataTransfer?.files[0];
@@ -32,7 +33,18 @@ export default function Index() {
       setAvatar(newAvatar);
       console.log("File dragged successfully");
     }
-  }
+  };
+
+  const handleChangeImage = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleRemoveImage = () => {
+    setAvatar(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
 
   return (
     <div
@@ -96,31 +108,27 @@ export default function Index() {
                 <div className="relative z-10 flex h-[126px] flex-col items-center justify-center overflow-hidden rounded-12 border border-dashed border-c-neutral-500 bg-c-neutral-0 bg-opacity-[8%] backdrop-blur-[5px]">
                   {/* input */}
                   {/* trick to hide and get the cursor pointer text-[0px] and translate */}
+                  <input
+                    type="file"
+                    name="file"
+                    id="file"
+                    accept=".jpg, .png"
+                    onChange={(e) => handleFileUpload(e)}
+                    onDrop={(e) => handleDrop(e)}
+                    onDragOver={(e) => e.preventDefault()}
+                    ref={fileInputRef}
+                    className={`absolute inset-0 z-10 -translate-x-200 cursor-pointer text-[0px] opacity-0 ${avatar && "pointer-events-none"}`}
+                  />
                   {!avatar ? (
-                    <>
-                      <input
-                        type="file"
-                        name="file"
-                        id="file"
-                        accept=".jpg, .png"
-                        onChange={(e) => handleFileUpload(e)}
-                        onDrop={(e) => handleDrop(e)}
-                        onDragOver={(e) => e.preventDefault()}
-                        className="absolute inset-0 z-10 -translate-x-200 cursor-pointer text-[0px] opacity-0"
-                      />
-                      {/* upload icon */}
-                      <div className="flex flex-col items-center justify-center gap-200">
-                        <div className="shadow-dropshadow-icon flex size-[50px] items-center justify-center rounded-12 border border-c-neutral-700 bg-c-neutral-0 bg-opacity-10 backdrop-blur-[24px]">
-                          <img
-                            src="/images/icon-upload.svg"
-                            alt="Upload icon"
-                          />
-                        </div>
-                        <span className="text-preset-6 text-c-neutral-300">
-                          Drag and drop or click to upload
-                        </span>
+                    // upload icon
+                    <div className="flex flex-col items-center justify-center gap-200">
+                      <div className="shadow-dropshadow-icon flex size-[50px] items-center justify-center rounded-12 border border-c-neutral-700 bg-c-neutral-0 bg-opacity-10 backdrop-blur-[24px]">
+                        <img src="/images/icon-upload.svg" alt="Upload icon" />
                       </div>
-                    </>
+                      <span className="text-preset-6 text-c-neutral-300">
+                        Drag and drop or click to upload
+                      </span>
+                    </div>
                   ) : (
                     <div className="flex flex-col items-center justify-center gap-200">
                       <div className="shadow-dropshadow-icon size-[50px] overflow-hidden rounded-12 border border-c-neutral-500">
@@ -128,7 +136,7 @@ export default function Index() {
                       </div>
                       <div className="space-x-100">
                         <button
-                          onClick={() => setAvatar(null)}
+                          onClick={handleRemoveImage}
                           type="button"
                           className="rounded-4 bg-c-neutral-0 bg-opacity-10 px-100 py-050 text-c-neutral-300 underline underline-offset-2"
                         >
@@ -137,6 +145,7 @@ export default function Index() {
                         <button
                           type="button"
                           className="rounded-4 bg-c-neutral-0 bg-opacity-10 px-100 py-050 text-c-neutral-0"
+                          onClick={handleChangeImage}
                         >
                           Change image
                         </button>

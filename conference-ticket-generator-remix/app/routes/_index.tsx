@@ -105,7 +105,7 @@ export default function Index() {
                   Upload Avatar
                 </label>
                 {/* bg decoration */}
-                <div className="relative z-10 flex h-[126px] flex-col items-center justify-center overflow-hidden rounded-12 border border-dashed border-c-neutral-500 bg-c-neutral-0 bg-opacity-[8%] backdrop-blur-[5px]">
+                <div className="group relative flex h-[126px] flex-col items-center justify-center overflow-hidden rounded-12 border border-dashed border-c-neutral-500 bg-c-neutral-0 bg-opacity-[8%] backdrop-blur-[5px] transition-all duration-300 hover:bg-opacity-20">
                   {/* input */}
                   {/* trick to hide and get the cursor pointer text-[0px] and translate */}
                   <input
@@ -122,9 +122,9 @@ export default function Index() {
                   {!avatar ? (
                     // upload icon
                     <div className="flex flex-col items-center justify-center gap-200">
-                      <div className="shadow-dropshadow-icon flex size-[50px] items-center justify-center rounded-12 border border-c-neutral-700 bg-c-neutral-0 bg-opacity-10 backdrop-blur-[24px]">
+                      <button className="shadow-dropshadow-icon flex size-[50px] items-center justify-center rounded-12 border border-c-neutral-700 bg-c-neutral-0 bg-opacity-10 transition-opacity duration-300 group-hover:opacity-40">
                         <img src="/images/icon-upload.svg" alt="Upload icon" />
-                      </div>
+                      </button>
                       <span className="text-preset-6 text-c-neutral-300">
                         Drag and drop or click to upload
                       </span>

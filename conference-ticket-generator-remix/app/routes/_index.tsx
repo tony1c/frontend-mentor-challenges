@@ -14,7 +14,7 @@ export default function Index() {
         "bg-[url('/images/background-mobile.png')] bg-cover bg-center bg-no-repeat md:bg-[url('/images/background-tablet.png')] lg:bg-[url('/images/background-desktop.png')]"
       }
     >
-      <div className="relative mx-auto min-h-screen overflow-hidden">
+      <div className="relative min-h-screen overflow-hidden">
         {/* grid */}
         <div
           className={
@@ -22,19 +22,27 @@ export default function Index() {
           }
         ></div>
         {/* top line */}
-        <div className="absolute translate-x-[263px] translate-y-[24px] md:translate-x-[536px] md:translate-y-[88px]">
+        <div className="absolute translate-x-[263px] translate-y-[24px] md:translate-x-[536px] md:translate-y-[88px] lg:translate-x-[994px] lg:translate-y-[76px]">
           <img
             src="/images/pattern-squiggly-line-top.svg"
             alt="Top line decoration"
-            className="h-[53px] w-[112px] md:h-[108px] md:w-[232px]"
+            className="h-[53px] w-[112px] md:h-[108px] md:w-[232px] lg:h-[208px] lg:w-[446px]"
           />
         </div>
         {/* circle */}
-        <div className="absolute translate-x-[313px] translate-y-[548px] md:translate-x-[669px] md:translate-y-[552px]">
+        <div className="absolute translate-x-[313px] translate-y-[548px] md:translate-x-[669px] md:translate-y-[552px] lg:translate-x-[938px] lg:translate-y-[534px]">
           <img
             src="/images/pattern-circle.svg"
             alt="Top line decoration"
             className="size-[107px] md:size-[217px]"
+          />
+        </div>
+        {/* circle desktop only */}
+        <div className="absolute hidden -translate-y-[85px] translate-x-[44px] lg:block">
+          <img
+            src="/images/pattern-circle.svg"
+            alt="Top line decoration"
+            className="size-[217px]"
           />
         </div>
         {/* bottom line */}
@@ -42,7 +50,7 @@ export default function Index() {
           <img
             src="/images/pattern-squiggly-line-bottom.svg"
             alt="Bottom line decoration"
-            className="h-[210px] w-[301px] md:h-[276px] md:w-[396px]"
+            className="h-[210px] w-[301px] overflow-visible object-left md:h-[276px] md:w-[396px] lg:h-[476px] lg:w-[825px] lg:object-none"
           />
         </div>
         {/* content */}

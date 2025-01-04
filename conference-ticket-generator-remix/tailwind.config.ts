@@ -42,7 +42,7 @@ export default {
         },
       ],
       "preset-1-mobile": [
-        "60px",
+        "30px",
         {
           letterSpacing: "-1px",
           lineHeight: "110%",
@@ -104,6 +104,14 @@ export default {
       ],
 
       // preset-5
+      "preset-5": [
+        "20px",
+        {
+          letterSpacing: "-0.5px",
+          lineHeight: "120%",
+          fontWeight: 500,
+        },
+      ],
       "preset-5-extrabold": [
         "20px",
         {
@@ -168,6 +176,7 @@ export default {
     extend: {
       boxShadow: {
         "custom-dropshadow": "0 4px 0 #F57463",
+        "dropshadow-icon": "0 2px 4px #040128",
       },
       fontFamily: {
         inconsolata: ["Inconsolata", "sans-serif"],

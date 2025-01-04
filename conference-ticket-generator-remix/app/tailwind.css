@@ -1,5 +1,5 @@
 /* Logo font */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,6 +8,6 @@
 @layer base {
   @font-face {
     font-family: Inconsolata;
-    src: url(/fonts/Inconsolata-VariableFont_wdth,wght.ttf) format('truetype');
+    src: url(/fonts/Inconsolata-VariableFont_wdth,wght.ttf) format("truetype");
   }
 }

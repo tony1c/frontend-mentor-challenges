@@ -28,12 +28,12 @@ export default function Index() {
             alt="Top line decoration"
           />
         </div>
-        {/* circle */}
+        {/* circle middle */}
         <div className="absolute size-[107px] translate-x-[313px] translate-y-[548px] md:size-[217px] md:translate-x-[669px] md:translate-y-[552px] lg:translate-x-[938px] lg:translate-y-[534px]">
           <img src="/images/pattern-circle.svg" alt="Top line decoration" />
         </div>
-        {/* circle desktop only */}
-        <div className="absolute hidden size-[217px] -translate-y-[85px] translate-x-[44px] lg:block">
+        {/* circle top */}
+        <div className="absolute size-[107px] -translate-x-[20px] -translate-y-[30px] md:size-[217px] md:-translate-x-[27px] md:-translate-y-[87px] lg:-translate-y-[85px] lg:translate-x-[44px]">
           <img src="/images/pattern-circle.svg" alt="Top line decoration" />
         </div>
         {/* bottom line */}

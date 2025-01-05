@@ -81,7 +81,7 @@ export default {
         {
           letterSpacing: "-1px",
           lineHeight: "110%",
-          fontWeight: 700,
+          fontWeight: 500,
         },
       ],
 
@@ -158,6 +158,7 @@ export default {
       ],
     },
     colors: {
+      transparent: "transparent",
       "c-neutral": {
         900: "#0D082D",
         700: "#4B4869",

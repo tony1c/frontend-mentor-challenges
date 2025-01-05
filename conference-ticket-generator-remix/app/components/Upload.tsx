@@ -43,7 +43,7 @@ export const Upload = () => {
       {/* bg decoration */}
       <div className="group relative flex h-[126px] flex-col items-center justify-center overflow-hidden rounded-12 border border-dashed border-c-neutral-500 bg-c-neutral-0 bg-opacity-[8%] backdrop-blur-[5px] transition-all duration-300 hover:bg-opacity-20">
         {/* input */}
-        {/* trick to hide and get the cursor pointer text-[0px] and translate */}
+        {/* trick to hide and get the cursor pointer text-[0px] */}
         <input
           type="file"
           name="file"
@@ -53,7 +53,7 @@ export const Upload = () => {
           onDrop={(e) => handleDrop(e)}
           onDragOver={(e) => e.preventDefault()}
           ref={fileInputRef}
-          className={`absolute inset-0 z-10 -translate-x-200 cursor-pointer text-[0px] opacity-0 ${avatar && "pointer-events-none"}`}
+          className={`absolute inset-0 z-10 cursor-pointer text-[0px] opacity-0 ${avatar && "pointer-events-none"}`}
         />
         {!avatar ? (
           // upload icon

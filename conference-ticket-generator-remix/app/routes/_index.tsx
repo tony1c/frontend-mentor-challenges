@@ -6,6 +6,7 @@ import { Input } from "~/components/Input";
 import { Logo } from "~/components/Logo";
 import { Upload } from "~/components/Upload";
 import { GeneratedTicket } from "~/layout/GeneratedTicket";
+import { FormErrors } from "~/types/types";
 
 export const meta: MetaFunction = () => {
   return [
@@ -22,11 +23,17 @@ export async function action({ request }: ActionFunctionArgs) {
     username: String(body.get("username")),
   };
 
-  if (!data) {
-    return;
+  const errors: FormErrors = {};
+
+  if (!data.email.includes("@")) {
+    errors.email = "Please enter a valid email address.";
   }
 
-  console.log(data);
+  console.log(errors);
+  if (Object.keys(errors).length > 0) {
+    return Response.json({ errors });
+  }
+
   return data;
 }
 
@@ -108,6 +115,18 @@ export default function Index() {
                     name="email"
                     placeholder="example@email.com"
                   />
+                  {data?.errors?.email ? (
+                    <div className="space-x-100">
+                      <svg className="inline-block size-[16px] stroke-c-orange-500">
+                        <path d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+                        <path d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
+                        <path d="M8.004 10.462V7.596M8 5.569v-.042" />
+                      </svg>
+                      <span className="text-preset-7 text-c-orange-500">
+                        Please enter a valid email address.
+                      </span>
+                    </div>
+                  ) : null}
                   <Input
                     type="text"
                     label="Github Username"

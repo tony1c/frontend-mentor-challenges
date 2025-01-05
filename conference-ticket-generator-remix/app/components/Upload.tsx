@@ -1,6 +1,10 @@
 import { ChangeEvent, useRef, useState } from "react";
 
-export const Upload = () => {
+interface UploadProps {
+  onAvatarChange: (avatarUrl: string | null) => void;
+}
+
+export const Upload = ({ onAvatarChange }: UploadProps) => {
   const [avatar, setAvatar] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -9,6 +13,7 @@ export const Upload = () => {
     if (file) {
       const newAvatar = URL.createObjectURL(file);
       setAvatar(newAvatar);
+      onAvatarChange(newAvatar);
       console.log("Avatar selected!");
     }
   };
@@ -21,6 +26,7 @@ export const Upload = () => {
     if (file) {
       const newAvatar = URL.createObjectURL(file);
       setAvatar(newAvatar);
+      onAvatarChange(newAvatar);
       console.log("File dragged successfully");
     }
   };
@@ -31,6 +37,7 @@ export const Upload = () => {
 
   const handleRemoveImage = () => {
     setAvatar(null);
+    onAvatarChange(null);
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }

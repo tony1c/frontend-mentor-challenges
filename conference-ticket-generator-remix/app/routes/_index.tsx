@@ -1,6 +1,6 @@
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Form, useActionData } from "@remix-run/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "~/components/Button";
 import { Input } from "~/components/Input";
 import { Logo } from "~/components/Logo";
@@ -31,13 +31,18 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Index() {
-  const [submitted, setSubmitted] = useState(false);
   const data = useActionData<typeof action>();
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
 
   const handleAvatarChange = (newAvatarUrl: string | null) => {
     setAvatarUrl(newAvatarUrl);
   };
+
+  useEffect(() => {
+    if (data) {
+      window.scroll(0, 0);
+    }
+  }, [data]);
 
   return (
     <div
@@ -80,7 +85,7 @@ export default function Index() {
           <div>
             <Logo />
           </div>
-          {!submitted ? (
+          {!data ? (
             <>
               <div className="flex max-w-[343px] flex-col items-center gap-250 text-center">
                 <h2 className="text-preset-1-mobile">
@@ -93,14 +98,7 @@ export default function Index() {
 
               {/* form */}
               <div className="relative">
-                <Form
-                  method="post"
-                  onSubmit={() => {
-                    setSubmitted(true);
-                    console.log("submitted");
-                  }}
-                  className="h-[610px] w-[343px] space-y-300"
-                >
+                <Form method="post" className="h-[610px] w-[343px] space-y-300">
                   {/* upload field */}
                   <Upload onAvatarChange={handleAvatarChange} />
                   <Input type="text" label="Full Name" name="name" />

@@ -1,5 +1,6 @@
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
-import { Form, json, useActionData } from "@remix-run/react";
+import { Form, useActionData } from "@remix-run/react";
+import { useState } from "react";
 import { Button } from "~/components/Button";
 import { Input } from "~/components/Input";
 import { Logo } from "~/components/Logo";
@@ -15,17 +16,25 @@ export const meta: MetaFunction = () => {
 
 export async function action({ request }: ActionFunctionArgs) {
   const body = await request.formData();
-  const file = body.get("file");
-  const name = body.get("name");
-  const email = body.get("email");
-  const username = body.get("github");
-  return json({ message: `Hello, ${file}, ${name}, ${email}, ${username} ` });
+  const data = {
+    name: String(body.get("name")),
+    file: String(body.get("file")),
+    email: String(body.get("email")),
+    username: String(body.get("username")),
+  };
+
+  if (!data) {
+    return;
+  }
+
+  console.log(data);
+  return data;
 }
 
 export default function Index() {
-  const submitted = true;
+  const [submitted, setSubmitted] = useState(false);
   const data = useActionData<typeof action>();
-  console.log(data?.message);
+
   return (
     <div
       className={
@@ -82,7 +91,10 @@ export default function Index() {
               <div className="relative">
                 <Form
                   method="post"
-                  onSubmit={() => console.log("submitted")}
+                  onSubmit={() => {
+                    setSubmitted(true);
+                    console.log("submitted");
+                  }}
                   className="h-[610px] w-[343px] space-y-300"
                 >
                   {/* upload field */}
@@ -97,7 +109,7 @@ export default function Index() {
                   <Input
                     type="text"
                     label="Github Username"
-                    name="github"
+                    name="username"
                     placeholder="@yourusername"
                   />
                   <Button />
@@ -105,7 +117,7 @@ export default function Index() {
               </div>
             </>
           ) : (
-            <GeneratedTicket />
+            <GeneratedTicket {...data!} />
           )}
         </main>
       </div>

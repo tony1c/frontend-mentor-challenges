@@ -14,6 +14,7 @@ export const Input = (props: InputProps) => {
         {props.label}
       </label>
       <input
+        required
         name={props.name}
         type={props.type}
         placeholder={props.placeholder}

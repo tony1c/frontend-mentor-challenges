@@ -1,5 +1,5 @@
-import type { MetaFunction } from "@remix-run/node";
-import { Form } from "@remix-run/react";
+import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
+import { Form, json, useActionData } from "@remix-run/react";
 import { Button } from "~/components/Button";
 import { Input } from "~/components/Input";
 import { Logo } from "~/components/Logo";
@@ -12,7 +12,18 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export async function action({ request }: ActionFunctionArgs) {
+  const body = await request.formData();
+  const file = body.get("file");
+  const name = body.get("name");
+  const email = body.get("email");
+  const username = body.get("github");
+  return json({ message: `Hello, ${file}, ${name}, ${email}, ${username} ` });
+}
+
 export default function Index() {
+  const data = useActionData<typeof action>();
+  console.log(data?.message);
   return (
     <div
       className={
@@ -66,18 +77,21 @@ export default function Index() {
           {/* form */}
           <div className="relative">
             <Form
+              method="post"
               onSubmit={() => console.log("submitted")}
               className="h-[610px] w-[343px] space-y-300"
             >
               {/* upload field */}
               <Upload />
-              <Input label="Full Name" name="name" />
+              <Input type="text" label="Full Name" name="name" />
               <Input
+                type="email"
                 label="Email Address"
-                name="e-mail"
+                name="email"
                 placeholder="example@email.com"
               />
               <Input
+                type="text"
                 label="Github Username"
                 name="github"
                 placeholder="@yourusername"

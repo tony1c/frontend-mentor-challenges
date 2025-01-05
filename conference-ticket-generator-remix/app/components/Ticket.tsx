@@ -1,4 +1,6 @@
-export const Ticket = () => {
+import type { TicketProps } from "~/types/types";
+
+export const Ticket = (props: TicketProps) => {
   return (
     <div
       className={
@@ -28,11 +30,11 @@ export const Ticket = () => {
 
         <div className="flex gap-150">
           <div className="size-[45px] overflow-hidden rounded-6">
-            <img src="/images/image-avatar.jpg" alt="" />
+            <img src={props.file} alt="Avatar" />
           </div>
           <div>
             <span className="text-[20px] font-medium leading-[110%] -tracking-[1px] text-c-neutral-0">
-              Jonatan Kristof
+              {props.name}
             </span>
             <div className="space-x-050">
               <img
@@ -41,7 +43,7 @@ export const Ticket = () => {
                 className="inline-block size-[16px]"
               />
               <span className="text-preset-6-mobile text-c-neutral-300">
-                @jonathankristof0101
+                {props.username}
               </span>
             </div>
           </div>
@@ -50,20 +52,3 @@ export const Ticket = () => {
     </div>
   );
 };
-{
-  /* <div className="flex gap-250 p-300">
-        <div className="size-[40px]">
-          <img src="/images/logo-mark.svg" alt="Logo" />
-        </div>
-        <div className="flex flex-col gap-150">
-          <h2 className="text-preset-2-mobile text-c-neutral-0 md:text-preset-2">
-            Coding Conf
-          </h2>
-          <div className="flex gap-200 text-preset-6-mobile text-c-neutral-300 md:text-preset-6">
-            <span>Jan 31, 2025</span>
-            <span>/</span>
-            <span>Offline</span>
-          </div>
-        </div>
-      </div> */
-}

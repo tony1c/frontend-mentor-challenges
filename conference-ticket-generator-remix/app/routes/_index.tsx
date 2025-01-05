@@ -4,6 +4,7 @@ import { Button } from "~/components/Button";
 import { Input } from "~/components/Input";
 import { Logo } from "~/components/Logo";
 import { Upload } from "~/components/Upload";
+import { GeneratedTicket } from "~/layout/GeneratedTicket";
 
 export const meta: MetaFunction = () => {
   return [
@@ -22,6 +23,7 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Index() {
+  const submitted = true;
   const data = useActionData<typeof action>();
   console.log(data?.message);
   return (
@@ -65,40 +67,46 @@ export default function Index() {
           <div>
             <Logo />
           </div>
-          <div className="flex max-w-[343px] flex-col items-center gap-250 text-center">
-            <h2 className="text-preset-1-mobile">
-              Your Journey to Coding Conf 2025 Starts Here!
-            </h2>
-            <p className="text-preset-4-mobile">
-              Secure your spot at next year’s biggest coding conference.
-            </p>
-          </div>
+          {!submitted ? (
+            <>
+              <div className="flex max-w-[343px] flex-col items-center gap-250 text-center">
+                <h2 className="text-preset-1-mobile">
+                  Your Journey to Coding Conf 2025 Starts Here!
+                </h2>
+                <p className="text-preset-4-mobile">
+                  Secure your spot at next year’s biggest coding conference.
+                </p>
+              </div>
 
-          {/* form */}
-          <div className="relative">
-            <Form
-              method="post"
-              onSubmit={() => console.log("submitted")}
-              className="h-[610px] w-[343px] space-y-300"
-            >
-              {/* upload field */}
-              <Upload />
-              <Input type="text" label="Full Name" name="name" />
-              <Input
-                type="email"
-                label="Email Address"
-                name="email"
-                placeholder="example@email.com"
-              />
-              <Input
-                type="text"
-                label="Github Username"
-                name="github"
-                placeholder="@yourusername"
-              />
-              <Button />
-            </Form>
-          </div>
+              {/* form */}
+              <div className="relative">
+                <Form
+                  method="post"
+                  onSubmit={() => console.log("submitted")}
+                  className="h-[610px] w-[343px] space-y-300"
+                >
+                  {/* upload field */}
+                  <Upload />
+                  <Input type="text" label="Full Name" name="name" />
+                  <Input
+                    type="email"
+                    label="Email Address"
+                    name="email"
+                    placeholder="example@email.com"
+                  />
+                  <Input
+                    type="text"
+                    label="Github Username"
+                    name="github"
+                    placeholder="@yourusername"
+                  />
+                  <Button />
+                </Form>
+              </div>
+            </>
+          ) : (
+            <GeneratedTicket />
+          )}
         </main>
       </div>
     </div>

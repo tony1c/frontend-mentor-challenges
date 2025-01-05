@@ -61,6 +61,7 @@ export const Upload = ({ onAvatarChange }: UploadProps) => {
           onDragOver={(e) => e.preventDefault()}
           ref={fileInputRef}
           className={`absolute inset-0 z-10 cursor-pointer text-[0px] opacity-0 ${avatar && "pointer-events-none"}`}
+          required
         />
         {!avatar ? (
           // upload icon

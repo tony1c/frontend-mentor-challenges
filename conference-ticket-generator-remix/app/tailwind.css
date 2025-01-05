@@ -10,4 +10,12 @@
     font-family: Inconsolata;
     src: url(/fonts/Inconsolata-VariableFont_wdth,wght.ttf) format("truetype");
   }
+
+  /* Change Autocomplete styles in Chrome*/
+  input:-webkit-autofill {
+    -webkit-text-fill-color: theme("colors.c-neutral.300");
+    -webkit-box-shadow: 0 0 0px 1000px theme("colors.c-neutral.0/[20%]") inset;
+    box-shadow: 0 0 0px 1000px theme("colors.c-neutral.0/[20%]") inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
 }

@@ -1,7 +1,7 @@
 import { Ticket } from "~/components/Ticket";
 import type { TicketProps } from "~/types/types";
 
-export const GeneratedTicket = (props: TicketProps) => {
+export const GeneratedTicket = ({ file, ...props }: TicketProps) => {
   return (
     <div className="relative max-w-[343px]">
       <div className="space-y-250 text-center">
@@ -18,7 +18,7 @@ export const GeneratedTicket = (props: TicketProps) => {
           updates in the run up to the event.
         </p>
       </div>
-      <Ticket {...props} />
+      <Ticket {...props} file={file} />
     </div>
   );
 };

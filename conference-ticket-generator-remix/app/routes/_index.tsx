@@ -18,7 +18,6 @@ export async function action({ request }: ActionFunctionArgs) {
   const body = await request.formData();
   const data = {
     name: String(body.get("name")),
-    file: String(body.get("file")),
     email: String(body.get("email")),
     username: String(body.get("username")),
   };
@@ -34,6 +33,11 @@ export async function action({ request }: ActionFunctionArgs) {
 export default function Index() {
   const [submitted, setSubmitted] = useState(false);
   const data = useActionData<typeof action>();
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+
+  const handleAvatarChange = (newAvatarUrl: string | null) => {
+    setAvatarUrl(newAvatarUrl);
+  };
 
   return (
     <div
@@ -98,7 +102,7 @@ export default function Index() {
                   className="h-[610px] w-[343px] space-y-300"
                 >
                   {/* upload field */}
-                  <Upload />
+                  <Upload onAvatarChange={handleAvatarChange} />
                   <Input type="text" label="Full Name" name="name" />
                   <Input
                     type="email"
@@ -117,7 +121,7 @@ export default function Index() {
               </div>
             </>
           ) : (
-            <GeneratedTicket {...data!} />
+            <GeneratedTicket {...data!} file={avatarUrl!} />
           )}
         </main>
       </div>

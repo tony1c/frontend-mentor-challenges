@@ -7,14 +7,18 @@ interface UploadProps {
 export const Upload = ({ onAvatarChange }: UploadProps) => {
   const [avatar, setAvatar] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const [hasError, setHasError] = useState<boolean>(false);
 
   const handleFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (file) {
+    if (file && file.size < 500 * 1024) {
       const newAvatar = URL.createObjectURL(file);
       setAvatar(newAvatar);
       onAvatarChange(newAvatar);
+      setHasError(false);
       console.log("Avatar selected!");
+    } else {
+      setHasError(true);
     }
   };
 
@@ -23,11 +27,14 @@ export const Upload = ({ onAvatarChange }: UploadProps) => {
 
     const file = e.dataTransfer?.files[0];
 
-    if (file) {
+    if (file && file.size < 500 * 1024) {
       const newAvatar = URL.createObjectURL(file);
       setAvatar(newAvatar);
       onAvatarChange(newAvatar);
+      setHasError(false);
       console.log("File dragged successfully");
+    } else {
+      setHasError(true);
     }
   };
 
@@ -97,14 +104,29 @@ export const Upload = ({ onAvatarChange }: UploadProps) => {
           </div>
         )}
       </div>
-      <div className="inline-flex gap-200">
-        <div className="size-200">
-          <img src="/images/icon-info.svg" alt="Info icon" />
+      {!hasError ? (
+        <div className="space-x-100">
+          <svg className="inline-block size-[16px] stroke-c-neutral-300">
+            <path d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+            <path d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
+            <path d="M8.004 10.462V7.596M8 5.569v-.042" />
+          </svg>
+          <span className="text-preset-7 text-c-neutral-300">
+            Upload your photo (JPG or PNG, max size: 500KB).
+          </span>
         </div>
-        <span className="text-preset-7">
-          Upload your photo (JPG or PNG, max size: 500KB).
-        </span>
-      </div>
+      ) : (
+        <div className="space-x-100">
+          <svg className="inline-block size-[16px] stroke-c-orange-500">
+            <path d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+            <path d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
+            <path d="M8.004 10.462V7.596M8 5.569v-.042" />
+          </svg>
+          <span className="text-preset-7 text-c-orange-500">
+            File too large. Please upload a photo under 500KB.
+          </span>
+        </div>
+      )}
     </div>
   );
 };

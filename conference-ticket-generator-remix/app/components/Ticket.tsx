@@ -30,7 +30,7 @@ export const Ticket = (props: TicketProps) => {
 
         <div className="flex gap-150">
           <div className="size-[45px] overflow-hidden rounded-6">
-            <img src={props.file} alt="Avatar" />
+            <img src={props.avatarUrl} alt="Avatar" />
           </div>
           <div>
             <span className="text-[20px] font-medium leading-[110%] -tracking-[1px] text-c-neutral-0">

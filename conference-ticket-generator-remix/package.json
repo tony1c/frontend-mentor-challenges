@@ -1,6 +1,6 @@
 {
   "name": "conference-ticket-generator-remix",
-  "private": true,
+  "private": false,
   "sideEffects": false,
   "type": "module",
   "scripts": {

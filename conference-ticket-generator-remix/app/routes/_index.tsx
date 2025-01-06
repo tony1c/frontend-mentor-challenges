@@ -6,8 +6,8 @@ import { Input } from "~/components/Input";
 import { Logo } from "~/components/Logo";
 import { Upload } from "~/components/Upload";
 import { GeneratedTicket } from "~/layout/GeneratedTicket";
+import { TicketData } from "~/types/types";
 // import { GeneratedTicket } from "~/layout/GeneratedTicket";
-import { IFormInput } from "~/types/types";
 
 export const meta: MetaFunction = () => {
   return [
@@ -18,10 +18,14 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
-  const [submittedData, setSubmittedData] = useState<IFormInput | null>(null);
-  const { register, handleSubmit } = useForm<IFormInput>();
+  const [submittedData, setSubmittedData] = useState<TicketData | null>(null);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<TicketData>();
 
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
+  const onSubmit: SubmitHandler<TicketData> = (data) => {
     data.avatarUrl = avatarUrl!;
     setSubmittedData(data);
   };
@@ -91,17 +95,26 @@ export default function Index() {
                   {/* upload field */}
                   <Upload onAvatarChange={handleAvatarChange} />
                   <Input
+                    id="name"
                     type="text"
                     label="Full Name"
                     register={register("name")}
                   />
                   <Input
+                    id="email"
+                    errors={errors}
                     type="email"
                     label="Email Address"
                     placeholder="example@email.com"
-                    register={register("email")}
+                    register={register("email", {
+                      required: {
+                        value: true,
+                        message: "Please enter a valid email address.",
+                      },
+                    })}
                   />
                   <Input
+                    id="username"
                     type="text"
                     label="Github Username"
                     placeholder="@yourusername"

@@ -1,6 +1,6 @@
-import type { TicketProps } from "~/types/types";
+import type { TicketData } from "~/types/types";
 
-export const Ticket = (props: TicketProps) => {
+export const Ticket = (props: TicketData) => {
   return (
     <div
       className={

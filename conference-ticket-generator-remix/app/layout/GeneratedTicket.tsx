@@ -1,7 +1,7 @@
 import { Ticket } from "~/components/Ticket";
-import type { TicketProps } from "~/types/types";
+import type { TicketData } from "~/types/types";
 
-export const GeneratedTicket = (props: TicketProps) => {
+export const GeneratedTicket = (props: TicketData) => {
   return (
     <div className="relative max-w-[343px]">
       <div className="space-y-250 text-center">

@@ -7,7 +7,6 @@ import { Logo } from "~/components/Logo";
 import { Upload } from "~/components/Upload";
 import { GeneratedTicket } from "~/layout/GeneratedTicket";
 import { TicketData } from "~/types/types";
-// import { GeneratedTicket } from "~/layout/GeneratedTicket";
 
 export const meta: MetaFunction = () => {
   return [

@@ -77,11 +77,11 @@ export default function Index() {
           </div>
           {!submittedData ? (
             <>
-              <div className="flex max-w-[343px] flex-col items-center gap-250 text-center">
-                <h2 className="text-preset-1-mobile">
+              <div className="flex max-w-[343px] flex-col items-center gap-250 text-center md:max-w-[705px] lg:max-w-[891px]">
+                <h2 className="text-preset-1-mobile md:text-preset-1">
                   Your Journey to Coding Conf 2025 Starts Here!
                 </h2>
-                <p className="text-preset-4-mobile">
+                <p className="text-preset-4-mobile text-c-neutral-300 md:text-preset-4">
                   Secure your spot at next year’s biggest coding conference.
                 </p>
               </div>
@@ -90,7 +90,7 @@ export default function Index() {
               <div className="relative">
                 <form
                   onSubmit={handleSubmit(onSubmit)}
-                  className="h-[610px] w-[343px] space-y-300"
+                  className="w-[343px] space-y-300 md:w-[522px] lg:w-[460px]"
                 >
                   {/* upload field */}
                   <Upload onAvatarChange={handleAvatarChange} />

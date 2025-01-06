@@ -1,12 +1,13 @@
-import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
-import { Form, useActionData } from "@remix-run/react";
-import { useEffect, useState } from "react";
+import type { MetaFunction } from "@remix-run/node";
+import { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "~/components/Button";
 import { Input } from "~/components/Input";
 import { Logo } from "~/components/Logo";
 import { Upload } from "~/components/Upload";
 import { GeneratedTicket } from "~/layout/GeneratedTicket";
-import { FormErrors } from "~/types/types";
+// import { GeneratedTicket } from "~/layout/GeneratedTicket";
+import { IFormInput } from "~/types/types";
 
 export const meta: MetaFunction = () => {
   return [
@@ -15,41 +16,19 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export async function action({ request }: ActionFunctionArgs) {
-  const body = await request.formData();
-  const data = {
-    name: String(body.get("name")),
-    email: String(body.get("email")),
-    username: String(body.get("username")),
-  };
-
-  const errors: FormErrors = {};
-
-  if (!data.email.includes("@")) {
-    errors.email = "Please enter a valid email address.";
-  }
-
-  console.log(errors);
-  if (Object.keys(errors).length > 0) {
-    return Response.json({ errors });
-  }
-
-  return data;
-}
-
 export default function Index() {
-  const data = useActionData<typeof action>();
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+  const [submittedData, setSubmittedData] = useState<IFormInput | null>(null);
+  const { register, handleSubmit } = useForm<IFormInput>();
+
+  const onSubmit: SubmitHandler<IFormInput> = (data) => {
+    data.avatarUrl = avatarUrl!;
+    setSubmittedData(data);
+  };
 
   const handleAvatarChange = (newAvatarUrl: string | null) => {
     setAvatarUrl(newAvatarUrl);
   };
-
-  useEffect(() => {
-    if (data) {
-      window.scroll(0, 0);
-    }
-  }, [data]);
 
   return (
     <div
@@ -92,7 +71,7 @@ export default function Index() {
           <div>
             <Logo />
           </div>
-          {!data ? (
+          {!submittedData ? (
             <>
               <div className="flex max-w-[343px] flex-col items-center gap-250 text-center">
                 <h2 className="text-preset-1-mobile">
@@ -105,28 +84,35 @@ export default function Index() {
 
               {/* form */}
               <div className="relative">
-                <Form method="post" className="h-[610px] w-[343px] space-y-300">
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="h-[610px] w-[343px] space-y-300"
+                >
                   {/* upload field */}
                   <Upload onAvatarChange={handleAvatarChange} />
-                  <Input type="text" label="Full Name" name="name" />
+                  <Input
+                    type="text"
+                    label="Full Name"
+                    register={register("name")}
+                  />
                   <Input
                     type="email"
                     label="Email Address"
-                    name="email"
                     placeholder="example@email.com"
+                    register={register("email")}
                   />
                   <Input
                     type="text"
                     label="Github Username"
-                    name="username"
                     placeholder="@yourusername"
+                    register={register("username")}
                   />
                   <Button />
-                </Form>
+                </form>
               </div>
             </>
           ) : (
-            <GeneratedTicket {...data!} file={avatarUrl!} />
+            <GeneratedTicket {...submittedData} />
           )}
         </main>
       </div>

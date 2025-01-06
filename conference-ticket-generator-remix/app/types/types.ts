@@ -1,8 +1,17 @@
+import { UseFormRegisterReturn } from "react-hook-form";
+
 export interface TicketProps {
   name: string;
-  file: string;
+  avatarUrl: string;
   email: string;
   username: string;
+}
+
+export interface IFormInput {
+  name: string;
+  email: string;
+  username: string;
+  avatarUrl: string;
 }
 
 export interface FormErrors {
@@ -11,9 +20,9 @@ export interface FormErrors {
 
 export type InputProps = {
   label: string;
-  name: string;
   type: string;
   value?: string;
   placeholder?: string;
   errors?: string;
+  register?: UseFormRegisterReturn;
 };

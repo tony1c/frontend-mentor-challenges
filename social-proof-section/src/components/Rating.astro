@@ -11,8 +11,12 @@ const { place } = Astro.props;
   <!-- stars -->
   <div class="flex gap-[8px]">
     {
-      Array.from({ length: 5 }, () => (
-        <Image src={star} class="h-[15.77px] w-[16.55px]" alt="Star" />
+      Array.from({ length: 5 }, (_, i) => (
+        <Image
+          src={star}
+          class="h-[15.77px] w-[16.55px]"
+          alt={`Star ${i + 1}`}
+        />
       ))
     }
   </div>

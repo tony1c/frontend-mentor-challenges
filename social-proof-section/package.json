@@ -6,8 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "build:gh-page": "astro check && astro build --base=/social-proof-section/"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.4",

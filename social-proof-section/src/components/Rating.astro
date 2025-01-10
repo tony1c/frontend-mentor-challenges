@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import star from "../assets/images/icon-star.svg";
+
+const { place } = Astro.props;
+---
+
+<div
+  class="flex h-[78px] max-w-[327px] flex-col items-center justify-center gap-[15px] rounded-[8px] bg-c-lightGrayishMagenta"
+>
+  <!-- stars -->
+  <div class="flex gap-[8px]">
+    {
+      Array.from({ length: 5 }, () => (
+        <Image src={star} class="h-[15.77px] w-[16.55px]" alt="Star" />
+      ))
+    }
+  </div>
+  <p class="text-[17px] font-700 text-c-veryDarkMagenta">
+    Rated 5 Stars in {place}
+  </p>
+</div>

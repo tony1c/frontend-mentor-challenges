@@ -1,0 +1,45 @@
+---
+import Rating from "../components/Rating.astro";
+import Layout from "../layouts/Layout.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <!-- bg decoration -->
+  <section
+    class="relative flex h-[1530px] justify-center font-leagueSpartan lg:h-[800px]"
+  >
+    <div
+      class="absolute top-0 h-[232px] w-[374px] bg-[url('/src/assets/images/bg-pattern-top-mobile.svg')] bg-cover lg:h-[362px] lg:w-[584px]"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 right-0 h-[673px] w-[1085px] bg-[url('/src/assets/images/bg-pattern-bottom-mobile.svg')] bg-cover lg:bg-[url('/src/assets/images/bg-pattern-bottom-desktop.svg')]"
+    >
+    </div>
+    <!-- title -->
+    <div>
+      <div
+        class="mt-[82px] flex max-w-[327px] flex-col gap-[17px] text-center leading-[32px] text-c-veryDarkMagenta"
+      >
+        <h1 class="text-[40px] font-700">
+          10,000+ of our users love our product.
+        </h1>
+        <p
+          class="text-[19px] font-400 leading-[25px] -tracking-[0.43px] text-c-darkGrayishMagenta"
+        >
+          We only provide great products combined with excellent customer
+          service. See what our satisfied customers are saying about our
+          services.
+        </p>
+      </div>
+      <div class="mt-[39px] space-y-[16px]">
+        <Rating place="Reviews" />
+        <Rating place="Guru" />
+        <Rating place="BestTech" />
+      </div>
+    </div>
+  </section>
+</Layout>

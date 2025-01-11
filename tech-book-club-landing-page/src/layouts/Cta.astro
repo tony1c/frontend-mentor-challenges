@@ -5,25 +5,27 @@ import imageAvatars from "../assets/images/image-avatars.webp";
 import starIcon from "../assets/images/icon-star.svg";
 ---
 
-<Button />
-<div class="mt-250 flex h-[62px] items-center gap-150">
-  <!-- testimonials avatar -->
-  <div class="h-500 w-[110px]">
-    <Image src={imageAvatars} alt="Developer's avatars'" />
-  </div>
-  <!-- stars -->
-  <div class="w-[221px] space-y-050">
-    <div class="flex w-[120px]">
-      {
-        Array.from({ length: 5 }, (_, i) => (
-          <div>
-            <Image src={starIcon} alt={`Star ${i + 1}`} />
-          </div>
-        ))
-      }
+<div class="max-w-[388px] space-y-250">
+  <Button />
+  <div class="flex h-[62px] w-full items-center gap-150">
+    <!-- testimonials avatar -->
+    <div class="h-500 w-[110px]">
+      <Image src={imageAvatars} alt="Developer's avatars'" />
     </div>
-    <p class="font-martian-mono text-preset-7 text-neutral-700">
-      200+ developers joined already
-    </p>
+    <!-- stars -->
+    <div class="space-y-050">
+      <div class="flex w-[120px]">
+        {
+          Array.from({ length: 5 }, (_, i) => (
+            <div>
+              <Image src={starIcon} alt={`Star ${i + 1}`} />
+            </div>
+          ))
+        }
+      </div>
+      <p class="font-martian-mono text-preset-7 text-neutral-700">
+        200+ developers joined already
+      </p>
+    </div>
   </div>
 </div>

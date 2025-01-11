@@ -164,5 +164,6 @@ export default {
 
     extend: {},
   },
+  safelist: ["text-preset-7"],
   plugins: [],
 };

@@ -2,9 +2,10 @@
 import desktopHeroImg from "../assets/images/image-hero-desktop.webp";
 import mobileHeroImg from "../assets/images/image-hero-mobile.webp";
 import tabletHeroImg from "../assets/images/image-hero-tablet.webp";
+import Button from "../components/Button.astro";
+import DevReviews from "../components/DevReviews.astro";
 import HeroImg from "../components/HeroImg.astro";
 import Logo from "../components/Logo.astro";
-import Cta from "./Cta.astro";
 ---
 
 <section
@@ -43,7 +44,12 @@ import Cta from "./Cta.astro";
         </div>
 
         <!-- cta -->
-        <Cta />
+        <div class="max-w-[388px] space-y-250">
+          <Button direction="down" bgColor="light" color="dark"
+            >Review membership options</Button
+          >
+          <DevReviews color="dark" />
+        </div>
       </div>
       <!-- hero img -->
       <div class="mt-800 overflow-hidden rounded-[5.08px]">

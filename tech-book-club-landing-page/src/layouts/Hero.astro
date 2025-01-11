@@ -6,16 +6,19 @@ import heroImgMobile from "../assets/images/image-hero-mobile.webp";
 import heroImgDesktop from "../assets/images/image-hero-desktop.webp";
 ---
 
-<div class="relative h-[1116.92px] bg-neutral-100">
+<section
+  role="banner"
+  class="relative h-[1116.92px] bg-neutral-100 md:h-[1557.04px]"
+>
   <!-- bg decoration -->
   <div
     class="absolute inset-0 h-[820px] bg-[url('../assets/images/pattern-light-bg.svg')]"
   >
   </div>
-  <section role="banner" class="relative px-200 py-300">
+  <div class="relative px-200 pb-1000 pt-300 md:px-400 md:pt-400">
     <Logo />
     <!-- grid -->
-    <div class="mx-auto mt-600 grid max-w-[343px] grid-cols-1">
+    <div class="mx-auto mt-600 grid max-w-[343px] grid-cols-1 md:max-w-[704px]">
       <!-- content -->
       <div>
         <!-- text container -->
@@ -37,8 +40,8 @@ import heroImgDesktop from "../assets/images/image-hero-desktop.webp";
       </div>
       <!-- hero img -->
       <div class="mt-800 overflow-hidden rounded-[5.08px]">
-        <Image src={heroImgMobile} alt="Hero image" />
+        <Image src={heroImgMobile} alt="Hero image" class="size-full" />
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>

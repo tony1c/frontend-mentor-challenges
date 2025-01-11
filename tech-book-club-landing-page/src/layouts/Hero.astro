@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../components/Logo.astro";
+import Cta from "./Cta.astro";
+import heroImgMobile from "../assets/images/image-hero-mobile.webp";
+import heroImgDesktop from "../assets/images/image-hero-desktop.webp";
+---
+
+<div class="relative h-[1116.92px] bg-neutral-100">
+  <!-- bg decoration -->
+  <div
+    class="absolute inset-0 h-[820px] bg-[url('../assets/images/pattern-light-bg.svg')]"
+  >
+  </div>
+  <section role="banner" class="relative px-200 py-300">
+    <Logo />
+    <!-- grid -->
+    <div class="mx-auto mt-600 grid max-w-[343px] grid-cols-1">
+      <!-- content -->
+      <div>
+        <!-- text container -->
+        <div class="space-y-300">
+          <h1
+            class="bg-text-gradient bg-clip-text text-preset-1-mobile text-transparent md:text-preset-1"
+          >
+            Join the ultimate tech book club
+          </h1>
+          <p class="text-preset-5 text-neutral-700">
+            Turn your reading time into learning time with fellow tech
+            enthusiasts. Get curated recommendations, join vibrant discussions,
+            and level up your skills one chapter at a time.
+          </p>
+        </div>
+
+        <!-- cta -->
+        <Cta />
+      </div>
+      <!-- hero img -->
+      <div class="mt-800 overflow-hidden rounded-[5.08px]">
+        <Image src={heroImgMobile} alt="Hero image" />
+      </div>
+    </div>
+  </section>
+</div>

@@ -4,14 +4,28 @@
 
 @layer base {
   @font-face {
-    font-family: 'Inter';
-    src: url('/fonts/inter/Inter-VariableFont_opsz\,wght.ttf'),
-      format('truetype');
+    font-family: "Inter";
+    src: url("/fonts/inter/Inter-VariableFont_opsz\,wght.ttf"),
+      format("truetype");
   }
 
   @font-face {
-    font-family: 'Martian Mono';
-    src: url('/fonts/martian-mono/MartianMono-VariableFont_wdth\,wght.ttf'),
-      format('truetype');
+    font-family: "Martian Mono";
+    src: url("/fonts/martian-mono/MartianMono-VariableFont_wdth\,wght.ttf"),
+      format("truetype");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  button {
+    font-family: theme("fontFamily.martian-mono");
+  }
+
+  p {
+    font-family: theme("fontFamily.inter");
   }
 }

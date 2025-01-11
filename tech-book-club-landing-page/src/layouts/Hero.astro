@@ -1,24 +1,27 @@
 ---
-import { Image } from "astro:assets";
+import desktopHeroImg from "../assets/images/image-hero-desktop.webp";
+import mobileHeroImg from "../assets/images/image-hero-mobile.webp";
+import tabletHeroImg from "../assets/images/image-hero-tablet.webp";
+import HeroImg from "../components/HeroImg.astro";
 import Logo from "../components/Logo.astro";
 import Cta from "./Cta.astro";
-import heroImgMobile from "../assets/images/image-hero-mobile.webp";
-import heroImgDesktop from "../assets/images/image-hero-desktop.webp";
 ---
 
 <section
   role="banner"
-  class="relative h-[1116.92px] bg-neutral-100 md:h-[1557.04px]"
+  class="relative h-[1116.92px] bg-neutral-100 md:h-[1557.04px] lg:h-[820px]"
 >
   <!-- bg decoration -->
   <div
     class="absolute inset-0 h-[820px] bg-[url('../assets/images/pattern-light-bg.svg')]"
   >
   </div>
-  <div class="relative px-200 pb-1000 pt-300 md:px-400 md:pt-400">
+  <div class="relative px-200 pb-1000 pt-300 md:px-400 md:pt-400 lg:px-[135px]">
     <Logo />
     <!-- grid -->
-    <div class="mx-auto mt-600 grid max-w-[343px] grid-cols-1 md:max-w-[704px]">
+    <div
+      class="mx-auto mt-600 grid max-w-[343px] grid-cols-1 md:max-w-[704px] lg:max-w-full lg:grid-cols-2 lg:place-items-center lg:gap-800"
+    >
       <!-- content -->
       <div>
         <!-- text container -->
@@ -40,7 +43,12 @@ import heroImgDesktop from "../assets/images/image-hero-desktop.webp";
       </div>
       <!-- hero img -->
       <div class="mt-800 overflow-hidden rounded-[5.08px]">
-        <Image src={heroImgMobile} alt="Hero image" class="size-full" />
+        <HeroImg
+          mobileImgUrl={mobileHeroImg}
+          tabletImgUrl={tabletHeroImg}
+          desktopImgUrl={desktopHeroImg}
+          alt="Hero image"
+        />
       </div>
     </div>
   </div>

@@ -1,11 +1,40 @@
+---
+import { cn } from "../utils/cn";
+
+interface Props {
+  bgColor: "none" | "light";
+  color: "dark" | "light";
+  direction?: "up" | "down";
+}
+
+const { direction, bgColor, color } = Astro.props;
+---
+
 <button
-  class="mt-400 flex h-[64px] w-full items-center justify-center gap-200 rounded-8 border-[2px] bg-light-salmon-50 text-preset-6-mobile uppercase text-neutral-900 md:text-preset-6"
-  ><span>Review membership options</span>
+  class={cn(
+    "mt-400 flex h-[64px] w-full items-center justify-center gap-200 rounded-8 border-[2px] text-preset-6-mobile uppercase md:text-preset-6",
+    {
+      "bg-transparent": bgColor === "none",
+      "bg-light-salmon-50": bgColor === "light",
+      "text-neutral-900 border-neutral-900": color === "dark",
+      "text-white border-white": color === "light",
+    },
+  )}
+  ><span><slot /></span>
   <span class="size-300 fill-neutral-900">
-    <svg viewBox="0 0 24 25"
-      ><path
-        d="m3.96 14.956.72-3.12c1.224.12 2.328.504 3.264 1.2.936.696 1.584 1.512 1.896 2.496V3.676h2.76v11.856c.672-1.944 2.688-3.48 5.16-3.696l.72 3.12c-3.384.12-5.52 2.112-5.88 5.544H9.84c-.36-3.456-2.496-5.424-5.88-5.544Z"
-      ></path></svg
-    ></span
-  >
+    {
+      direction === "down" && (
+        <svg viewBox="0 0 24 25">
+          <path d="m3.96 14.956.72-3.12c1.224.12 2.328.504 3.264 1.2.936.696 1.584 1.512 1.896 2.496V3.676h2.76v11.856c.672-1.944 2.688-3.48 5.16-3.696l.72 3.12c-3.384.12-5.52 2.112-5.88 5.544H9.84c-.36-3.456-2.496-5.424-5.88-5.544Z" />
+        </svg>
+      )
+    }
+    {
+      direction === "up" && (
+        <svg viewBox="0 0 24 25">
+          <path d="m3.96 8.742.72 3.12c1.224-.12 2.328-.504 3.264-1.2.936-.696 1.584-1.512 1.896-2.496v11.856h2.76V8.166c.672 1.944 2.688 3.48 5.16 3.696l.72-3.12c-3.384-.12-5.52-2.112-5.88-5.544H9.84c-.36 3.456-2.496 5.424-5.88 5.544Z" />
+        </svg>
+      )
+    }
+  </span>
 </button>

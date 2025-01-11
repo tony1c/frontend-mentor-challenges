@@ -6,7 +6,7 @@ const { place } = Astro.props;
 ---
 
 <div
-  class="flex h-[78px] max-w-[327px] flex-col items-center justify-center gap-[15px] rounded-[8px] bg-c-lightGrayishMagenta"
+  class="flex h-[78px] w-[327px] flex-col items-center justify-center gap-[15px] rounded-[8px] bg-c-lightGrayishMagenta lg:h-[56px] lg:w-[445px] lg:flex-row lg:justify-normal lg:gap-[32.45px] lg:pl-[32px]"
 >
   <!-- stars -->
   <div class="flex gap-[8px]">
@@ -20,7 +20,7 @@ const { place } = Astro.props;
       ))
     }
   </div>
-  <p class="text-[17px] font-700 text-c-veryDarkMagenta">
+  <p class="mt-1 text-[17px] font-700 text-c-veryDarkMagenta">
     Rated 5 Stars in {place}
   </p>
 </div>

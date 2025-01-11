@@ -1,0 +1,47 @@
+---
+import Review from "../components/Review.astro";
+import coltonAvatar from "../assets/images/image-colton.jpg";
+import anneAvatar from "../assets/images/image-anne.jpg";
+import ireneAvatar from "../assets/images/image-irene.jpg";
+
+type Reviewer = {
+  name: string;
+  avatar: ImageMetadata;
+  review: string;
+};
+
+const reviews: Reviewer[] = [
+  {
+    name: "Colton Smith",
+    avatar: coltonAvatar,
+    review:
+      "“ We needed the same printed design as the one we had ordered a week prior. Not only did they find the original order, but we also received it in time. Excellent! ”",
+  },
+  {
+    name: "Irene Roberts",
+    avatar: ireneAvatar,
+    review:
+      "“ Customer service is always excellent and very quick turn around. Completely delighted with the simplicity of the purchase and the speed of delivery.”",
+  },
+  {
+    name: "Anne Wallace",
+    avatar: anneAvatar,
+    review:
+      "“ Put an order with this company and can only praise them for the very high standard. Will definitely use them again and recommend them to everyone! ”",
+  },
+];
+---
+
+<div
+  class="flex h-[266px] flex-col gap-[16px] lg:flex-row lg:gap-[30px] lg:[&>*:nth-child(2)]:self-center lg:[&>*:nth-child(3)]:self-end"
+>
+  {
+    reviews.map((review) => (
+      <Review
+        name={review.name}
+        avatar={review.avatar}
+        review={review.review}
+      />
+    ))
+  }
+</div>

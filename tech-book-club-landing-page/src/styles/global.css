@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter/Inter-VariableFont_opsz\,wght.ttf'),
+      format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Martian Mono';
+    src: url('/fonts/martian-mono/MartianMono-VariableFont_wdth\,wght.ttf'),
+      format('truetype');
+  }
+}

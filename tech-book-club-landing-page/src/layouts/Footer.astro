@@ -1,40 +1,37 @@
 ---
-import Button from "../components/Button.astro";
-import DevReviews from "../components/DevReviews.astro";
-import { Image } from "astro:assets";
-import blueskyLogo from "../assets/images/logo-bluesky.svg";
-import linkedinLogo from "../assets/images/logo-linkedin.svg";
+import Button from '../components/Button.astro';
+import DevReviews from '../components/DevReviews.astro';
+import { Image } from 'astro:assets';
+import blueskyLogo from '../assets/images/logo-bluesky.svg';
+import linkedinLogo from '../assets/images/logo-linkedin.svg';
 ---
 
 <footer
-  class="relative h-[541px] rounded-t-16 bg-neutral-900 px-200 pt-600 text-white md:h-[505px]"
->
+  class='relative h-[541px] rounded-t-16 bg-neutral-900 px-200 pt-600 text-white md:h-[505px]'>
   <!-- bg grid -->
   <div
-    class="absolute inset-0 bg-[url('../assets/images/pattern-dark-bg.svg')]"
-  >
+    class="absolute inset-0 bg-[url('../assets/images/pattern-dark-bg.svg')]">
   </div>
   <!-- content -->
-  <div class="relative mx-auto max-w-[343px] md:max-w-[704px] lg:max-w-[753px]">
-    <div class="space-y-300">
-      <h2 class="text-center text-preset-2-mobile lg:text-preset-2">
+  <div class='relative mx-auto max-w-[343px] md:max-w-[704px] lg:max-w-[753px]'>
+    <div class='space-y-300'>
+      <h2 class='text-center text-preset-2-mobile lg:text-preset-2'>
         Ready to debug your reading list?
       </h2>
-      <div class="mx-auto max-w-[388px] space-y-300">
-        <Button direction="up" bgColor="none" color="light"
+      <div class='mx-auto max-w-[388px] space-y-300'>
+        <Button direction='up' bgColor='none' color='light'
           >Review membership options</Button
         >
-        <DevReviews color="light" />
+        <DevReviews color='light' />
       </div>
     </div>
   </div>
   <div
-    class="relative mx-auto mt-800 flex flex-col items-center gap-200 border-t border-neutral-100 px-400 py-300 md:flex-row md:justify-between lg:max-w-[1170px]"
-  >
+    class='relative mx-auto mt-800 flex flex-col items-center gap-200 border-t border-neutral-100 px-400 py-300 md:flex-row md:justify-between lg:max-w-[1170px]'>
     <span>&copy; 2024 – Tech Book Club</span>
-    <div class="flex gap-300">
-      <Image src={blueskyLogo} width="22" height="22" alt="Bluesky logo" />
-      <Image src={linkedinLogo} width="22" height="22" alt="Bluesky logo" />
+    <div class='flex gap-300'>
+      <Image src={blueskyLogo} width='22' height='22' alt='Bluesky logo' />
+      <Image src={linkedinLogo} width='22' height='22' alt='Bluesky logo' />
     </div>
   </div>
 </footer>

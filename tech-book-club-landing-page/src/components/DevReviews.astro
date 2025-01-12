@@ -1,11 +1,11 @@
 ---
-import { Image } from "astro:assets";
-import imageAvatars from "../assets/images/image-avatars.webp";
-import starIcon from "../assets/images/icon-star.svg";
-import { cn } from "../utils/cn";
+import { Image } from 'astro:assets';
+import imageAvatars from '../assets/images/image-avatars.webp';
+import starIcon from '../assets/images/icon-star.svg';
+import { cn } from '../utils/cn';
 
 interface Props {
-  color: "dark" | "light";
+  color: 'dark' | 'light';
 }
 
 const { color } = Astro.props;
@@ -29,14 +29,13 @@ const { color } = Astro.props;
     </div>
     <p
       class={cn(
-        "font-martian-mono",
+        'font-martian-mono',
         {
-          "text-neutral-700": color === "dark",
-          "text-white": color === "light",
+          'text-neutral-700': color === 'dark',
+          'text-white': color === 'light',
         },
-        "text-preset-7",
-      )}
-    >
+        'text-preset-7',
+      )}>
       200+ developers joined already
     </p>
   </div>

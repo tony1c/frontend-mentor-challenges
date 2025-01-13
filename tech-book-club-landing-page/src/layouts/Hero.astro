@@ -1,37 +1,42 @@
 ---
-import desktopHeroImg from '../assets/images/image-hero-desktop.webp';
-import mobileHeroImg from '../assets/images/image-hero-mobile.webp';
-import tabletHeroImg from '../assets/images/image-hero-tablet.webp';
-import Button from '../components/Button.astro';
-import DevReviews from '../components/DevReviews.astro';
-import HeroImg from '../components/HeroImg.astro';
-import Logo from '../components/Logo.astro';
+import desktopHeroImg from "../assets/images/image-hero-desktop.webp";
+import mobileHeroImg from "../assets/images/image-hero-mobile.webp";
+import tabletHeroImg from "../assets/images/image-hero-tablet.webp";
+import Button from "../components/Button.astro";
+import DevReviews from "../components/DevReviews.astro";
+import HeroImg from "../components/HeroImg.astro";
+import Logo from "../components/Logo.astro";
 ---
 
 <section
-  role='banner'
-  class='relative h-[1116.92px] overflow-hidden bg-neutral-100 md:h-[1557.04px] lg:h-[820px]'>
+  role="banner"
+  class="relative h-[1116.92px] overflow-hidden bg-neutral-100 md:h-[1557.04px] lg:h-[820px]"
+>
   <!-- bg decoration -->
   <div
-    class="absolute inset-0 h-[820px] bg-[url('../assets/images/pattern-light-bg.svg')]">
+    class="absolute inset-0 h-[820px] bg-[url('../assets/images/pattern-light-bg.svg')]"
+  >
   </div>
   <div
-    class="absolute bottom-0 right-0 size-[684px] bg-[url('../assets/images/pattern-glow.svg')]">
+    class="absolute bottom-0 right-0 size-[684px] bg-[url('../assets/images/pattern-glow.svg')]"
+  >
   </div>
-  <div class='relative px-200 pb-1000 pt-300 md:px-400 md:pt-400 lg:px-[135px]'>
+  <div class="relative px-200 pb-1000 pt-300 md:px-400 md:pt-400 lg:px-[135px]">
     <Logo />
     <!-- grid -->
     <div
-      class='mx-auto mt-600 grid max-w-[343px] grid-cols-1 md:max-w-[704px] lg:max-w-[1440px] lg:grid-cols-2 lg:place-items-center lg:gap-800'>
+      class="mx-auto mt-600 grid max-w-[343px] grid-cols-1 md:max-w-[704px] lg:max-w-[1440px] lg:grid-cols-2 lg:place-items-center lg:gap-800"
+    >
       <!-- content -->
-      <div class='max-w-[570px]'>
+      <div class="max-w-[570px]">
         <!-- text container -->
-        <div class='space-y-300'>
+        <div class="space-y-300">
           <h1
-            class='bg-text-gradient bg-clip-text text-preset-1-mobile text-transparent md:text-preset-1'>
+            class="bg-text-gradient bg-clip-text text-preset-1-mobile text-transparent md:text-preset-1"
+          >
             Join the ultimate tech book club
           </h1>
-          <p class='text-preset-5 text-neutral-700'>
+          <p class="text-preset-5 text-neutral-700">
             Turn your reading time into learning time with fellow tech
             enthusiasts. Get curated recommendations, join vibrant discussions,
             and level up your skills one chapter at a time.
@@ -39,20 +44,20 @@ import Logo from '../components/Logo.astro';
         </div>
 
         <!-- cta -->
-        <div class='max-w-[388px] space-y-250'>
-          <Button direction='down' bgColor='light' color='dark'
+        <div class="max-w-[388px] space-y-250">
+          <Button direction="down" bgColor="light" color="dark"
             >Review membership options</Button
           >
-          <DevReviews color='dark' />
+          <DevReviews color="dark" />
         </div>
       </div>
       <!-- hero img -->
-      <div class='mt-800 overflow-hidden rounded-[5.08px]'>
+      <div class="mt-800 overflow-hidden rounded-[5.08px]">
         <HeroImg
           mobileImgUrl={mobileHeroImg}
           tabletImgUrl={tabletHeroImg}
           desktopImgUrl={desktopHeroImg}
-          alt='Hero image'
+          alt="Hero image"
         />
       </div>
     </div>

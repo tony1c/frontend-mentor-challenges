@@ -1,0 +1,22 @@
+---
+import { cn } from '../utils/cn';
+
+interface Props {
+  id: string;
+  width?: 'small' | 'big';
+}
+
+const { id, width = 'small' } = Astro.props;
+---
+
+<section
+  {id}
+  class={cn(
+    'px-200 md:px-400 lg:px-[135px] lg:my-[120px] my-800 md:my-1000 mx-auto',
+    {
+      'max-w-[1170px]': width === 'big',
+      'max-w-[970px]': width === 'small',
+    },
+  )}>
+  <slot />
+</section>

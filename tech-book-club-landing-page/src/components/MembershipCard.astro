@@ -1,0 +1,55 @@
+---
+import { cn } from '../utils/cn';
+import Button from './Button.astro';
+import Checkbox from './Checkbox.astro';
+
+interface Props {
+  option: string;
+  firstCheckbox: string;
+  secondCheckbox: string;
+  bestValue?: boolean;
+  price?: string;
+  ctaText?: string;
+}
+
+const {
+  option,
+  price,
+  bestValue,
+  firstCheckbox,
+  secondCheckbox,
+  ctaText = 'Subscribe now',
+} = Astro.props;
+---
+
+<div
+  class={cn(
+    'mx-auto w-full max-w-[340px] z-0 relative space-y-400 rounded-8 border border-neutral-200 p-300',
+    { 'bg-neutral-100': bestValue },
+  )}>
+  <!-- bg decoration for bestValue card -->
+  {
+    bestValue && (
+      <div class='absolute inset-0 bottom-0 right-0 -z-10 bg-[url("../assets/images/pattern-glow.svg")]' />
+    )
+  }
+  <div class='space-y-300'>
+    <h3 class='text-preset-4'>{option}</h3>
+    {
+      price ? (
+        <div class='flex items-center gap-100'>
+          <span class='text-preset-3'>&dollar;{price}</span>
+          <span class='text-preset-5 text-neutral-700'>/month</span>
+        </div>
+      ) : (
+        <span class='inline-block text-preset-3'>Custom</span>
+      )
+    }
+  </div>
+  <div class='w-full border border-neutral-200'></div>
+  <div class='space-y-200'>
+    <Checkbox>{firstCheckbox}</Checkbox>
+    <Checkbox>{secondCheckbox}</Checkbox>
+  </div>
+  <Button color='dark' bgColor='light'>{ctaText}</Button>
+</div>

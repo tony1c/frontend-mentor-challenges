@@ -1,0 +1,35 @@
+---
+import SectionContainer from '../SectionContainer.astro';
+import MembershipCard from '../../components/MembershipCard.astro';
+---
+
+<SectionContainer id='membership-options'>
+  <div class='space-y-300 text-neutral-900'>
+    <h2 class='text-preset-2-mobile md:text-preset-2'>Membership options</h2>
+    <!-- grid -->
+    <div class='grid grid-cols-1 gap-300'>
+      <!-- membership card -->
+      <MembershipCard
+        option='Starter'
+        price='19'
+        firstCheckbox='1 book/month'
+        secondCheckbox='Online Forums'
+      />
+
+      <MembershipCard
+        option='Pro'
+        price='29'
+        firstCheckbox='2 books/month'
+        secondCheckbox='Virtual meetups'
+        bestValue
+      />
+
+      <MembershipCard
+        option='Enterprise'
+        firstCheckbox='Team access'
+        secondCheckbox='Private sessions'
+        ctaText='Talk to us'
+      />
+    </div>
+  </div>
+</SectionContainer>

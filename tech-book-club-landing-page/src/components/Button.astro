@@ -22,9 +22,9 @@ const { direction, bgColor, color } = Astro.props;
   )}
   ><span><slot /></span>
   <span
-    class={cn('size-300', {
-      'fill-neutral-900': direction === 'down',
-      'fill-white': direction === 'up',
+    class={cn({
+      'fill-neutral-900 size-300': direction === 'down',
+      'fill-white size-300': direction === 'up',
     })}>
     {
       direction === 'down' && (

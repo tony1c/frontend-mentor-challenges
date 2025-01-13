@@ -1,5 +1,13 @@
+---
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
 <section
-  id='read-together'
+  {id}
   class='relative mx-auto my-800 grid max-w-[343px] grid-cols-1 place-items-center gap-500 px-200 md:my-1000 md:max-w-[768px] lg:my-[120px] lg:max-w-[1170px] lg:grid-cols-2 lg:gap-1000'>
   <!-- section text -->
   <slot />

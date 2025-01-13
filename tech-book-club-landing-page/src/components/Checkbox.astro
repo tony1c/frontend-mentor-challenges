@@ -1,0 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import iconCheck from '../assets/images/icon-check.svg';
+---
+
+<div class='flex items-center gap-[14px]'>
+  <Image src={iconCheck} alt='Check icon' />
+  <p class='text-preset-5 text-neutral-700'>
+    <slot />
+  </p>
+</div>

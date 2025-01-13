@@ -1,7 +1,9 @@
 ---
-import Footer from '../layouts/Footer.astro';
-import Hero from '../layouts/Hero.astro';
+import Footer from '../layouts/sections/Footer.astro';
+import Hero from '../layouts/sections/Hero.astro';
 import Layout from '../layouts/Layout.astro';
+import SectionRead from '../layouts/sections/SectionRead.astro';
+import SectionTech from '../layouts/sections/SectionTech.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -9,5 +11,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
   <Hero />
+  <SectionRead />
+  <SectionTech />
   <Footer />
 </Layout>

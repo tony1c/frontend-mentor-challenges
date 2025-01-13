@@ -1,0 +1,39 @@
+---
+import GridTwoCols from '../GridTwoCols.astro';
+
+import Checkbox from '../../components/Checkbox.astro';
+
+import MyImage from '../../components/MyImage.astro';
+import readTogetherMobile from '../../assets/images/image-read-together-mobile.webp';
+import readTogetherTablet from '../../assets/images/image-read-together-tablet.webp';
+import readTogetherDesktop from '../../assets/images/image-read-together-desktop.webp';
+
+type CheckText = {
+  id: number;
+  text: string;
+};
+
+const checkboxes: CheckText[] = [
+  { id: 0, text: 'Monthly curated tech reads selected by industry experts' },
+  { id: 1, text: 'Virtual and in-person meetups for deep-dive discussions' },
+  { id: 2, text: 'Early access to new tech book releases' },
+  { id: 3, text: 'Author Q&A sessions with tech thought leaders' },
+];
+---
+
+<GridTwoCols>
+  <div class='space-y-300 lg:order-1'>
+    <h2 class='text-preset-2-mobile text-neutral-900 md:text-preset-2'>
+      Read together, <br /> grow together
+    </h2>
+    <!-- checkboxes -->
+    {checkboxes.map(check => <Checkbox>{check.text}</Checkbox>)}
+  </div>
+  <!-- section img -->
+  <MyImage
+    mobileImgUrl={readTogetherMobile}
+    tabletImgUrl={readTogetherTablet}
+    desktopImgUrl={readTogetherDesktop}
+    alt='Read together section image'
+  />
+</GridTwoCols>

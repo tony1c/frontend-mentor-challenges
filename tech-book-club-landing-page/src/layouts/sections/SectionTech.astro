@@ -1,0 +1,43 @@
+---
+import MyImage from '../../components/MyImage.astro';
+import GridTwoCols from '../GridTwoCols.astro';
+import patternCircle from '../../assets/images/pattern-circle.png';
+import Image from 'astro/components/Image.astro';
+import notAverageMobile from '../../assets/images/image-not-average-mobile.webp';
+import notAverageTablet from '../../assets/images/image-not-average-tablet.webp';
+import notAverageDesktop from '../../assets/images/image-not-average-desktop.webp';
+import logosTech from '../../assets/images/logos-tech.svg';
+---
+
+<GridTwoCols>
+  <div class='max-w-[704px] space-y-300'>
+    <h2
+      class='max-w-[343px] text-preset-2-mobile text-neutral-900 md:max-w-[534px] md:text-preset-2'>
+      Not your average book <span
+        class='relative inline-block h-[46.53px] w-[108.62px] md:h-[68.08px] md:w-[158.9px]'
+        >club
+        <span class='absolute inset-0 -translate-x-[11px]'
+          ><Image src={patternCircle} alt='Circle pattern' />
+        </span>
+      </span>
+    </h2>
+    <p class='text-[17px] tracking-[0.012em] text-neutral-700'>
+      Connect with a community that speaks your language - from <span
+        class='text-preset-5-semibold'>Python</span
+      > to
+      <span class='text-preset-5-semibold'>TypeScript</span> and everything in between.
+      Our discussions blend technical depth with practical applications.
+    </p>
+  </div>
+  <!-- section img -->
+  <MyImage
+    mobileImgUrl={notAverageMobile}
+    tabletImgUrl={notAverageTablet}
+    desktopImgUrl={notAverageDesktop}
+    alt='Not average club section image'
+  />
+  <div
+    class='absolute bottom-[50px] right-[82.44px] z-10 hidden h-[138px] w-[119px] md:inline-block lg:bottom-[31px] lg:right-[520.44px]'>
+    <Image src={logosTech} alt='Tech logos' />
+  </div>
+</GridTwoCols>

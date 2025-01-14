@@ -24,8 +24,8 @@ const {
 
 <div
   class={cn(
-    'mx-auto w-full max-w-[340px] lg:max-w-[286px] z-0 relative flex flex-col gap-400 rounded-8 border border-neutral-200 p-300',
-    { 'bg-neutral-100': bestValue },
+    'mx-auto w-full max-w-[340px] h-[358px] lg:max-w-[286px] z-0 relative flex flex-col gap-400 rounded-8 border border-neutral-200 p-300',
+    { 'bg-neutral-100 lg:py-500 lg:h-[390px]': bestValue },
   )}>
   <!-- bg decoration for bestValue card -->
   {
@@ -33,7 +33,6 @@ const {
       <div class='absolute inset-0 bottom-0 right-0 -z-10 bg-[url("../assets/images/pattern-glow.svg")]' />
     )
   }
-  <!-- bug -->
   <div class='space-y-300'>
     <h3 class='text-preset-4'>{option}</h3>
     {
@@ -46,11 +45,11 @@ const {
         <span class='inline-block text-preset-3'>Custom</span>
       )
     }
-  </div>
-  <div class='w-full border border-neutral-200'></div>
-  <div class='space-y-200'>
-    <Checkbox>{firstCheckbox}</Checkbox>
-    <Checkbox>{secondCheckbox}</Checkbox>
+    <div class='w-full border border-neutral-200'></div>
+    <div class='space-y-200'>
+      <Checkbox>{firstCheckbox}</Checkbox>
+      <Checkbox>{secondCheckbox}</Checkbox>
+    </div>
   </div>
   <Button color='dark' bgColor='light'>{ctaText}</Button>
 </div>

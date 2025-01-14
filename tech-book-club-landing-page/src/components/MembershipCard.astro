@@ -24,7 +24,7 @@ const {
 
 <div
   class={cn(
-    'mx-auto w-full max-w-[340px] z-0 relative space-y-400 rounded-8 border border-neutral-200 p-300',
+    'mx-auto w-full max-w-[340px] lg:max-w-[286px] z-0 relative flex flex-col gap-400 rounded-8 border border-neutral-200 p-300',
     { 'bg-neutral-100': bestValue },
   )}>
   <!-- bg decoration for bestValue card -->
@@ -33,6 +33,7 @@ const {
       <div class='absolute inset-0 bottom-0 right-0 -z-10 bg-[url("../assets/images/pattern-glow.svg")]' />
     )
   }
+  <!-- bug -->
   <div class='space-y-300'>
     <h3 class='text-preset-4'>{option}</h3>
     {

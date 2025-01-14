@@ -16,4 +16,5 @@ export default {
       },
     },
   ],
+  tailwindFunctions: ['cn'],
 };

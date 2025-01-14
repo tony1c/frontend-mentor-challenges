@@ -11,9 +11,9 @@ const { id, width = 'small' } = Astro.props;
 
 <section
   {id}
-  class={cn('px-200 mx-auto lg:my-[120px] my-800 md:my-1000', {
+  class={cn('mx-auto my-800 px-200 md:my-1000 md:px-0 lg:my-[120px]', {
     'max-w-[1170px]': width === 'big',
-    'max-w-[970px]': width === 'small',
+    'md:max-w-[704px] lg:max-w-[970px]': width === 'small',
   })}>
   <slot />
 </section>

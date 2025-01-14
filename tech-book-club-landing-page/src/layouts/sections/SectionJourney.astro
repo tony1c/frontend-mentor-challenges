@@ -1,0 +1,31 @@
+---
+import Step from '../../components/Step.astro';
+import SectionContainer from '../SectionContainer.astro';
+---
+
+<SectionContainer id='tech-journey' width='big'>
+  <div
+    class='relative hidden h-[454px] flex-col gap-800 rounded-12 bg-neutral-100 py-1000 lg:flex'>
+    <!-- bg decoration -->
+    <div
+      class='absolute inset-0 bg-[url("../assets/images/pattern-light-bg.svg")]'>
+    </div>
+    <div
+      class='absolute bottom-0 right-0 size-[500px] bg-[url("../assets/images/pattern-glow.svg")]'>
+    </div>
+
+    <!-- content -->
+    <div class='mx-auto max-w-[529px]'>
+      <h2
+        class='text-center text-[50px] font-semibold leading-[120%] -tracking-[4%] text-[#062630]'>
+        Your tech reading journey
+      </h2>
+    </div>
+    <div class='relative mx-auto flex h-[110px] max-w-[1050px] gap-600'>
+      <Step number='1' text='Choose your membership tier' />
+      <Step number='2' text='Get your monthly book selection' />
+      <Step number='3' text='Join our discussion forums' />
+      <Step number='4' text='Attend exclusive meetups' arrow={false} />
+    </div>
+  </div>
+</SectionContainer>

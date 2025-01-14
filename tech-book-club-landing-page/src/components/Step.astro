@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import arrowPattern from '../assets/images/pattern-arrow.svg';
+
+interface Props {
+  number: string;
+  text: string;
+  arrow?: boolean;
+}
+
+const { number, text, arrow = true } = Astro.props;
+---
+
+<div class='flex h-full w-[226px] flex-col gap-300'>
+  <div class='flex justify-between'>
+    <div
+      class='flex size-500 items-center justify-center rounded-4 border-2 border-neutral-900'>
+      <span class='font-martian-mono text-[24px] leading-[24px] -tracking-[1%]'
+        >{number}</span
+      >
+    </div>
+    {arrow && <Image src={arrowPattern} alt='Arrow pattern' />}
+  </div>
+
+  <h3
+    class='text-[18px] font-semibold leading-[130%] -tracking-[1%] text-neutral-900'>
+    {text}
+  </h3>
+</div>

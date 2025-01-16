@@ -18,17 +18,13 @@ const { color } = Astro.props;
     <Image src={imageAvatars} alt="Developer's avatars'" />
   </div>
   <!-- stars -->
-  <div class='space-y-050'>
+  <div
+    class={cn('space-y-050', {
+      'text-neutral-700': color === 'dark',
+      'text-white': color === 'light',
+    })}>
     <Stars size='small' />
-    <p
-      class={cn(
-        'font-martian-mono',
-        {
-          'text-neutral-700': color === 'dark',
-          'text-white': color === 'light',
-        },
-        'text-preset-7',
-      )}>
+    <p class='font-martian-mono text-preset-7' ,>
       200+ developers joined already
     </p>
   </div>

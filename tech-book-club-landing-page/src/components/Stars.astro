@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import starIcon from '../assets/images/icon-star.svg';
+import { cn } from '../utils/cn';
+
+interface Props {
+  size: 'small' | 'big';
+}
+
+const { size } = Astro.props;
+---
+
+<div
+  class={cn('flex', {
+    'gap-075': size === 'big',
+  })}>
+  {
+    Array.from({ length: 5 }, (_, i) => (
+      <Image
+        class={cn({
+          'size-300': size === 'small',
+          'size-[28px]': size === 'big',
+        })}
+        src={starIcon}
+        alt={`Star ${i + 1}`}
+      />
+    ))
+  }
+</div>

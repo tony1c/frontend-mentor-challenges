@@ -1,0 +1,23 @@
+---
+import Stars from '../../components/Stars.astro';
+import SectionContainer from '../SectionContainer.astro';
+---
+
+<SectionContainer id='review' width='small'>
+  <div class='flex flex-col gap-400 lg:items-center'>
+    <Stars size='big' />
+
+    <div
+      class='flex max-w-[343px] flex-col gap-400 md:max-w-[704px] lg:max-w-full lg:text-center'>
+      <p
+        class='font-martian-mono text-preset-3-mobile text-neutral-900 md:text-preset-3'>
+        "This book club transformed my technical reading from a solitary
+        activity into an enriching community experience. The discussions are
+        gold!"
+      </p>
+      <span class='text-preset-5 text-neutral-700'
+        >Sarah Chen, Software Architect</span
+      >
+    </div>
+  </div>
+</SectionContainer>

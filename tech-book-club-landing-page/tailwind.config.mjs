@@ -6,11 +6,12 @@ export default {
       inter: ['Inter', 'sans-serif'],
       'martian-mono': ["'Martian Mono'", 'sans-serif'],
     },
-    backgroundImage: {
+    backgroundImage: theme => ({
       'text-gradient':
         'linear-gradient(107deg, #FF9A60 -11.37%, #062630 61.84%);',
+      'gradient-btn': `linear-gradient(to right, ${theme('colors.neutral.700')}, ${theme('colors.neutral.900')})`,
       gradient: 'linear-gradient(90deg, #FFE2D1 0%, #FFF5EF 100%)',
-    },
+    }),
     spacing: {
       0: '0px',
       '025': '2px',

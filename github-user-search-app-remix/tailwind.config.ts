@@ -2,7 +2,11 @@ import type { Config } from 'tailwindcss';
 
 export default {
   content: ['./app/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'class',
   theme: {
+    fontFamily: {
+      'space-mono': ["'Space Mono'", 'sans-serif'],
+    },
     colors: {
       transparent: 'transparent',
       white: 'hsl(0,0%,100%)',

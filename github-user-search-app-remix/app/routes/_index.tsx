@@ -1,4 +1,5 @@
 import type { MetaFunction } from '@remix-run/node';
+import { ThemeSwitcher } from '~/components/theme-switcher';
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,5 +9,9 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  return <div className='bg-light-mode-light-gray h-screen text-3xl'></div>;
+  return (
+    <div className='bg-light-mode-dark-gray dark:bg-dark-mode-dark-blue h-screen'>
+      <ThemeSwitcher />
+    </div>
+  );
 }

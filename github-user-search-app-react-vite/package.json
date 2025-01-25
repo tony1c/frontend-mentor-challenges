@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.0",
+<<<<<<< HEAD
     "octokit": "^4.1.0",
+=======
+>>>>>>> 76e31139c434b466354c06baea46b7937c3be81f
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^4.0.0"

@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-c-0079FF: oklch(60.14% 0.21850401882525503 257.5701912819547);
+  /* light-mode */
+  --color-c-light-697C9A: oklch(58.3% 0.05073707724077148 258.62733061140716);
+  --color-c-light-4B6A9B: oklch(52.21% 0.08540731707914395 259.18300713432063);
+  --color-c-light-2B3442: oklch(32.36% 0.028016450355081993 257.50572477297317);
+  --color-c-light-F6F8FF: oklch(98% 0.00937514188172203 274.87948457841446);
+  --color-c-light-FEFEFE: oklch(99.7% 0 0);
+  /* dark-mode */
+  --color-c-dark-FFF: oklch(100% 0 0);
+  --color-c-dark-141D2F: oklch(23.08% 0.036723679544211844 262.34184933547283);
+  --color-c-dark-1E2A47: oklch(28.83% 0.05589334649316808 266.8510811877794);
+
+  /* font */
+  --font-mono: "Space Mono", sans-serif;
+}
+
+@layer components {
+  body {
+    font-family: var(--font-mono);
+  }
+  h1 {
+    font-size: 26px;
+    line-height: 38px;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 22px;
+    line-height: 33px;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+  h4 {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  p {
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 400;
+  }
+}

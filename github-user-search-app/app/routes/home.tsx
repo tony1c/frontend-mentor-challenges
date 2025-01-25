@@ -1,3 +1,4 @@
+import { ThemeSwitcher } from '~/components/themeSwitcher';
 import type { Route } from './+types/home';
 
 export function meta({}: Route.MetaArgs) {
@@ -8,5 +9,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <div className=''>Hello from app</div>;
+  return (
+    <div className='h-screen bg-0079FF dark:bg-2B3442'>
+      <ThemeSwitcher />
+    </div>
+  );
 }

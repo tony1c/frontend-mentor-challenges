@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import iconSearch from '../assets/icon-search.svg';
 import { useUser } from '../hook/useUser';
 import { fetchGithubUserData } from '../services/api/githubService';
+import { User } from '../types/user';
 
 export const Input = () => {
   const { error, setError, setUser } = useUser();
@@ -10,7 +11,7 @@ export const Input = () => {
   useEffect(() => {
     const setInitialUser = async () => {
       const initialUser = await fetchGithubUserData('octocat');
-      setUser(initialUser);
+      setUser(initialUser as User);
     };
 
     setInitialUser();
@@ -27,7 +28,7 @@ export const Input = () => {
       const userData = await fetchGithubUserData(username);
       console.log(userData);
 
-      setUser(userData);
+      setUser(userData as User);
     } catch (err) {
       setError(true);
       console.error(err, 'err');

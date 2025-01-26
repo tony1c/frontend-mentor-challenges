@@ -12,7 +12,7 @@ export const UserDisplay = () => {
   const { user } = useUser();
 
   return (
-    <div className='bg-c-light-FEFEFE dark:bg-c-dark-1E2A47 dark:text-c-dark-FFF mt-4 min-h-[501.5px] w-full rounded-[15px] px-[24px] py-[32px] shadow-lg'>
+    <div className='bg-c-light-FEFEFE dark:bg-c-dark-1E2A47 dark:text-c-dark-FFF mt-4 w-full rounded-[15px] px-[24px] py-[32px] shadow-lg'>
       {user && (
         <div>
           <div className='flex gap-[19px]'>
@@ -39,17 +39,21 @@ export const UserDisplay = () => {
             </p>
           </div>
 
-          <div className='bg-c-light-F6F8FF dark:bg-c-dark-141D2F mt-[23px] flex justify-evenly rounded-[10px] px-[14px] py-[18px] text-center'>
+          <div className='bg-c-light-F6F8FF dark:bg-c-dark-141D2F mt-[23px] flex justify-evenly rounded-[10px] px-[14px] py-[18px] text-center md:justify-start md:gap-[99px] md:text-start'>
             <UserBoxInfo title='Repos' value={user.data.public_repos} />
             <UserBoxInfo title='Followers' value={user.data.followers} />
             <UserBoxInfo title='Following' value={user.data.following} />
           </div>
 
-          <div className='mt-6 space-y-4'>
-            <UserInfo Icon={IconLocation} text={user.data.location} />
-            <UserInfo Icon={IconWebsite} text={user.data.blog} />
-            <UserInfo Icon={IconTwitter} text={user.data.twitter_username} />
-            <UserInfo Icon={IconCompany} text={user.data.company} />
+          <div className='mt-6 max-w-[429px] justify-between space-y-4 md:mt-[30px] md:flex'>
+            <div className='space-y-4'>
+              <UserInfo Icon={IconLocation} text={user.data.location} />
+              <UserInfo Icon={IconWebsite} text={user.data.blog} />
+            </div>
+            <div className='space-y-4'>
+              <UserInfo Icon={IconTwitter} text={user.data.twitter_username} />
+              <UserInfo Icon={IconCompany} text={user.data.company} />
+            </div>
           </div>
         </div>
       )}

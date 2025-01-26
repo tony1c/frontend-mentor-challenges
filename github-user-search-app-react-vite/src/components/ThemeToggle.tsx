@@ -16,7 +16,7 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <button type='button' onClick={handleToggle}>
+    <button type='button' onClick={handleToggle} className='cursor-pointer'>
       <div className='group flex w-[89px] justify-end gap-[16px]'>
         {theme === 'light' ? (
           <>

@@ -4,6 +4,8 @@ interface Props {
 }
 
 export const UserInfo = ({ Icon, text }: Props) => {
+  const isLink = text?.includes('https://');
+
   if (!text) {
     return (
       <div className='flex gap-[19px] opacity-50'>
@@ -18,9 +20,17 @@ export const UserInfo = ({ Icon, text }: Props) => {
   return (
     <div className='flex gap-[19px]'>
       <Icon />
-      <span className='text-c-light-4B6A9B dark:text-c-dark-FFF text-[13px]'>
-        {text}
-      </span>
+      {!isLink ? (
+        <span className='text-c-light-4B6A9B dark:text-c-dark-FFF text-[13px]'>
+          {text}
+        </span>
+      ) : (
+        <a
+          href={text}
+          className='text-c-light-4B6A9B dark:text-c-dark-FFF text-[13px]'>
+          {text}
+        </a>
+      )}
     </div>
   );
 };

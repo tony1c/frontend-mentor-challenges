@@ -30,22 +30,27 @@ export const Input = () => {
   };
 
   return (
-    <div className='bg-c-light-FEFEFE dark:bg-c-dark-1E2A47 mt-[36px] flex h-[60px] w-full items-center justify-evenly rounded-[15px] shadow-lg'>
-      <img src={iconSearch} alt='Search Icon' />
-      <form method='post' onSubmit={handleSubmit}>
-        <label htmlFor='username'>
-          <input
-            type='text'
-            name='username'
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-            placeholder='Search github username...'
-            className='dark:text-c-dark-FFF w-[184px] cursor-pointer border-transparent text-[13px] leading-[25px] outline-none'
-          />
-        </label>
+    <div className='bg-c-light-FEFEFE dark:bg-c-dark-1E2A47 mt-[36px] flex h-[60px] w-full items-center rounded-[15px] shadow-lg'>
+      <form
+        method='post'
+        onSubmit={handleSubmit}
+        className='flex w-full items-center justify-between pr-[9px] pl-4 md:pl-8'>
+        <div className='flex gap-[8.95px] md:gap-[23.94px]'>
+          <img src={iconSearch} alt='Search Icon' />
+          <label htmlFor='username'>
+            <input
+              type='text'
+              name='username'
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+              placeholder='Search github username...'
+              className='dark:text-c-dark-FFF w-[184px] cursor-pointer border-transparent text-[13px] leading-[25px] outline-none md:w-[254px]'
+            />
+          </label>
+        </div>
         <button
           type='submit'
-          className='bg-c-0079FF text-c-dark-FFF h-[46px] w-[84px] rounded-[10px]'>
+          className='bg-c-0079FF text-c-dark-FFF h-[46px] w-[84px] cursor-pointer rounded-[10px] transition-colors duration-300 hover:bg-[#60ABFF]'>
           Search
         </button>
       </form>

@@ -1,7 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const ThemeToggle = () => {
-  const [theme, setTheme] = useState<string>('light');
+  const [theme, setTheme] = useState<string>('dark');
+
+  useEffect(() => {
+    const html = document.documentElement;
+    html.classList.add('dark');
+  }, []);
 
   const handleToggle = () => {
     const html = document.documentElement;

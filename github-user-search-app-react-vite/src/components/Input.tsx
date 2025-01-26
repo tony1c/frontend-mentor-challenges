@@ -1,10 +1,10 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import iconSearch from '../assets/icon-search.svg';
 import { useUser } from '../hook/useUser';
 import { fetchGithubUserData } from '../services/api/githubService';
 
 export const Input = () => {
-  const { setUser } = useUser();
+  const { error, setError, setUser } = useUser();
   const [username, setUsername] = useState<string>('');
 
   useEffect(() => {
@@ -20,13 +20,23 @@ export const Input = () => {
     e.preventDefault();
 
     if (!username) {
-      console.log('no username');
       return;
     }
 
-    const userData = await fetchGithubUserData(username);
-    console.log(userData);
-    setUser(userData);
+    try {
+      const userData = await fetchGithubUserData(username);
+      console.log(userData);
+
+      setUser(userData);
+    } catch (err) {
+      setError(true);
+      console.error(err, 'err');
+    }
+  };
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setError(null);
+    setUsername(e.target.value);
   };
 
   return (
@@ -42,12 +52,13 @@ export const Input = () => {
               type='text'
               name='username'
               value={username}
-              onChange={e => setUsername(e.target.value)}
+              onChange={handleInputChange}
               placeholder='Search github username...'
               className='dark:text-c-dark-FFF w-[184px] cursor-pointer border-transparent text-[13px] leading-[25px] outline-none md:w-[254px]'
             />
           </label>
         </div>
+        {error && <span className='font-bold text-[#F74646]'>No results</span>}
         <button
           type='submit'
           className='bg-c-0079FF text-c-dark-FFF h-[46px] w-[84px] cursor-pointer rounded-[10px] transition-colors duration-300 hover:bg-[#60ABFF]'>

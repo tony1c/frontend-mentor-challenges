@@ -27,7 +27,7 @@ export const UserInfo = ({ Icon, text }: Props) => {
       ) : (
         <a
           href={text}
-          className='text-c-light-4B6A9B dark:text-c-dark-FFF text-[13px]'>
+          className='text-c-light-4B6A9B dark:text-c-dark-FFF text-[13px] hover:underline'>
           {text}
         </a>
       )}

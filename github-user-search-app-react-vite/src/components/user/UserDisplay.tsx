@@ -40,8 +40,7 @@ export const UserDisplay = () => {
 
             <div className='mt-[33px]'>
               <p className='text-c-light-4B6A9B dark:text-c-dark-FFF text-[13px] leading-[25px]'>
-                {user.bio ??
-                  'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.'}
+                {user.bio ?? 'This profile has no bio.'}
               </p>
             </div>
 

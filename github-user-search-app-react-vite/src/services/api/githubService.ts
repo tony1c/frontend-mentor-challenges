@@ -13,8 +13,8 @@ export const fetchGithubUserData = async (username: string) => {
   const octokit = new Octokit({});
 
   try {
-    const rateLimitData = await octokit.request('GET /rate_limit');
-    console.log(rateLimitData.data);
+    // const rateLimitData = await octokit.request('GET /rate_limit');
+    // console.log(rateLimitData.data);
     const userData = await octokit.request('GET /users/{username}', {
       username: username,
       headers: {

@@ -18,12 +18,14 @@ export const UserDisplay = () => {
           <img
             src={user.avatar_url}
             className='hidden size-[117px] rounded-full lg:block'
+            alt='Avatar image'
           />
           <div>
             <div className='flex gap-[19px]'>
               <img
                 src={user.avatar_url}
                 className='block size-[70px] rounded-full lg:hidden'
+                alt='Avatar image'
               />
               <div className='flex w-full flex-col justify-between lg:flex-row'>
                 <div className='flex flex-col'>

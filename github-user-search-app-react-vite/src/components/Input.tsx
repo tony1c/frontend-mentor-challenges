@@ -51,6 +51,7 @@ export const Input = () => {
           <label htmlFor='username'>
             <input
               type='text'
+              id='username'
               name='username'
               value={username}
               onChange={handleInputChange}

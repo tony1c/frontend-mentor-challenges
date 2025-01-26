@@ -1,5 +1,6 @@
 import { Input } from './components/Input';
 import { Navbar } from './components/Navbar';
+import { UserDisplay } from './components/user/UserDisplay';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <div className='mx-auto max-w-[327px]'>
           <Navbar />
           <Input />
+          <UserDisplay />
         </div>
       </div>
     </main>

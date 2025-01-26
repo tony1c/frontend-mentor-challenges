@@ -11,5 +11,6 @@ export type User = {
     following: number;
     twitter_username: string;
     company: string;
+    public_repos: number;
   };
 };

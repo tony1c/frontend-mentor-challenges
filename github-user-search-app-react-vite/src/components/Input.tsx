@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import iconSearch from '../assets/icon-search.svg';
 import { useUser } from '../hook/useUser';
 import { fetchGithubUserData } from '../services/api/githubService';
@@ -6,6 +6,15 @@ import { fetchGithubUserData } from '../services/api/githubService';
 export const Input = () => {
   const { setUser } = useUser();
   const [username, setUsername] = useState<string>('');
+
+  useEffect(() => {
+    const setInitialUser = async () => {
+      const initialUser = await fetchGithubUserData('octocat');
+      setUser(initialUser);
+    };
+
+    setInitialUser();
+  }, [setUser]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

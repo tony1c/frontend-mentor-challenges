@@ -8,7 +8,7 @@ export const fetchGithubUserData = async (username: string) => {
 
   try {
     const userData = (await octokit.request('GET /users/{username}', {
-      username,
+      username: username,
       headers: {
         'X-GitHub-Api-Version': '2022-11-28',
       },

@@ -45,7 +45,7 @@ export const Input = () => {
       <form
         method='post'
         onSubmit={handleSubmit}
-        className='flex w-full items-center justify-between pr-[9px] pl-4 md:pl-8'>
+        className='relative flex w-full items-center justify-between pr-[9px] pl-4 md:pl-8'>
         <div className='flex gap-[8.95px] md:gap-[23.94px]'>
           <img src={iconSearch} alt='Search Icon' />
           <label htmlFor='username'>
@@ -55,11 +55,15 @@ export const Input = () => {
               value={username}
               onChange={handleInputChange}
               placeholder='Search github username...'
-              className='dark:text-c-dark-FFF w-[184px] cursor-pointer border-transparent text-[13px] leading-[25px] outline-none md:w-[254px]'
+              className='dark:text-c-dark-FFF w-[183px] cursor-pointer border-transparent text-[13px] leading-[25px] outline-none md:w-[254px]'
             />
           </label>
+          {error && (
+            <span className='absolute right-27 font-bold text-[#F74646]'>
+              No results
+            </span>
+          )}
         </div>
-        {error && <span className='font-bold text-[#F74646]'>No results</span>}
         <button
           type='submit'
           className='bg-c-0079FF text-c-dark-FFF h-[46px] w-[84px] cursor-pointer rounded-[10px] transition-colors duration-300 hover:bg-[#60ABFF]'>

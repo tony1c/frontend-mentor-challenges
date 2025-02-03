@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <p className='font-bold'>This is a test paragraph with inline styles.</p>
+      <p className=''>This is a test paragraph</p>
     </div>
   );
 }

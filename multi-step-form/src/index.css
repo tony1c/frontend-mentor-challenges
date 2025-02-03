@@ -21,8 +21,46 @@
     font-weight: 700;
     font-style: normal;
   }
+
+  html {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--color-c-bg);
+  }
 }
 
-html {
-  font-family: 'Ubuntu', sans-serif;
+@theme {
+  --color-c-bg: #eff5ff;
+  --color-c-border: #d6d9e6;
+  --color-c-denim: #022959;
+  --color-c-grey: #9699aa;
+  --color-c-light-blue: #abbcff;
+  --color-c-light-grey: #d6d9e6;
+  --color-c-orange: #ffaf7e;
+  --color-c-pink: #f9818e;
+  --color-c-purple: #483eff;
+  --color-c-red-errors: #ee374a;
+  --color-c-sky-blue: #bee2fd;
+  --color-c-very-light-grey: #f8f9ff;
+  --color-c-white: #ffffff;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.body-l {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.body-m {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.body-s {
+  font-weight: 400;
+  font-size: 12px;
 }

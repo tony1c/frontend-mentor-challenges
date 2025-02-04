@@ -7,7 +7,7 @@ import {
   useState,
 } from 'react';
 
-type StepValue = 1 | 2 | 3 | 4;
+export type StepValue = 1 | 2 | 3 | 4;
 
 type Step = {
   step: StepValue;

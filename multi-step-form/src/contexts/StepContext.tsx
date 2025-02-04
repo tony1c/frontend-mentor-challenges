@@ -13,12 +13,14 @@ type Step = {
   step: StepValue;
   setStep: Dispatch<SetStateAction<1 | 2 | 3 | 4>>;
   inc: () => void;
+  dec: () => void;
 };
 
 const StepContext = createContext<Step>({
   step: 1,
   setStep: () => {},
   inc: () => {},
+  dec: () => {},
 });
 
 export const StepProvider = ({ children }: PropsWithChildren) => {
@@ -26,14 +28,19 @@ export const StepProvider = ({ children }: PropsWithChildren) => {
 
   function inc() {
     setStep(prevStep =>
-      prevStep < 4 ? ((prevStep + 1) as StepValue) : prevStep
+      prevStep < 4 ? ((prevStep + 1) as StepValue) : prevStep,
     );
+  }
+
+  function dec() {
+    setStep(prevStep => (prevStep -= 1) as StepValue);
   }
 
   const value = {
     step,
     setStep,
     inc,
+    dec,
   };
 
   return <StepContext.Provider value={value}>{children}</StepContext.Provider>;

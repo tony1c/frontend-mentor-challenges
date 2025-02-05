@@ -4,6 +4,7 @@ import iconArcade from '../../assets/images/icon-arcade.svg';
 import iconPro from '../../assets/images/icon-pro.svg';
 import { FormLayout } from '../../layouts/FormLayout';
 import { Radio } from './Radio';
+import { TogglePlan } from './TogglePlan';
 
 export const Step2 = () => {
   const { register, setValue, watch } = useFormContext();
@@ -49,6 +50,10 @@ export const Step2 = () => {
           handleChecked={() => handleRadioChange('Pro Monthly')}
           {...register('plan')}
         />
+
+        <div className='mt-6'>
+          <TogglePlan />
+        </div>
       </div>
     </FormLayout>
   );

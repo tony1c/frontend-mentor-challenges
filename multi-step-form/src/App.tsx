@@ -5,6 +5,9 @@ import { Steps } from './components/Steps';
 
 type Inputs = {
   name: string;
+  email: string;
+  phone: string;
+  plan: string;
 };
 
 function App() {

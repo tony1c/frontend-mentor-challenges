@@ -12,35 +12,35 @@ export type StepValue = 1 | 2 | 3 | 4;
 type Step = {
   step: StepValue;
   setStep: Dispatch<SetStateAction<1 | 2 | 3 | 4>>;
-  inc: () => void;
-  dec: () => void;
+  nextStep: () => void;
+  prevStep: () => void;
 };
 
 const StepContext = createContext<Step>({
   step: 1,
   setStep: () => {},
-  inc: () => {},
-  dec: () => {},
+  nextStep: () => {},
+  prevStep: () => {},
 });
 
 export const StepProvider = ({ children }: PropsWithChildren) => {
   const [step, setStep] = useState<StepValue>(1);
 
-  function inc() {
+  function prevStep() {
+    setStep(prevStep => (prevStep -= 1) as StepValue);
+  }
+
+  function nextStep() {
     setStep(prevStep =>
       prevStep < 4 ? ((prevStep + 1) as StepValue) : prevStep,
     );
   }
 
-  function dec() {
-    setStep(prevStep => (prevStep -= 1) as StepValue);
-  }
-
   const value = {
     step,
     setStep,
-    inc,
-    dec,
+    nextStep,
+    prevStep,
   };
 
   return <StepContext.Provider value={value}>{children}</StepContext.Provider>;

@@ -1,21 +1,21 @@
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useFormContext } from 'react-hook-form';
 import { FormLayout } from '../../layouts/FormLayout';
+import { Input } from './Input';
 
-type Inputs = {
-  name: string;
-};
+interface Inputs {
+  age: number;
+}
 
 export const Step2 = () => {
-  const { handleSubmit } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+  const { register } = useFormContext<Inputs>();
 
   return (
     <FormLayout
       title='Select your plan'
       description='You have the option of monthly or yearly billing.'>
-      <form onSubmit={handleSubmit(onSubmit)} className='mt-[22px]'>
-        <h1>hello from step2</h1>
-      </form>
+      <div className='mt-[22px]'>
+        <Input register={register} name='age' label='Select Age' />
+      </div>
     </FormLayout>
   );
 };

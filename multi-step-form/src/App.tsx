@@ -1,8 +1,16 @@
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { Controls } from './components/Controls';
 import { ViewStep } from './components/Forms/ViewStep';
 import { Steps } from './components/Steps';
 
+type Inputs = {
+  name: string;
+};
+
 function App() {
+  const methods = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+
   return (
     <main className='bg-bg grid grid-cols-1 lg:grid-cols-2'>
       {/* first col */}
@@ -10,13 +18,15 @@ function App() {
         <Steps />
       </div>
       {/* second col */}
-      <div>
-        <div className='px-4'>
-          {/* form */}
-          <ViewStep />
-        </div>
-        <Controls />
-      </div>
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
+          <div className='px-4'>
+            {/* form */}
+            <ViewStep />
+          </div>
+          <Controls />
+        </form>
+      </FormProvider>
     </main>
   );
 }

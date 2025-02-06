@@ -1,5 +1,6 @@
 import { ChangeEvent, FocusEvent, forwardRef } from 'react';
 import { cn } from '../../utils/cn';
+import { usePlan } from '../../contexts/PlanContext';
 
 interface RadioProps {
   icon: string;
@@ -16,12 +17,14 @@ interface RadioProps {
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>(
   ({ ...props }, ref) => {
+    const { plan } = usePlan();
     return (
       <div
         onClick={props.handleChecked}
         className={cn(
           'border-light-grey flex h-[77px] w-full cursor-pointer items-center rounded-[10px] border',
           { 'border-purple bg-very-light-grey': props.checked },
+          { 'h-[99px]': plan === 'yearly' },
         )}>
         <div className='flex gap-3.5 pl-4'>
           <img src={props.icon} />
@@ -32,6 +35,9 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
             <span className='text-grey text-[14px] leading-[20px]'>
               {props.price}
             </span>
+            {plan === 'yearly' && (
+              <span className='text-denim text-[12px]'>2 months free</span>
+            )}
             <input
               type='radio'
               value={props.value}

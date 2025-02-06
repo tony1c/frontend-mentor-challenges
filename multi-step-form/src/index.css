@@ -44,23 +44,52 @@
   --color-white: #ffffff;
 }
 
-.heading {
-  font-weight: bold;
-  font-size: 32px;
-}
+@layer components {
+  .heading {
+    font-weight: bold;
+    font-size: 32px;
+  }
 
-.body-l {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 25px;
-}
+  .body-l {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+  }
 
-.body-m {
-  font-weight: 400;
-  font-size: 14px;
-}
+  .body-m {
+    font-weight: 400;
+    font-size: 14px;
+  }
 
-.body-s {
-  font-weight: 400;
-  font-size: 12px;
+  .body-s {
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  input[type='checkbox'] {
+    position: relative;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--color-light-grey);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type='checkbox']:checked {
+    background-color: var(--color-purple);
+    border: 1px solid var(--color-purple);
+  }
+
+  input[type='checkbox']:checked::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    color: var(--color-white);
+  }
 }

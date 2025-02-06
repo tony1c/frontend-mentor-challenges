@@ -10,7 +10,7 @@ import {
 type PlanContextType = {
   plan: 'monthly' | 'yearly';
   setPlan: Dispatch<SetStateAction<'monthly' | 'yearly'>>;
-  togglePlan: () => void;
+  togglePlan: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 const PlanContext = createContext<PlanContextType>({
@@ -22,7 +22,9 @@ const PlanContext = createContext<PlanContextType>({
 export const PlanProvider = ({ children }: PropsWithChildren) => {
   const [plan, setPlan] = useState<'monthly' | 'yearly'>('monthly');
 
-  const togglePlan = () => {
+  const togglePlan = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
     setPlan(prevPlan => (prevPlan === 'monthly' ? 'yearly' : 'monthly'));
   };
 

@@ -2,17 +2,14 @@ import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { Controls } from './components/Controls';
 import { ViewStep } from './components/Forms/ViewStep';
 import { Steps } from './components/Steps';
+import { Step1Type } from './components/Forms/Step1';
+import { Step2Type } from './components/Forms/Step2';
 
-type Inputs = {
-  name: string;
-  email: string;
-  phone: string;
-  plan: string;
-};
+type FormType = Step1Type & Step2Type;
 
 function App() {
-  const methods = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+  const methods = useForm<FormType>();
+  const onSubmit: SubmitHandler<FormType> = data => console.log(data);
 
   return (
     <main className='bg-bg grid grid-cols-1 lg:grid-cols-2'>

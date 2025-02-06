@@ -6,8 +6,13 @@ import { FormLayout } from '../../layouts/FormLayout';
 import { Radio } from './Radio';
 import { TogglePlan } from './TogglePlan';
 
+export type Step2Type = {
+  selectedPlan: string;
+  plan: string;
+};
+
 export const Step2 = () => {
-  const { register, setValue, watch } = useFormContext();
+  const { register, setValue, watch } = useFormContext<Step2Type>();
 
   const selectedValue = watch('plan');
 

@@ -2,14 +2,14 @@ import { useFormContext } from 'react-hook-form';
 import { FormLayout } from '../../layouts/FormLayout';
 import { Input } from './Input';
 
-interface Inputs {
+export type Step1Type = {
   name: string;
   email: string;
   phone: string;
-}
+};
 
 export const Step1 = () => {
-  const { register } = useFormContext<Inputs>();
+  const { register } = useFormContext<Step1Type>();
 
   return (
     <FormLayout

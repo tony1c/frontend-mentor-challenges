@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --color-*: initial;
+  /* primary */
+  --color-red-500: hsl(10, 79%, 65%);
+  --color-blue-300: hsl(186, 34%, 65%);
+
+  /* neutral */
+  --color-white: hsl(0, 0%, 100%);
+  --color-brown-950: hsl(25, 47%, 15%);
+  --color-brown-400: hsl(28, 10%, 53%);
+  --color-red-100: hsl(26, 66%, 93%);
+}

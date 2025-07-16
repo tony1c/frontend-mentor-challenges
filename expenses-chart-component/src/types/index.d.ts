@@ -1,5 +1,8 @@
 declare module "*.json" {
-  const value: any;
+  const value: {
+    day: string;
+    amount: number;
+  }[];
   export default value;
 }
 

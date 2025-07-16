@@ -1,11 +1,11 @@
 import "./style.css";
 import data from "./data/data.json";
 import { html, totalBalance } from "./utils";
-import { createCandle } from "./candle";
+import { renderChart } from "./chart";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = html`
   <div
-    class="flex h-screen text-brown-950 justify-center bg-red-100 pt-[114px] font-sans text-[18px]">
+    class="flex h-screen text-brown-950 justify-center bg-red-100 items-center font-sans text-[18px]">
     <div class="space-y-3">
       <div
         class="flex h-[96px] w-[346px] items-center px-[19px] justify-between rounded-xl bg-red-500">
@@ -24,11 +24,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = html`
           Spending - Last 7 days
         </h1>
 
-        <div class="flex h-[254px] items-end border-b-2 border-b-red-100 pb-6">
-          <div class="flex w-full items-end justify-between">
-            ${data.map(item => createCandle(item, data)).join("")}
-          </div>
-        </div>
+        ${renderChart(data)}
         </div>
         <div class="flex justify-between">
           <div class="flex flex-col gap-[8px]">
@@ -45,4 +41,3 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = html`
     </div>
   </div>
 `;
-console.log(data);

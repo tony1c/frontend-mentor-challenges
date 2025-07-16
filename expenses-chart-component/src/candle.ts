@@ -1,10 +1,10 @@
 import type { DataPoint } from "./types";
 import { html } from "./utils";
-import { maxAmount } from "./utils";
+import { maxAmountSpent } from "./utils";
 
 export function createCandle(data: DataPoint, allData: DataPoint[]) {
-  const maxAmm = maxAmount(allData);
-  const heightPercentage = (data.amount / maxAmm) * 150;
+  const maxAmount = maxAmountSpent(allData);
+  const heightPercentage = (data.amount / maxAmount) * 150;
 
   return html`<div class="group relative flex flex-col items-center gap-2">
     <div
@@ -14,9 +14,9 @@ export function createCandle(data: DataPoint, allData: DataPoint[]) {
     <div
       style="height: ${heightPercentage}px"
       id="candle"
-      class="${data.amount === maxAmm
+      class="${data.amount === maxAmount
         ? "bg-blue-300"
-        : "bg-red-500"} h-[20px] w-[32px] cursor-pointer rounded-[3px] hover:opacity-80"></div>
+        : "bg-red-500"} w-[32px] cursor-pointer rounded-[3px] hover:opacity-80"></div>
     <span class="text-brown-400 text-sm">${data.day}</span>
   </div>`;
 }

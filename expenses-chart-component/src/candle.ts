@@ -16,7 +16,7 @@ export function createCandle(data: DataPoint, allData: DataPoint[]) {
       id="candle"
       class="${data.amount === maxAmount
         ? "bg-blue-300"
-        : "bg-red-500"} w-[32px] cursor-pointer rounded-[3px] hover:opacity-80"></div>
+        : "bg-red-500"} w-[32px] cursor-pointer rounded-[6px] hover:opacity-80 lg:w-[52px]"></div>
     <span class="text-brown-400 text-sm">${data.day}</span>
   </div>`;
 }

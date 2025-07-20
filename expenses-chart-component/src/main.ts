@@ -4,7 +4,8 @@ import { html } from "./utils";
 import { renderChart } from "./chart";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = html`
-  <div
+  <main
+    role="main"
     class="flex h-screen text-brown-950 justify-center bg-red-100 items-center font-sans text-[18px]">
     <div class="space-y-3">
       <div
@@ -39,5 +40,5 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = html`
         </div>
        </div>
     </div>
-  </div>
+  </main>
 `;

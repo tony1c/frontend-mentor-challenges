@@ -1,6 +1,6 @@
 import "./style.css";
 import data from "./data/data.json";
-import { html, totalBalance } from "./utils";
+import { html } from "./utils";
 import { renderChart } from "./chart";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = html`
@@ -29,7 +29,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = html`
         <div class="flex justify-between">
           <div class="flex flex-col gap-[8px] lg:gap-[16px]">
             <h2 class="text-sm text-brown-400 lg:text-lg">Total this month</h1>
-            <span class="font-bold text-3xl lg:text-5xl">$${totalBalance(data)}</span>
+            <span class="font-bold text-3xl lg:text-5xl">$478.33</span>
           </div>
 
           <div class="text-end flex flex-col self-end text-sm">

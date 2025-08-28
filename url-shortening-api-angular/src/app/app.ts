@@ -1,7 +1,7 @@
-import { Component, inject, signal } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ShortenService } from './services/shorten';
-import { ShortenedUrl } from './models/shorten';
+import { urlValidator } from './validators/url-validator';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +9,24 @@ import { ShortenedUrl } from './models/shorten';
   styleUrl: './app.css',
   imports: [ReactiveFormsModule],
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('url-shortening-api-angular');
   shortenService = inject(ShortenService);
-  shortenedUrls = signal<ShortenedUrl[]>([]);
+  shortenUrls = this.shortenService.shortenUrls;
+  url = new FormControl<string>('', {
+    nonNullable: true,
+    validators: [Validators.required, urlValidator()],
+  });
 
-  url = new FormControl<string>('', { nonNullable: true });
+  ngOnInit(): void {
+    this.shortenService.loadShortenUrls();
+  }
 
   onSubmit(): void {
-    if (!this.url.value) return;
+    if (this.url.invalid) return;
 
-    this.shortenService
-      .shortenAndAdd(this.url.value, this.shortenedUrls)
-      .subscribe({ next: () => this.url.reset() });
+    this.shortenService.shortenAndAdd(this.url.value).subscribe({
+      next: () => this.url.reset(),
+    });
   }
 }

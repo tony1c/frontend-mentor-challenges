@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, WritableSignal } from '@angular/core';
+import { inject, Injectable, Signal, signal } from '@angular/core';
 import { catchError, map, Observable, tap } from 'rxjs';
 import { ShortenedUrl } from '../models/shorten';
 
@@ -9,6 +9,12 @@ import { ShortenedUrl } from '../models/shorten';
 export class ShortenService {
   #http = inject(HttpClient);
   #apiUrl = '/api/v1/shorten';
+  #shortenUrls = signal<ShortenedUrl[]>([]);
+  readonly #urls = 'shortenUrls';
+
+  get shortenUrls(): Signal<ShortenedUrl[]> {
+    return this.#shortenUrls.asReadonly();
+  }
 
   private callShortenApi$(url: string): Observable<{ result_url: string }> {
     return this.#http.post<{ result_url: string }>(this.#apiUrl, { url });
@@ -24,9 +30,21 @@ export class ShortenService {
     );
   }
 
-  shortenAndAdd(url: string, urlsSignal: WritableSignal<ShortenedUrl[]>): Observable<ShortenedUrl> {
+  private saveShortenToLocalStorage(): void {
+    const stringifiedShortenUrl = JSON.stringify(this.#shortenUrls());
+    localStorage.setItem(this.#urls, stringifiedShortenUrl);
+  }
+
+  loadShortenUrls(): void {
+    if (!localStorage.getItem(this.#urls)) return;
+
+    this.#shortenUrls.update(() => JSON.parse(localStorage.getItem(this.#urls)!));
+  }
+
+  shortenAndAdd(url: string): Observable<ShortenedUrl> {
     return this.shortenUrl(url).pipe(
-      tap((shortenedUrl) => urlsSignal.update((urls) => [...urls, shortenedUrl]))
+      tap((shortenedUrl) => this.#shortenUrls.update((urls) => [...urls, shortenedUrl])),
+      tap(() => this.saveShortenToLocalStorage())
     );
   }
 }

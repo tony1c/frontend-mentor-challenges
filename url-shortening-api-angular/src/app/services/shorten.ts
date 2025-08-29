@@ -10,7 +10,7 @@ export class ShortenService {
   #http = inject(HttpClient);
   #apiUrl = '/api/v1/shorten';
   #shortenUrls = signal<ShortenedUrl[]>([]);
-  readonly #urls = 'shortenUrls';
+  readonly #allUrls = 'shorten-urls:all-urls';
 
   get shortenUrls(): Signal<ShortenedUrl[]> {
     return this.#shortenUrls.asReadonly();
@@ -32,18 +32,23 @@ export class ShortenService {
 
   private saveShortenToLocalStorage(): void {
     const stringifiedShortenUrl = JSON.stringify(this.#shortenUrls());
-    localStorage.setItem(this.#urls, stringifiedShortenUrl);
+    localStorage.setItem(this.#allUrls, stringifiedShortenUrl);
   }
 
   loadShortenUrls(): void {
-    if (!localStorage.getItem(this.#urls)) return;
+    if (!localStorage.getItem(this.#allUrls)) return;
 
-    this.#shortenUrls.update(() => JSON.parse(localStorage.getItem(this.#urls)!));
+    this.#shortenUrls.update(() => JSON.parse(localStorage.getItem(this.#allUrls)!));
   }
 
   shortenAndAdd(url: string): Observable<ShortenedUrl> {
     return this.shortenUrl(url).pipe(
-      tap((shortenedUrl) => this.#shortenUrls.update((urls) => [...urls, shortenedUrl])),
+      tap((shortenedUrl) =>
+        this.#shortenUrls.update((urls) => {
+          const latestThree = urls.slice(0, 2);
+          return [shortenedUrl, ...latestThree];
+        })
+      ),
       tap(() => this.saveShortenToLocalStorage())
     );
   }

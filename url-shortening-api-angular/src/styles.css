@@ -8,15 +8,20 @@
   /*** Colors ***/
   /* Primary colors */
   --color-*: initial;
-  --color-blue-400: hsl(180, 66%, 49%);
-  --color-purple-950: hsl(257, 27%, 26%);
+  --color-2bd0d0: hsl(180, 66%, 49%);
+  --color-34313d: hsl(257, 27%, 26%);
   /* Secondary colors */
   --color-red-400: hsl(0, 87%, 67%);
   /* Neutral colors */
+  --color-fff: hsl(0, 0%, 100%);
   --color-gray-400: hsl(0, 0%, 75%);
-  --color-gray-500: hsl(257, 7%, 63%);
+  --color-9e9aa8: hsl(257, 7%, 63%);
   --color-gray-900: hsl(255, 11%, 22%);
   --color-gray-950: hsl(260, 8%, 14%);
+  /* Font weights */
+  --font-weight-*: initial;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 }
 
 body {

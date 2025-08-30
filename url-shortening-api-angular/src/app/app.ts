@@ -1,6 +1,8 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
+import { Hero } from './sections/hero/hero';
+import { Nav } from './sections/navbar/nav/nav';
 import { ShortenService } from './services/shorten';
 import { urlValidator } from './validators/url-validator';
 
@@ -8,7 +10,7 @@ import { urlValidator } from './validators/url-validator';
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, Hero, Nav],
 })
 export class App implements OnInit {
   protected readonly title = signal('url-shortening-api-angular');

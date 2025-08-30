@@ -1,0 +1,23 @@
+<nav class="flex justify-between px-6 pt-10">
+  <img ngSrc="images/logo.svg" width="120" height="32" alt="" />
+  <button (click)="toggleIsOpen()" class="cursor-pointer">
+    <img ngSrc="images/menu.svg" width="24" height="24" alt="Hamburger Menu" />
+  </button>
+
+  @if (isOpen()) {
+    <div
+      [appOutsideClick]="isOpen()"
+      (outsideClick)="closeMenu()"
+      class="absolute left-1/2 mt-24 h-[383px] w-[327px] -translate-x-1/2 space-y-[30px] rounded-[10px] bg-34313d p-10"
+    >
+      <ul class="flex flex-col items-center gap-[30px]">
+        @for (link of links(); track $index) {
+          <li class="cursor-pointer text-[18px] font-bold text-fff">
+            <a [href]="link.href">{{ link.name }}</a>
+          </li>
+        }
+      </ul>
+      <div class="h-[1px] w-full bg-9e9aa8"></div>
+    </div>
+  }
+</nav>

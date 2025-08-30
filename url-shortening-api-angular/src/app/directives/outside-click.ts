@@ -24,9 +24,7 @@ export class OutsideClick implements OnInit, OnDestroy {
       return;
     }
 
-    console.log(`${event.target}, ${this.#el.nativeElement}`);
     if (!this.#el.nativeElement.contains(event.target)) {
-      console.log('Emitting');
       this.outSideClick.emit();
     }
   };
@@ -35,6 +33,7 @@ export class OutsideClick implements OnInit, OnDestroy {
     this.#listener = this.#renderer.listen('document', 'click', this.onDocumentClick);
   }
 
+  // When calling the listener on destroy, you're calling the cleanup function to remove the event listener in order to prevent memory leaks.
   ngOnDestroy(): void {
     if (this.#listener) {
       this.#listener();

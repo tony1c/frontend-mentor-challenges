@@ -1,7 +1,7 @@
 <input type="text" placeholder="Insert url" [formControl]="url" />
-<button type="button" (click)="onSubmit()">Shorten It!</button>
+<button class="bg-blue-400" type="button" (click)="onSubmit()">Shorten It!</button>
 
 @for (shorten of shortenUrls(); track $index) {
-<p>{{ shorten.originalUrl }}</p>
-<p>{{ shorten.shortenedUrl }}</p>
+  <p>{{ shorten.originalUrl }}</p>
+  <p>{{ shorten.shortenedUrl }}</p>
 }

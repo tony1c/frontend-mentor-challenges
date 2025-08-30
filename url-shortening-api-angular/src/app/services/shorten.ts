@@ -22,11 +22,11 @@ export class ShortenService {
 
   private shortenUrl(url: string): Observable<ShortenedUrl> {
     return this.callShortenApi$(url).pipe(
-      map((res) => ({ originalUrl: url, shortenedUrl: res.result_url })),
-      catchError((err) => {
+      map(res => ({ originalUrl: url, shortenedUrl: res.result_url })),
+      catchError(err => {
         console.error('Failed to shorten the URL:', err);
         throw err;
-      })
+      }),
     );
   }
 
@@ -43,13 +43,13 @@ export class ShortenService {
 
   shortenAndAdd(url: string): Observable<ShortenedUrl> {
     return this.shortenUrl(url).pipe(
-      tap((shortenedUrl) =>
-        this.#shortenUrls.update((urls) => {
-          const latestThree = urls.slice(0, 2);
-          return [shortenedUrl, ...latestThree];
-        })
+      tap(shortenedUrl =>
+        this.#shortenUrls.update(urls => {
+          const latestTwoUrls = urls.slice(0, 2);
+          return [shortenedUrl, ...latestTwoUrls];
+        }),
       ),
-      tap(() => this.saveShortenToLocalStorage())
+      tap(() => this.saveShortenToLocalStorage()),
     );
   }
 }

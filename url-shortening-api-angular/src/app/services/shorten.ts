@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, Signal, signal } from '@angular/core';
 import { catchError, map, Observable, tap } from 'rxjs';
-import { ShortenedUrl } from '../models/shorten';
+
+import type { ShortenedUrl } from '../models/shorten';
 
 @Injectable({
   providedIn: 'root',

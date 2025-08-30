@@ -7,22 +7,29 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint",
-    "prepare": "husky"
-  },
-  "lint-staged": {
-    "src/**/*.{ts,html,css}": [
-      "prettier --write",
-      "ng lint",
-      "git add"
-    ]
+    "lint": "ng lint"
   },
   "prettier": {
     "printWidth": 100,
     "singleQuote": true,
     "arrowParens": "avoid",
     "tailwindStylesheet": "./src/styles.css",
+    "importOrder": [
+      "^@angular$",
+      "rxjs",
+      "^\\w",
+      "^(@shared|@core|@env|@test-utilities)(/.*|$)",
+      "^(business-logic|@ui)(/.*|$)",
+      "",
+      "^[./|~/]"
+    ],
+    "importOrderParserPlugins": [
+      "typescript",
+      "jsx",
+      "decorators-legacy"
+    ],
     "plugins": [
+      "@ianvs/prettier-plugin-sort-imports",
       "prettier-plugin-tailwindcss"
     ],
     "overrides": [
@@ -52,6 +59,7 @@
     "@angular/build": "^20.2.0",
     "@angular/cli": "^20.2.0",
     "@angular/compiler-cli": "^20.2.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
     "@types/jasmine": "~5.1.0",
     "angular-eslint": "20.2.0",
     "eslint": "^9.33.0",

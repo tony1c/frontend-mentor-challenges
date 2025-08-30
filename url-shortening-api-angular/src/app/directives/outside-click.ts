@@ -14,7 +14,7 @@ import {
 })
 export class OutsideClick implements OnInit, OnDestroy {
   appOutsideClick = input.required<boolean>();
-  outsideClick = output();
+  outSideClick = output();
   #el = inject(ElementRef);
   #renderer = inject(Renderer2);
   #listener: (() => void) | undefined;
@@ -24,10 +24,10 @@ export class OutsideClick implements OnInit, OnDestroy {
       return;
     }
 
-    const target = event.target;
-
-    if (!this.#el.nativeElement.contains(target)) {
-      this.outsideClick.emit();
+    console.log(`${event.target}, ${this.#el.nativeElement}`);
+    if (!this.#el.nativeElement.contains(event.target)) {
+      console.log('Emitting');
+      this.outSideClick.emit();
     }
   };
 

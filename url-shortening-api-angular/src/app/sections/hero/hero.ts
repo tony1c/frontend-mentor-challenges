@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import type { ShortenedUrl } from '../../models/shorten';
 
 @Component({
   selector: 'app-hero',

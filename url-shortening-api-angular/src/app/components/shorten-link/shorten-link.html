@@ -1,0 +1,20 @@
+<div class="flex items-center justify-center">
+  <div class="flex h-[155px] w-[327px] flex-col rounded-[5px] bg-fff py-4">
+    <span
+      class="inline-flex h-[36px] w-full items-center border-b border-b-9e9aa8 px-4 text-[16px] leading-[36px] font-medium tracking-[0.12px]"
+    >
+      {{ shortenUrl().originalUrl }}</span
+    >
+    <span
+      class="inline-flex h-[36px] w-full items-center px-4 text-[16px] leading-[36px] font-medium tracking-[0.12px] text-2bd0d0"
+    >
+      {{ shortenUrl().shortenedUrl }}</span
+    >
+    <button
+      class="mx-auto h-12 w-[295px] cursor-pointer rounded-[5px] bg-2bd0d0 font-bold text-fff transition-colors duration-300 hover:bg-2bd0d0/70"
+      type="button"
+    >
+      Copy
+    </button>
+  </div>
+</div>

@@ -1,10 +1,11 @@
+import { NgClass } from '@angular/common';
 import { Component, input, signal } from '@angular/core';
 
 import { ShortenedUrl } from '../../models/shorten';
 
 @Component({
   selector: 'app-shorten-link',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './shorten-link.html',
   styles: ``,
 })

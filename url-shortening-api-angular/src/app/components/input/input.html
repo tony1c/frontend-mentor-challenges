@@ -2,15 +2,26 @@
   class="mx-auto max-w-[327px] -translate-y-1/2 rounded-[10px] bg-34313d bg-[url(/images/bg-shorten-mobile.svg)] bg-top-right bg-no-repeat lg:max-w-[1110px] lg:bg-[url(/images/bg-shorten-desktop.svg)] lg:bg-cover lg:bg-center"
 >
   <div class="flex h-full flex-col justify-center gap-4 p-6 lg:flex-row lg:gap-6 lg:py-[62px]">
-    <input
-      class="h-12 rounded-[5px] bg-fff pl-4 text-[16px] font-medium placeholder:text-9e9aa8 lg:w-[769px]"
-      type="text"
-      placeholder="Shorten a link here..."
-      [formControl]="url"
-    />
+    <div class="flex flex-col gap-1">
+      <input
+        [ngClass]="isInvalid() ? 'border border-f46363 text-f46363 placeholder:text-f46363' : ''"
+        class="h-12 rounded-[5px] bg-fff pl-4 text-[16px] font-medium placeholder:text-9e9aa8 lg:w-[769px]"
+        type="text"
+        placeholder="Shorten a link here..."
+        [formControl]="url"
+        (keydown.enter)="onSubmit()"
+        (input)="onInputChange()"
+        required
+      />
+      @if (isInvalid()) {
+        <small class="text-[12px] leading-[18px] font-medium tracking-[0.08px] text-f46363"
+          >Please add a link.</small
+        >
+      }
+    </div>
     <button
       class="h-12 cursor-pointer rounded-[5px] bg-2bd0d0 font-bold text-fff transition-colors duration-300 hover:bg-2bd0d0/70 lg:w-[188px]"
-      type="button"
+      type="submit"
       (click)="onSubmit()"
     >
       Shorten It!

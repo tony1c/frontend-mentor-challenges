@@ -1,0 +1,30 @@
+<nav class="mx-auto hidden h-full max-w-[1108px] items-center justify-between lg:flex">
+  <div class="flex items-center gap-8">
+    <a href="/">
+      <img ngSrc="images/logo.svg" width="120" height="32" alt="Shortly Logo" />
+    </a>
+    <ul class="flex gap-8">
+      @for (link of links(); track $index) {
+        <li
+          class="cursor-pointer text-[15px] font-bold text-9e9aa8 transition-colors duration-300 hover:text-34313d"
+        >
+          {{ link.name }}
+        </li>
+      }
+    </ul>
+  </div>
+
+  <div class="flex items-center gap-9">
+    <a
+      href="/"
+      class="cursor-pointer text-[15px] font-bold text-9e9aa8 transition-colors duration-300 hover:text-34313d"
+      >Login</a
+    >
+    <a
+      href="/"
+      class="flex h-10 w-[105px] cursor-pointer items-center justify-center rounded-[28px] bg-2bd0d0 text-[15px] font-bold text-fff transition-colors duration-300 hover:bg-2bd0d0/70"
+    >
+      Sign up
+    </a>
+  </div>
+</nav>

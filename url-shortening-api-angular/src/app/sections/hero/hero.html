@@ -1,5 +1,7 @@
-<section id="hero-section">
-  <div class="mx-auto grid h-screen grid-cols-1 place-items-center lg:grid-cols-2">
+<section id="hero-section" class="relative overflow-hidden">
+  <div
+    class="mx-auto grid h-screen max-w-[1108px] grid-cols-1 place-items-center pt-6 lg:grid-cols-2"
+  >
     <div
       class="order-last flex w-[347px] flex-col items-center gap-[15px] text-center lg:order-first lg:w-[564px] lg:items-start lg:text-left"
     >
@@ -10,7 +12,7 @@
       </h1>
 
       <p
-        class="max-w-[540px] text-[18px] leading-[30px] font-medium tracking-[0.12px] text-9e9aa8 lg:leading-[36px] lg:tracking-[0.15px]"
+        class="max-w-[540px] leading-[30px] font-medium tracking-[0.12px] text-9e9aa8 lg:leading-[36px] lg:tracking-[0.15px]"
       >
         Build your brand’s recognition and get detailed insights on how your links are performing.
       </p>
@@ -20,6 +22,14 @@
         Get started
       </button>
     </div>
-    <img ngSrc="images/illustration-working.svg" alt="Working" width="733" height="482" priority />
+
+    <img
+      class="top-1/2 -right-20 ml-20 lg:absolute lg:ml-0 lg:-translate-y-1/2"
+      ngSrc="images/illustration-working.svg"
+      alt="Working"
+      width="733"
+      height="482"
+      priority
+    />
   </div>
 </section>

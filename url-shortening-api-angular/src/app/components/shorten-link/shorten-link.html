@@ -11,10 +11,11 @@
       {{ shortenUrl().shortenedUrl }}</span
     >
     <button
+      (click)="onClick()"
       class="mx-auto h-12 w-[295px] cursor-pointer rounded-[5px] bg-2bd0d0 font-bold text-fff transition-colors duration-300 hover:bg-2bd0d0/70"
       type="button"
     >
-      Copy
+      {{ buttonText() }}
     </button>
   </div>
 </div>

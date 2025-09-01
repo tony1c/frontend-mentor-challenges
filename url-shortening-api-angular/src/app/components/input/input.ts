@@ -19,13 +19,16 @@ export class Input {
     validators: [Validators.required, urlValidator()],
   });
 
-  onSubmit(): void {
+  // Tried to handle the submit method without a extra variable, in this case isSubmitted, with updateOn: 'submit' but since we want to clear the errors on input value change, there are cases when the post request still goes through even though the url is not valid. Seems like the onInputChange clears errors as soon as we try to make the post request, which is not what we want.
+  public onSubmit(): void {
     this.isSubmitted.set(true);
 
     if (this.url.invalid) {
+      console.log('Invalid url!');
       return;
     }
 
+    // The error handler shouldn't be needed because the post request wouldn't go through if the url is not valid on submit, but it's still good to make sure we correctly set the error in any case.
     this.shortenService.shortenAndAdd(this.url.value).subscribe({
       next: () => this.url.reset(),
       error: () => {
@@ -41,7 +44,7 @@ export class Input {
     }
   }
 
-  isInvalid(): boolean {
+  public isInvalid(): boolean {
     return this.url.invalid && this.isSubmitted() && (this.url.touched || this.url.dirty);
   }
 }

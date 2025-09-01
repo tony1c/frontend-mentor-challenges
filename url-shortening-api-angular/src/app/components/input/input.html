@@ -4,7 +4,11 @@
   <div class="flex h-full flex-col justify-center gap-4 p-6 lg:flex-row lg:gap-6 lg:py-[62px]">
     <div class="flex flex-col gap-1">
       <input
-        [ngClass]="isInvalid() ? 'border border-f46363 text-f46363 placeholder:text-f46363' : ''"
+        [ngClass]="
+          isInvalid()
+            ? 'border-2 border-f46363 p-0 text-f46363 ring-offset-f46363 outline-f46363 placeholder:text-f46363 focus:outline-none'
+            : ''
+        "
         class="h-12 rounded-[5px] bg-fff pl-4 text-[16px] font-medium placeholder:text-9e9aa8 lg:w-[769px]"
         type="text"
         placeholder="Shorten a link here..."

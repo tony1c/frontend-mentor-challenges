@@ -13,3 +13,9 @@ export interface Feature {
   text: string;
   iconPath: string;
 }
+
+export interface Social {
+  path: string;
+  href: string;
+  alt: string;
+}

@@ -14,11 +14,10 @@
   --color-f46363: hsl(0, 87%, 67%);
   /* Neutral colors */
   --color-fff: hsl(0, 0%, 100%);
-  --color-gray-400: hsl(0, 0%, 75%);
   --color-9e9aa8: hsl(257, 7%, 63%);
   --color-eff1f7: hsl(222deg 36% 95%);
-  --color-gray-900: hsl(255, 11%, 22%);
-  --color-gray-950: hsl(260, 8%, 14%);
+  --color-232127: hsl(255, 8%, 14%);
+  --color-bfbfbf: hsl(0, 0%, 75%, 100%);
   /* Font weights */
   --font-weight-*: initial;
   --font-weight-medium: 500;

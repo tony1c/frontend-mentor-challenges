@@ -1,10 +1,37 @@
-<section id="advanced-statistics" class="pt-10">
-  <div class="h-[5000px] bg-eff1f7">
+<section id="advanced-statistics" class="">
+  <div class="bg-eff1f7 pb-[120px]">
     <app-input></app-input>
     <div class="flex flex-col gap-6">
       @for (shorten of shortenUrls(); track $index) {
         <app-shorten-link [shortenUrl]="shorten"></app-shorten-link>
       }
+    </div>
+    <div class="flex flex-col items-center gap-[92px]">
+      <div
+        class="mx-auto max-w-[327px] space-y-[16px] text-center lg:max-w-[540px] lg:space-y-[18px]"
+      >
+        <h2
+          class="text-[28px] leading-[48px] font-bold -tracking-[0.7px] lg:text-[40px] lg:-tracking-[1px]"
+        >
+          Advanced Statistics
+        </h2>
+        <p
+          class="text-[16px] leading-[28px] font-medium tracking-[0.11px] text-9e9aa8 lg:text-[18px] lg:leading-[32px] lg:tracking-[0.12px]"
+        >
+          Track how your links are performing across the web with our advanced statistics dashboard.
+        </p>
+      </div>
+
+      <!-- Feature cards -->
+      <div class="relative flex flex-col gap-[92px] lg:flex-row lg:gap-[30px]">
+        <div
+          class="absolute left-[calc(50%-4px)] h-[964px] w-[8px] bg-2bd0d0 lg:top-[calc(50%-4px)] lg:-translate-y-1/2 lg:rotate-90"
+        ></div>
+        @for (feature of features; track $index) {
+          <!-- Line decoration -->
+          <app-feature-card [ngClass]="calcMargin($index)" [feature]="feature"></app-feature-card>
+        }
+      </div>
     </div>
   </div>
 </section>

@@ -1,4 +1,5 @@
 <button
+  aria-label="toggle-active-ext"
   [class.bg-accent]="extention().isActive"
   [class.bg-primary-content-600]="!extention().isActive"
   [ngClass]="extention().isActive ? 'justify-end' : 'justify-start'"

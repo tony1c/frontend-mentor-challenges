@@ -1,0 +1,9 @@
+<button
+  [class.bg-accent]="extention().isActive"
+  [class.bg-primary-content-600]="!extention().isActive"
+  [ngClass]="extention().isActive ? 'justify-end' : 'justify-start'"
+  class="flex h-[22px] w-[37px] cursor-pointer items-center rounded-full px-[2.5px]"
+  (click)="toggleActive(extention())"
+>
+  <div class="size-[16px] rounded-full bg-neutral-0"></div>
+</button>

@@ -11,7 +11,7 @@ export class Theme {
   #document = inject(DOCUMENT);
   // Actually not useful in this app because it is CSR, but in case we would go for a SSR app, this would be the way to go for safe access to the DOM.
   #platformId = inject(PLATFORM_ID);
-  readonly currTheme = signal<ThemeType>('light');
+  readonly currTheme = signal<ThemeType>('dark');
 
   constructor() {
     this.initializeTheme();
@@ -26,7 +26,7 @@ export class Theme {
 
   initializeTheme(): void {
     if (isPlatformBrowser(this.#platformId)) {
-      const theme = localStorage.getItem(storageKey) || 'light';
+      const theme = localStorage.getItem(storageKey) || this.currTheme();
 
       this.setTheme(theme as ThemeType);
     }

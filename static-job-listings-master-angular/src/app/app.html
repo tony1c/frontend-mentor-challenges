@@ -1,9 +1,10 @@
-<main class="min-h-screen bg-green-bg font-league-spartan">
+<main class="min-h-screen bg-green-bg pb-10 font-league-spartan">
   <div class="h-[157px] bg-green-400">
     <div
       class="size-full bg-[url('assets/images/bg-header-mobile.svg')] bg-cover bg-bottom bg-no-repeat lg:bg-[url('assets/images/bg-header-desktop.svg')]"
     ></div>
   </div>
 
-  <app-job-component [job]="selectedJob()"></app-job-component>
+  <app-job-list-component></app-job-list-component>
+  <!-- <app-job-component [job]="selectedJob()"></app-job-component> -->
 </main>

@@ -1,11 +1,11 @@
 import { Component, computed, inject, signal } from '@angular/core';
 
-import { JobComponent } from './components/job-component/job-component';
+import { JobListComponent } from './components/job-list-component/job-list-component';
 import { JobListingsService } from './features/job-listings/services/job-listings-service';
 
 @Component({
   selector: 'app-root',
-  imports: [JobComponent],
+  imports: [JobListComponent],
   templateUrl: './app.html',
   styles: ``,
 })

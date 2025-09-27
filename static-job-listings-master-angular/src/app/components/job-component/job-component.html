@@ -1,0 +1,66 @@
+<div class="mt-11 flex items-center justify-center">
+  <div
+    [ngClass]="job().featured ? 'border-l-green-400' : 'border-l-transparent'"
+    class="relative h-[250px] w-full max-w-[322px] rounded-md border-l-4 bg-white shadow-md"
+  >
+    <!-- logo -->
+    <img
+      [src]="formattedImgPath(job().logo)"
+      alt="Job logo"
+      class="absolute left-6 size-14 -translate-y-1/2 rounded-full bg-green-900"
+    />
+
+    <div class="flex flex-col gap-2 px-5 py-8">
+      <div class="flex items-center gap-2">
+        <h2 class="text-green-400">{{ job().company }}</h2>
+        @if (job().new) {
+          <span
+            class="h-[26px] rounded-3xl bg-green-400 px-2.5 leading-[30px] font-medium text-white uppercase"
+          >
+            new!
+          </span>
+        }
+        @if (job().featured) {
+          <span
+            class="h-[26px] rounded-3xl bg-green-900 px-2.5 leading-[30px] font-medium text-white uppercase"
+          >
+            featured
+          </span>
+        }
+      </div>
+
+      <h3 class="font-medium">{{ job().position }}</h3>
+
+      <ul class="flex items-center gap-4 text-gray-400">
+        <li class="">{{ job().postedAt }}</li>
+
+        <li class="flex items-center justify-center gap-2">
+          <div class="mb-0.5 size-1 rounded-full bg-gray-400"></div>
+          {{ job().contract }}
+        </li>
+        <li class="flex items-center justify-center gap-2">
+          <div class="mb-0.5 size-1 rounded-full bg-gray-400"></div>
+          {{ job().location }}
+        </li>
+      </ul>
+
+      <!-- line -->
+      <div class="h-[1px] w-full bg-gray-400"></div>
+
+      <!-- tags -->
+      <ul class="flex flex-wrap gap-5">
+        <li class="rounded-sm bg-green-bg px-2 leading-[30px] font-bold text-green-400">
+          {{ job().role }}
+        </li>
+        <li class="rounded-sm bg-green-bg px-2 leading-[30px] font-bold text-green-400">
+          {{ job().level }}
+        </li>
+        @for (language of job().languages; track $index) {
+          <li class="rounded-sm bg-green-bg px-2 leading-[30px] font-bold text-green-400">
+            {{ language }}
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

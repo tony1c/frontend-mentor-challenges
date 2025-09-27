@@ -1,11 +1,12 @@
+import { Job } from '@/app/models/job.model';
 import { Injectable, signal } from '@angular/core';
-import data from 'assets/data.json';
+import jobList from 'assets/data.json';
 
 @Injectable({
   providedIn: 'root',
 })
 export class JobListingsService {
-  #jobsList = signal(data);
+  #jobsList = signal<Job[]>(jobList);
 
   get jobsList() {
     return this.#jobsList;

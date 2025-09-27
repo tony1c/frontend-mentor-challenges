@@ -1,2 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-*: initial;
+  --font-league-spartan: 'League Spartan', sans-serif;
+  /* Primary */
+  --color-*: initial;
+  --color-green-400: hsl(180, 29%, 50%);
+  /* Neutral */
+  --color-white: hsl(0, 0%, 100%);
+  --color-green-bg: hsl(180, 52%, 96%);
+  --color-gray-400: hsl(180, 8%, 52%);
+  --color-green-900: hsl(180, 14%, 20%);
+}
+
+body {
+  font-size: 15px;
+}

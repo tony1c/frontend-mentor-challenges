@@ -1,11 +1,11 @@
 <div class="mt-11 flex items-center justify-center">
   <div
     [ngClass]="job().featured ? 'border-l-green-400' : 'border-l-transparent'"
-    class="relative h-[250px] w-full max-w-[322px] rounded-md border-l-4 bg-white shadow-md"
+    class="relative h-[250px] w-full max-w-[322px] rounded-md border-l-4 bg-white shadow-md lg:max-w-[1100px]"
   >
     <!-- logo -->
     <img
-      [src]="formattedImgPath(job().logo)"
+      [src]="formatImgPath(job().logo)"
       alt="Job logo"
       class="absolute left-6 size-14 -translate-y-1/2 rounded-full bg-green-900"
     />

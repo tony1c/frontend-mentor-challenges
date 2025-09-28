@@ -1,6 +1,7 @@
-import { Job } from '@/app/models/job.model';
 import { NgClass } from '@angular/common';
 import { Component, input } from '@angular/core';
+
+import { Job } from '../../models/job.interface';
 
 @Component({
   selector: 'app-job-component',
@@ -11,7 +12,7 @@ import { Component, input } from '@angular/core';
 export class JobComponent {
   job = input.required<Job>();
 
-  formattedImgPath(basePath: string): string {
+  formatImgPath(basePath: string): string {
     const formattedLogoUrl = basePath.slice(2);
     return `assets/${formattedLogoUrl}`;
   }

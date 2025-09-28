@@ -1,7 +1,7 @@
 import { Component, computed, inject, signal } from '@angular/core';
 
-import { JobListComponent } from './components/job-list-component/job-list-component';
-import { JobListingsService } from './features/job-listings/services/job-listings-service';
+import { JobListComponent } from './features/jobs/components/job-list-component/job-list-component';
+import { JobListingsService } from './features/jobs/services/job-listings-service';
 
 @Component({
   selector: 'app-root',

@@ -1,4 +1,4 @@
-import { JobListingsService } from '@/app/features/job-listings/services/job-listings-service';
+import { JobListingsService } from '@/app/features/jobs/services/job-listings-service';
 import { Component, inject } from '@angular/core';
 
 import { JobComponent } from '../job-component/job-component';

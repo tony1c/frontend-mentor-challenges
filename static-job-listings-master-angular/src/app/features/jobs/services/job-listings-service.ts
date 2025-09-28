@@ -1,4 +1,4 @@
-import { Job } from '@/app/models/job.model';
+import { Job } from '@/app/features/jobs/models/job.interface';
 import { Injectable, signal } from '@angular/core';
 import jobList from 'assets/data.json';
 

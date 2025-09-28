@@ -1,0 +1,46 @@
+@if (filters().length > 0) {
+  <div
+    class="mx-auto flex min-h-[120px] w-full max-w-[322px] -translate-y-1/2 justify-between rounded-md bg-white p-5 shadow-2xl lg:max-w-[1100px]"
+  >
+    <ul role="list" aria-label="Active filters" class="flex flex-wrap gap-2">
+      @for (filter of filters(); track $index) {
+        <li
+          class="flex size-fit items-center justify-between gap-3 rounded-sm bg-green-bg pl-2 leading-[30px] font-bold text-green-400"
+        >
+          <span class="inline-block">
+            {{ filter }}
+          </span>
+          <button
+            (click)="removeFilter(filter)"
+            class="w-[32px] cursor-pointer rounded-e-sm bg-green-400"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="p-1"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </li>
+      }
+    </ul>
+
+    <button
+      role="button"
+      (click)="clearFilters()"
+      class="cursor-pointer font-bold tracking-wide text-gray-400"
+    >
+      Clear
+    </button>
+  </div>
+} @else {
+  <div class="h-[120px]"></div>
+}

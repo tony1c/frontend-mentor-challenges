@@ -1,3 +1,5 @@
-@for (job of jobList(); track job.id) {
-  <app-job-component [job]="job"></app-job-component>
-}
+<div class="flex flex-col gap-12">
+  @for (job of jobList(); track job.id) {
+    <app-job-component [job]="job"></app-job-component>
+  }
+</div>

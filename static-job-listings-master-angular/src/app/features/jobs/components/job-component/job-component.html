@@ -29,7 +29,9 @@
         }
       </div>
 
-      <h3 class="font-medium">{{ job().position }}</h3>
+      <h3 class="cursor-pointer font-medium transition-colors duration-200 hover:text-green-400">
+        {{ job().position }}
+      </h3>
 
       <ul class="flex items-center gap-4 text-gray-400">
         <li class="">{{ job().postedAt }}</li>
@@ -51,20 +53,20 @@
       <div class="mt-1 flex flex-wrap gap-5">
         <button
           (click)="addFilter(job().role)"
-          class="cursor-pointer rounded-sm bg-green-bg px-2 leading-[30px] font-bold text-green-400"
+          class="cursor-pointer rounded-sm bg-green-bg px-2 leading-[30px] font-bold text-green-400 transition-colors duration-200 hover:bg-green-400 hover:text-white"
         >
           {{ job().role }}
         </button>
         <button
           (click)="addFilter(job().level)"
-          class="cursor-pointer rounded-sm bg-green-bg px-2 leading-[30px] font-bold text-green-400"
+          class="cursor-pointer rounded-sm bg-green-bg px-2 leading-[30px] font-bold text-green-400 transition-colors duration-200 hover:bg-green-400 hover:text-white"
         >
           {{ job().level }}
         </button>
         @for (language of job().languages; track $index) {
           <button
             (click)="addFilter(language)"
-            class="cursor-pointer rounded-sm bg-green-bg px-2 leading-[30px] font-bold text-green-400"
+            class="cursor-pointer rounded-sm bg-green-bg px-2 leading-[30px] font-bold text-green-400 transition-colors duration-200 hover:bg-green-400 hover:text-white"
           >
             {{ language }}
           </button>

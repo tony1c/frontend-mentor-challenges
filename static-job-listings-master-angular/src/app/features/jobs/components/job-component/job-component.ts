@@ -11,7 +11,7 @@ import { JobListingsService } from '../../services/job-listings-service';
   styles: ``,
 })
 export class JobComponent {
-  #jobListingsService = inject(JobListingsService);
+  #jobsService = inject(JobListingsService);
   job = input.required<Job>();
 
   formatImgPath(basePath: string): string {
@@ -20,6 +20,6 @@ export class JobComponent {
   }
 
   addFilter(filter: string): void {
-    this.#jobListingsService.addFilter(filter);
+    this.#jobsService.addFilter(filter);
   }
 }

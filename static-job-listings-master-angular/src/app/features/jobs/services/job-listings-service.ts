@@ -16,7 +16,12 @@ export class JobListingsService {
       return jobs;
     }
 
-    return jobs;
+    return jobs.filter(job => {
+      const jobTags = [job.role, job.level, ...(job.languages || [])].filter(Boolean);
+      return filters.every(filter =>
+        jobTags.some(tag => tag.toLowerCase().includes(filter.toLowerCase())),
+      );
+    });
   });
 
   get jobsList() {
@@ -32,7 +37,6 @@ export class JobListingsService {
       return;
     }
     this.#filters.update(filters => [...filters, filter]);
-    console.log(this.#filters());
   }
 
   clearFilters(): void {

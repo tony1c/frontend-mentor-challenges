@@ -1,2 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  /* Font */
+  --font-*: initial;
+  --font-space-grotesk: 'Space Grotesk', sans-serif;
+
+  /* Primary */
+  --color-*: initial;
+  /* (input errors) */
+  --color-red-400: hsl(0, 100%, 66%);
+  --background-image-gradient: linear-gradient(
+    180deg,
+    hsl(249, 99%, 64%) 0%,
+    hsl(278, 94%, 30%) 100%
+  );
+  /* Neutral */
+  --color-white: hsl(0, 100%, 100%);
+  --color-gray-200: hsl(270, 3%, 87%);
+  --color-gray-400: hsl(212, 12%, 71%);
+  --color-purple-950: hsl(278, 68%, 11%);
+}
+
+body {
+  font-size: 18px;
+  font-family: var(--font-space-grotesk);
+}

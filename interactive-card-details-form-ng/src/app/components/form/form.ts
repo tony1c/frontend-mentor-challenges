@@ -19,6 +19,8 @@ export class Form {
   });
 
   constructor() {
+    this.cardFormValues.emit(this.cardForm.getRawValue());
+
     this.cardForm.valueChanges.pipe(takeUntilDestroyed()).subscribe(() => {
       this.cardFormValues.emit(this.cardForm.getRawValue());
     });

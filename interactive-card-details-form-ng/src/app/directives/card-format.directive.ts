@@ -7,8 +7,8 @@ export class CardFormatDirective {
   #el = inject(ElementRef);
 
   private format(value: string) {
-    const digits = value.replace(/\D/g, '').slice(0, 16);
-    return digits.replace(/(.{4})/g, '$1 ').trim();
+    const chars = value.replace(/[^a-zA-Z0-9]/g, '').slice(0, 16);
+    return chars.replace(/(.{4})/g, '$1 ').trim();
   }
 
   @HostListener('input')
@@ -16,7 +16,7 @@ export class CardFormatDirective {
     const input = this.#el.nativeElement;
     const raw = input.value;
     const caret = input.selectionStart ?? raw.length;
-    const digitsBefore = raw.slice(0, caret).replace(/\D/g, '').length;
+    const digitsBefore = raw.slice(0, caret).replace(/[^a-zA-Z0-9]/g, '').length;
 
     input.value = this.format(raw);
 

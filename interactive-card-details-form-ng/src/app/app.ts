@@ -13,7 +13,7 @@ import { CardForm } from './models/types';
 })
 export class App {
   protected readonly title = signal('angular-start');
-  cardFormValues = signal<CardForm>({ cardNumber: '0000 0000 0000 0000', cardholderName: 'aaa' });
+  cardFormValues = signal<CardForm>({ cardholderName: '', cardNumber: '' });
 
   handleCardNumberChange(cardForm: CardForm): void {
     this.cardFormValues.set(cardForm);

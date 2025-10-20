@@ -1,1 +1,11 @@
-<p>form works!</p>
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+  <label for=""></label>
+  <input
+    formControlName="cardNumber"
+    appCardFormatDirective
+    placeholder="e.g. 1234 5678 9123 0000"
+    type="text"
+    maxlength="19"
+    inputmode="numeric"
+  />
+</form>

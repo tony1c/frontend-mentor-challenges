@@ -3,6 +3,7 @@ import { Component, signal } from '@angular/core';
 import { BackCard } from './components/cards/back-card/back-card';
 import { FrontCard } from './components/cards/front-card/front-card';
 import { Form } from './components/form/form';
+import { CardForm } from './models/types';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,9 @@ import { Form } from './components/form/form';
 })
 export class App {
   protected readonly title = signal('angular-start');
+  cardFormValues = signal<CardForm>({ cardNumber: '0000 0000 0000 0000', cardholderName: 'aaa' });
+
+  handleCardNumberChange(cardForm: CardForm): void {
+    this.cardFormValues.set(cardForm);
+  }
 }

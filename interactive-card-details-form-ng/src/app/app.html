@@ -6,12 +6,12 @@
   ></div>
   <div class="flex items-end justify-center lg:items-center">
     <div class="relative lg:flex lg:flex-col lg:gap-10">
-      <app-front-card></app-front-card>
+      <app-front-card [cardFormValues]="cardFormValues()"></app-front-card>
       <div class="absolute -top-22 left-16 -z-10 lg:static lg:top-0 lg:left-0 lg:translate-x-20">
         <app-back-card></app-back-card>
       </div>
     </div>
   </div>
 
-  <app-form></app-form>
+  <app-form (cardFormValues)="handleCardNumberChange($event)"></app-form>
 </main>

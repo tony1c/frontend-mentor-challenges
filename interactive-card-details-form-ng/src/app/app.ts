@@ -13,9 +13,20 @@ import { CardForm } from './models/types';
 })
 export class App {
   protected readonly title = signal('angular-start');
-  cardFormValues = signal<CardForm>({ cardholderName: '', cardNumber: '' });
+  isSubmittedSuccessfully = signal(false);
+  cardFormValues = signal<CardForm>({
+    cardholderName: '',
+    cardNumber: '',
+    expMM: '',
+    expYY: '',
+    cvc: '',
+  });
 
   handleCardNumberChange(cardForm: CardForm): void {
     this.cardFormValues.set(cardForm);
+  }
+
+  handleIsSubmittedSuccessfully(): void {
+    this.isSubmittedSuccessfully.set(true);
   }
 }

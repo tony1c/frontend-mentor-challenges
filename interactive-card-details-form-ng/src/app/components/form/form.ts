@@ -13,9 +13,13 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class Form {
   #nnfb = inject(NonNullableFormBuilder);
   cardFormValues = output<CardForm>();
+  isSubmittedSuccessfully = output();
   cardForm = this.#nnfb.group({
     cardholderName: ['', Validators.required],
     cardNumber: ['', Validators.required],
+    expMM: ['', Validators.required],
+    expYY: ['', Validators.required],
+    cvc: ['', Validators.required],
   });
 
   constructor() {
@@ -28,5 +32,6 @@ export class Form {
 
   onSubmit(): void {
     console.log('Submitted!');
+    this.isSubmittedSuccessfully.emit();
   }
 }

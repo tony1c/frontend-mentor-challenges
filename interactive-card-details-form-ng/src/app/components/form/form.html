@@ -4,17 +4,21 @@
   class="mt-[50px] flex flex-col items-center lg:mt-0 lg:h-full lg:justify-center"
 >
   <div class="flex max-w-[328px] flex-col gap-8 text-purple-950 lg:max-w-[382px]">
-    <label for="" class="flex flex-col gap-2 uppercase"
-      ><span class="text-xs font-medium tracking-widest">Cardholder name</span>
+    <label for="" class="flex flex-col gap-2"
+      ><span class="text-xs font-medium tracking-widest uppercase">Cardholder name</span>
       <input
         formControlName="cardholderName"
         placeholder="e.g. Jane Appleseed"
         type="text"
+        [class.border-red-400]="isSubmitted() && cardForm.controls.cardholderName.invalid"
         class="h-11 cursor-pointer rounded-md border border-gray-400 px-3.5 placeholder:text-gray-400 focus:border-2 focus:border-purple-950 focus:outline-none"
       />
+      @if (isSubmitted() && cardForm.controls.cardholderName.invalid) {
+        <small class="text-sm text-red-400">Can't be blank</small>
+      }
     </label>
-    <label for="" class="flex flex-col gap-2 uppercase"
-      ><span class="text-xs font-medium tracking-widest">Card number</span>
+    <label for="" class="flex flex-col gap-2"
+      ><span class="text-xs font-medium tracking-widest uppercase">Card number</span>
       <input
         formControlName="cardNumber"
         appCardFormatDirective
@@ -22,12 +26,18 @@
         type="text"
         maxlength="19"
         inputmode="numeric"
-        class="h-11 cursor-pointer rounded-md border border-gray-400 px-3.5 placeholder:text-gray-400 focus:border-2 focus:border-purple-950 focus:outline-none"
+        [class.border-red-400]="isSubmitted() && cardForm.controls.cardNumber.invalid"
+        class="h-11 cursor-pointer rounded-md border border-gray-400 px-3.5 uppercase placeholder:text-gray-400 placeholder:normal-case focus:border-2 focus:border-purple-950 focus:outline-none"
       />
+      @if (isSubmitted() && cardForm.controls.cardNumber.hasError('required')) {
+        <small class="text-sm text-red-400">Can't be blank</small>
+      } @else if (isSubmitted() && cardForm.controls.cardNumber.hasError('numbersOnly')) {
+        <small class="text-sm text-red-400">Wrong format, numbers only</small>
+      }
     </label>
     <div class="flex gap-2">
-      <label for="" class="flex flex-col gap-2 uppercase"
-        ><span class="text-xs font-medium tracking-widest">Exp date (mm/yy)</span>
+      <label for="" class="flex flex-col gap-2"
+        ><span class="text-xs font-medium tracking-widest uppercase">Exp date (mm/yy)</span>
         <div class="flex gap-2">
           <input
             formControlName="expMM"
@@ -35,6 +45,7 @@
             type="text"
             inputmode="numeric"
             maxlength="2"
+            [class.border-red-400]="isSubmitted() && cardForm.controls.expMM.invalid"
             class="h-11 w-[72px] cursor-pointer rounded-md border border-gray-400 px-3.5 placeholder:text-gray-400 focus:border-2 focus:border-purple-950 focus:outline-none"
           />
           <input
@@ -43,20 +54,32 @@
             type="text"
             inputmode="numeric"
             maxlength="2"
+            [class.border-red-400]="isSubmitted() && cardForm.controls.expYY.invalid"
             class="h-11 w-[72px] cursor-pointer rounded-md border border-gray-400 px-3.5 placeholder:text-gray-400 focus:border-2 focus:border-purple-950 focus:outline-none"
           />
         </div>
+        @if (
+          isSubmitted() &&
+          (cardForm.controls.expMM.hasError('required') ||
+            cardForm.controls.expYY.hasError('required'))
+        ) {
+          <small class="text-sm text-red-400">Can't be blank</small>
+        }
       </label>
-      <label for="" class="flex flex-col gap-2 uppercase">
-        <span class="text-xs font-medium tracking-widest">CVC</span>
+      <label for="" class="flex flex-col gap-2">
+        <span class="text-xs font-medium tracking-widest uppercase">CVC</span>
         <input
           formControlName="cvc"
           placeholder="e.g. 123"
           type="text"
           inputmode="numeric"
           maxlength="3"
+          [class.border-red-400]="isSubmitted() && cardForm.controls.cvc.invalid"
           class="h-11 w-full cursor-pointer rounded-md border border-gray-400 px-3.5 placeholder:text-gray-400 focus:border-2 focus:border-purple-950 focus:outline-none"
         />
+        @if (isSubmitted() && cardForm.controls.cvc.hasError('required')) {
+          <small class="text-sm text-red-400">Can't be blank</small>
+        }
       </label>
     </div>
     <button

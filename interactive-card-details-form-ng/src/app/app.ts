@@ -26,7 +26,7 @@ export class App {
     this.cardFormValues.set(cardForm);
   }
 
-  handleIsSubmittedSuccessfully(): void {
-    this.isSubmittedSuccessfully.set(true);
+  handleIsSubmittedSuccessfully(bool: boolean): void {
+    this.isSubmittedSuccessfully.set(bool);
   }
 }

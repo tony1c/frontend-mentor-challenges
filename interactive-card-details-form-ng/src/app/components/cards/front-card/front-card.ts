@@ -13,5 +13,4 @@ export class FrontCard {
   cardNumber = computed(() => this.cardFormValues().cardNumber || '0000 0000 0000 0000');
   expMM = computed(() => this.cardFormValues().expMM || '00');
   expYY = computed(() => this.cardFormValues().expYY || '00');
-  cvc = computed(() => this.cardFormValues().cvc || '000');
 }

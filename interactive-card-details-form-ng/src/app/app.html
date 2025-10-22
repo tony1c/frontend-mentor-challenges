@@ -13,8 +13,12 @@
     </div>
   </div>
 
-  <app-form
-    (cardFormValues)="handleCardNumberChange($event)"
-    (isSubmittedSuccessfully)="handleIsSubmittedSuccessfully()"
-  ></app-form>
+  @if (!isSubmittedSuccessfully()) {
+    <app-form
+      (cardFormValues)="handleCardNumberChange($event)"
+      (isSubmittedSuccessfully)="handleIsSubmittedSuccessfully($event)"
+    ></app-form>
+  } @else {
+    <span>Success!</span>
+  }
 </main>

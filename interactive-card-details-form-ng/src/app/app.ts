@@ -2,12 +2,13 @@ import { Component, signal } from '@angular/core';
 
 import { BackCard } from './components/cards/back-card/back-card';
 import { FrontCard } from './components/cards/front-card/front-card';
+import { Completed } from './components/completed/completed';
 import { Form } from './components/form/form';
 import { CardForm } from './models/types';
 
 @Component({
   selector: 'app-root',
-  imports: [BackCard, FrontCard, Form],
+  imports: [BackCard, FrontCard, Form, Completed],
   templateUrl: './app.html',
   styles: ``,
 })

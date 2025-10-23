@@ -18,13 +18,7 @@ export class Form {
   isSubmitted = signal<boolean>(false);
   cardForm = this.#nnfb.group({
     cardholderName: ['', Validators.required],
-    cardNumber: [
-      '',
-      {
-        validators: [Validators.required, CardValidators.numbersOnly()],
-        updateOn: 'submit',
-      },
-    ],
+    cardNumber: ['', [Validators.required, CardValidators.numbersOnly()]],
     expMM: ['', Validators.required],
     expYY: ['', Validators.required],
     cvc: ['', Validators.required],
@@ -34,7 +28,6 @@ export class Form {
     this.cardForm.valueChanges.pipe(takeUntilDestroyed()).subscribe(() => {
       if (this.isSubmitted()) {
         this.isSubmitted.set(false);
-        console.log(this.isSubmitted());
       }
       this.cardFormValues.emit(this.cardForm.getRawValue());
     });
